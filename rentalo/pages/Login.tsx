@@ -179,7 +179,7 @@ const Login: React.FC = () => {
         </form>
         <div className="flex justify-between mb-1 ">
           <Link
-            href="/Register"
+            href="/ScegliUtente"
             className="text-blue-500 hover:text-blue-800 mt-7 inline-block"
           >
             ← Non hai un account?
