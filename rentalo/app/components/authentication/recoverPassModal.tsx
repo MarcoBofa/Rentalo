@@ -1,5 +1,5 @@
 "use client";
-import "../globals.css";
+import "../../globals.css";
 import React, { FormEvent, FC } from "react";
 import { ModalForm } from "@/types";
 import InputField from "./InputField";
@@ -34,7 +34,7 @@ const RecoverPassModal: FC<RecoverPassModalProps> = ({
 
   const onSubmit = (data: ModalForm) => {
     toast.success(
-      "If the Email is valid, you will receive a link to reset your password! :)",
+      "Se l'email inserita è associata ad un account, riceverai una mail con le istruzioni per il reset della password.",
       {
         duration: 5000,
       }
@@ -56,7 +56,7 @@ const RecoverPassModal: FC<RecoverPassModalProps> = ({
   //   };
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
+    <div className="fixed inset-0 z-10 bg-black bg-opacity-50 flex justify-center items-center">
       <ToasterProvider></ToasterProvider>
       <div className="bg-white p-8 rounded-lg max-w-md w-full">
         <button

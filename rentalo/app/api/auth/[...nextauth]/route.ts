@@ -7,6 +7,10 @@ import { PrismaAdapter } from "@next-auth/prisma-adapter";
 
 import prisma from "@/app/libs/prismadb";
 
+interface ExtendedUser extends User {
+  role: string;
+}
+
 export const authOptions: AuthOptions = {
   adapter: PrismaAdapter(prisma),
   providers: [
@@ -23,6 +27,7 @@ export const authOptions: AuthOptions = {
           email: profile?.email,
           name: profile?.login,
           image: profile?.avatar_url,
+          birthDate: null,
           role: userRole,
         };
       },
@@ -44,6 +49,7 @@ export const authOptions: AuthOptions = {
           name: `${profile.given_name} ${profile.family_name}`,
           email: profile.email,
           image: profile.picture,
+          birthDate: null,
           role: profile.role ? profile.role : "privato",
         };
       },
@@ -84,14 +90,18 @@ export const authOptions: AuthOptions = {
   ],
   callbacks: {
     async jwt({ token, user }) {
-      return {
-        ...token,
-        ...user,
-        email: user.email as string,
-      };
+      if (user) {
+        // Cast user to the extended type
+        const extendedUser = user as ExtendedUser;
+        token.role = extendedUser.role;
+      }
+      return token;
     },
     async session({ session, token }) {
-      session.user.role = token.role;
+      if (session?.user) {
+        // Extend the session's user type
+        (session.user as ExtendedUser).role = token.role as string;
+      }
       return session;
     },
   },
@@ -105,4 +115,6 @@ export const authOptions: AuthOptions = {
   secret: process.env.NEXTAUTH_SECRET,
 };
 
-export default NextAuth(authOptions);
+const handler = NextAuth(authOptions);
+
+export { handler as GET, handler as POST };

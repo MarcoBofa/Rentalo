@@ -14,14 +14,17 @@ import { signIn } from "next-auth/react";
 import { FaGithub, FaGoogle } from "react-icons/fa";
 import { useRouter } from "next/router";
 
-const RegistraAzienda: React.FC = () => {
+const RegistraPrivato: React.FC = () => {
   const [termsBtn, setTermsBtn] = useState(false);
+  const [birthDate, setBirthDate] = useState<string>("");
+
   const {
     register,
     handleSubmit,
     formState: { errors, isSubmitting },
     reset,
     watch,
+    setValue,
   } = useForm<IFormInput>({
     defaultValues: {
       name: "",
@@ -30,10 +33,17 @@ const RegistraAzienda: React.FC = () => {
       email: "",
       password: "",
       confirmPassword: "",
-      role: "azienda",
+      birthDate: "",
+      role: "privato",
     },
   });
   const router = useRouter();
+
+  const handleDateChange = (date: Date | null) => {
+    const formattedDate = date ? date.toISOString().split("T")[0] : "";
+    setValue("birthDate", formattedDate);
+    setBirthDate(formattedDate);
+  };
 
   const onSubmit = (data: IFormInput) => {
     if (data.password && data.password.length < 6) {
@@ -51,7 +61,7 @@ const RegistraAzienda: React.FC = () => {
     }
 
     axios
-      .post("/api/registraAzienda", data)
+      .post("/api/registerPrivato", data)
       .then(() => {
         toast.success("Account Creato!");
         router.push("/Login");
@@ -68,6 +78,84 @@ const RegistraAzienda: React.FC = () => {
 
   return (
     <div className={styles.flex + " h-screen"}>
+      <div className="w-1/2 p-10 flex flex-col items-center justify-center relative bg-black">
+        <div className="absolute inset-0">
+          <svg
+            className="w-full h-full"
+            viewBox="0 0 100 100"
+            preserveAspectRatio="none"
+          >
+            <defs>
+              <linearGradient
+                id="greyGradient"
+                x1="100%"
+                y1="100%"
+                x2="0%"
+                y2="100%"
+              >
+                <stop
+                  offset="0%"
+                  style={{ stopColor: "rgba(130, 62, 5, 1)" }}
+                />
+                <stop offset="60%" style={{ stopColor: "rgba(0, 0, 0, 1)" }} />
+              </linearGradient>
+              <clipPath id="triangleClip">
+                <polygon points="0,0 0,100 100,0" />
+              </clipPath>
+            </defs>
+            <rect
+              x="0"
+              y="0"
+              width="100"
+              height="100"
+              fill="url(#greyGradient)"
+              clipPath="url(#triangleClip)"
+            />
+          </svg>
+        </div>
+
+        <div className="text-center z-10 mt-20 flex flex-col justify-center">
+          <div className="mb-40 flex items-start justify-center">
+            <span className="text-orange-500 border border-orange-500 rounded-full w-8 h-8 flex items-center justify-center mr-4 mt-1">
+              <i className="fas fa-check"></i>
+            </span>
+            <div className="text-center">
+              <h2 className="text-3xl text-orange-500 font-bold mb-3">
+                Crea un account in pochi minuti
+              </h2>
+              <p className="text-md text-white">
+                Registrazione pratica e veloce
+              </p>
+            </div>
+          </div>
+          <div className="mb-40 flex items-start justify-center">
+            <span className="text-orange-500 border border-orange-500 rounded-full w-8 h-8 flex items-center justify-center mr-4 mt-1">
+              <i className="fas fa-check"></i>
+            </span>
+            <div className="text-center">
+              <h2 className="text-3xl text-orange-500 font-bold mb-3">
+                Noleggia quello che ti serve
+              </h2>
+              <p className="text-md text-white">
+                Trova tutti i macchinari e le attrezzature di cui hai bisogno
+              </p>
+            </div>
+          </div>
+          <div className="mb-40 flex items-start justify-center">
+            <span className="text-orange-500 border border-orange-500 rounded-full w-8 h-8 flex items-center justify-center mr-4 mt-1">
+              <i className="fas fa-check"></i>
+            </span>
+            <div className="text-center">
+              <h2 className="text-3xl text-orange-500 font-bold mb-3">
+                Gestione facile e pratica
+              </h2>
+              <p className="text-md text-white">
+                Gestisci comodamente i tuoi noleggi dalla piattaforma
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
       <ToasterProvider />
       <div className="w-1/2 bg-white p-10 flex items-center justify-center">
         <div className="w-2/3 flex flex-col justify-between">
@@ -86,10 +174,10 @@ const RegistraAzienda: React.FC = () => {
             </Link>
           </div>
           <h2 className="text-3xl font-bold text-black mb-6">
-            Crea il tuo account aziendale!
+            Crea il tuo account!
           </h2>
           <form onSubmit={handleSubmit(onSubmit)}>
-            <div className="flex space-x-4">
+            <div className="mb-4 flex space-x-4">
               <div className="w-1/2">
                 <InputField
                   label="name"
@@ -109,13 +197,21 @@ const RegistraAzienda: React.FC = () => {
                 />
               </div>
             </div>
-            ì
+            {/* <div className="mb-4">
+              <InputField
+                label="Date of Birth"
+                datePicker
+                onDateChange={handleDateChange}
+              />
+            </div> */}
             <div className="mb-4">
               <InputField
-                label="piva"
+                label="birthDate"
                 type="text"
+                datePicker
                 register={register}
                 watch={watch}
+                onDateChange={handleDateChange}
                 required
               />
             </div>
@@ -202,86 +298,8 @@ const RegistraAzienda: React.FC = () => {
           </form>
         </div>
       </div>
-      <div className="w-1/2 p-10 flex flex-col items-center justify-center relative bg-black">
-        <div className="absolute inset-0">
-          <svg
-            className="w-full h-full"
-            viewBox="0 0 100 100"
-            preserveAspectRatio="none"
-          >
-            <defs>
-              <linearGradient
-                id="greyGradient"
-                x1="0%"
-                y1="100%"
-                x2="100%"
-                y2="0%"
-              >
-                <stop
-                  offset="0%"
-                  style={{ stopColor: "rgba(130, 62, 5, 1)" }}
-                />
-                <stop offset="60%" style={{ stopColor: "rgba(0, 0, 0, 1)" }} />
-              </linearGradient>
-              <clipPath id="triangleClip">
-                <polygon points="0,100 100,0 100,100" />
-              </clipPath>
-            </defs>
-            <rect
-              x="0"
-              y="0"
-              width="100"
-              height="100"
-              fill="url(#greyGradient)"
-              clipPath="url(#triangleClip)"
-            />
-          </svg>
-        </div>
-
-        <div className="text-center z-10 mt-20 flex flex-col justify-center">
-          <div className="mb-40 flex items-start justify-center">
-            <span className="text-orange-500 border border-orange-500 rounded-full w-8 h-8 flex items-center justify-center mr-4 mt-1">
-              <i className="fas fa-check"></i>
-            </span>
-            <div className="text-center">
-              <h2 className="text-3xl text-orange-500 font-bold mb-3">
-                Crea il tuo account in pochi minuti!
-              </h2>
-              <p className="text-md text-white">
-                registrazione facile e veloce
-              </p>
-            </div>
-          </div>
-          <div className="mb-40 flex items-start justify-center">
-            <span className="text-orange-500 border border-orange-500 rounded-full w-8 h-8 flex items-center justify-center mr-4 mt-1">
-              <i className="fas fa-check"></i>
-            </span>
-            <div className="text-center">
-              <h2 className="text-3xl text-orange-500 font-bold mb-3">
-                Noleggia quello che ti serve
-              </h2>
-              <p className="text-md text-white">
-                Trova tutti i macchinari e le attrezzature di cui hai bisogno
-              </p>
-            </div>
-          </div>
-          <div className="mb-40 flex items-start justify-center">
-            <span className="text-orange-500 border border-orange-500 rounded-full w-8 h-8 flex items-center justify-center mr-4 mt-1">
-              <i className="fas fa-check"></i>
-            </span>
-            <div className="text-center">
-              <h2 className="text-3xl text-orange-500 font-bold mb-3">
-                Gestione facile e pratica
-              </h2>
-              <p className="text-md text-white">
-                Gestisci comodamente noleggi e annunci dalla piattaforma
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
   );
 };
 
-export default RegistraAzienda;
+export default RegistraPrivato;

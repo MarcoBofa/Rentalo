@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect } from "react";
+import React from "react";
 import "../app/globals.css";
 import InputField from "../app/components/authentication/InputField";
 import styles from "../app/stylings/custom.module.css";
@@ -14,7 +14,7 @@ import { signIn } from "next-auth/react";
 import { FaGithub, FaGoogle } from "react-icons/fa";
 import { useRouter } from "next/router";
 
-const RegistraAzienda: React.FC = () => {
+const RegistraNoleggiatore: React.FC = () => {
   const [termsBtn, setTermsBtn] = useState(false);
   const {
     register,
@@ -30,7 +30,7 @@ const RegistraAzienda: React.FC = () => {
       email: "",
       password: "",
       confirmPassword: "",
-      role: "azienda",
+      role: "noleggiatore",
     },
   });
   const router = useRouter();
@@ -51,9 +51,9 @@ const RegistraAzienda: React.FC = () => {
     }
 
     axios
-      .post("/api/registraAzienda", data)
+      .post("/api/registraNoleggiatore", data)
       .then(() => {
-        toast.success("Account Creato!");
+        toast.success("Account creato!");
         router.push("/Login");
       })
       .catch((error) => {
@@ -86,10 +86,10 @@ const RegistraAzienda: React.FC = () => {
             </Link>
           </div>
           <h2 className="text-3xl font-bold text-black mb-6">
-            Crea il tuo account aziendale!
+            Crea il tuo account da noleggiatore!
           </h2>
           <form onSubmit={handleSubmit(onSubmit)}>
-            <div className="flex space-x-4">
+            <div className="mb-4 flex space-x-4">
               <div className="w-1/2">
                 <InputField
                   label="name"
@@ -109,16 +109,13 @@ const RegistraAzienda: React.FC = () => {
                 />
               </div>
             </div>
-            ì
-            <div className="mb-4">
+            {/* <div className="mb-4">
               <InputField
-                label="piva"
-                type="text"
-                register={register}
-                watch={watch}
-                required
+                label="Date of Birth"
+                datePicker
+                onDateChange={handleDateChange}
               />
-            </div>
+            </div> */}
             <div className="mb-4">
               <InputField
                 label="email"
@@ -284,4 +281,4 @@ const RegistraAzienda: React.FC = () => {
   );
 };
 
-export default RegistraAzienda;
+export default RegistraNoleggiatore;
