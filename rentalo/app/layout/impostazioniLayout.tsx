@@ -29,135 +29,141 @@ const ImpostazioniLayout: React.FC<ImpostazioniProps> = ({ children }) => {
 
   let privatoSet = (
     <>
-      <aside className="w-1/5 min-h-screen top-21 left-0 bg-gray-800 text-white">
-        <ul className="space-y-2 text-sm">
-          <li>
-            <Link
-              href="/Impostazioni/email"
-              className="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700"
-            >
-              Email
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="/Impostazioni/password"
-              className="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700"
-            >
-              Password
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="/Impostazioni/nome"
-              className="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700"
-            >
-              Nome
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="/Impostazioni/nome"
-              className="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700"
-            >
-              Cognome
-            </Link>
-          </li>
-        </ul>
-      </aside>
-      <main className="w-4/5">{children}</main>
+      <div className="flex flex-col">
+        <aside className="w-1/5 min-h-screen top-21 left-0 bg-gray-800 text-white">
+          <ul className="space-y-2 text-sm">
+            <li>
+              <Link
+                href="/Impostazioni/email"
+                className="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700"
+              >
+                Email
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/Impostazioni/password"
+                className="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700"
+              >
+                Password
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/Impostazioni/nome"
+                className="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700"
+              >
+                Nome
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/Impostazioni/nome"
+                className="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700"
+              >
+                Cognome
+              </Link>
+            </li>
+          </ul>
+        </aside>
+        <main className="w-4/5">{children}</main>
+      </div>
     </>
   );
 
   let aziendaSet = (
     <>
-      <aside className="w-1/5 min-h-screen top-21 left-0 bg-gray-800 text-white">
-        <ul className="space-y-2 text-sm">
-          <li>
-            <Link
-              href="/Impostazioni/email"
-              className="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700"
-            >
-              Email
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="/Impostazioni/password"
-              className="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700"
-            >
-              Password
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="/Impostazioni/piva"
-              className="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700"
-            >
-              P.IVA
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="/Impostazioni/nome"
-              className="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700"
-            >
-              Nome
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="/Impostazioni/nome"
-              className="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700"
-            >
-              Cognome
-            </Link>
-          </li>
-        </ul>
-      </aside>
-      <main className="w-4/5">{children}</main>
+      <div className="flex flex-col">
+        <aside className="w-1/5 min-h-screen top-21 left-0 bg-gray-800 text-white">
+          <ul className="space-y-2 text-sm">
+            <li>
+              <Link
+                href="/Impostazioni/email"
+                className="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700"
+              >
+                Email
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/Impostazioni/password"
+                className="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700"
+              >
+                Password
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/Impostazioni/piva"
+                className="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700"
+              >
+                P.IVA
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/Impostazioni/nome"
+                className="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700"
+              >
+                Nome
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/Impostazioni/nome"
+                className="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700"
+              >
+                Cognome
+              </Link>
+            </li>
+          </ul>
+        </aside>
+        <main className="w-4/5">{children}</main>
+      </div>
     </>
   );
 
   let noleggiatoreSet = (
     <>
-      <aside className="w-1/5 min-h-screen top-21 left-0 bg-gray-800 text-white">
-        <ul className="space-y-2 text-sm">
-          <li>
-            <Link
-              href="/Impostazioni/email"
-              className="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700"
-            >
-              Email
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="/Impostazioni/password"
-              className="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700"
-            >
-              Password
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="/Impostazioni/nome"
-              className="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700"
-            >
-              Nome
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="/Impostazioni/nome"
-              className="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700"
-            >
-              Cognome
-            </Link>
-          </li>
-        </ul>
-      </aside>
-      <main className="w-4/5">{children}</main>
+      <div className="flex flex-col">
+        <aside className="w-1/5 min-h-screen top-21 left-0 bg-gray-800 text-white">
+          <ul className="space-y-2 text-sm">
+            <li>
+              <Link
+                href="/Impostazioni/email"
+                className="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700"
+              >
+                Email
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/Impostazioni/password"
+                className="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700"
+              >
+                Password
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/Impostazioni/nome"
+                className="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700"
+              >
+                Nome
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/Impostazioni/nome"
+                className="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700"
+              >
+                Cognome
+              </Link>
+            </li>
+          </ul>
+        </aside>
+        <main className="w-4/5">{children}</main>
+      </div>
     </>
   );
 
