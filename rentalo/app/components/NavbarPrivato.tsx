@@ -1,4 +1,5 @@
 "use client";
+import { useContext } from "react";
 import { Squash as Hamburger } from "hamburger-react";
 import { useState } from "react";
 import { signOut } from "next-auth/react";
@@ -6,16 +7,20 @@ import { safeUser } from "@/types";
 import Image from "next/image";
 
 import Link from "next/link";
+import UserContext from "../context/useContext";
 
 interface navbarPros {
   currentUser?: safeUser | null;
 }
 
-const Navbar: React.FC<navbarPros> = ({ currentUser }) => {
+const NavbarPrivato: React.FC<navbarPros> = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const context = useContext(UserContext);
+  const currentUser = context?.currentUser;
+  //console.log(currentUser);
 
   return (
-    <div className="fixed top-0 left-0 right-0 z-50 bg-gray-900 text-white py-4 px-6">
+    <div className="bg-gray-900 text-white py-4 px-6 w-full">
       <div className="mx-auto flex justify-between items-center">
         <Link href="/" className="text-3xl font-bold flex items-center">
           <Image
@@ -45,45 +50,33 @@ const Navbar: React.FC<navbarPros> = ({ currentUser }) => {
           </div>
           {dropdownOpen && (
             <div className="absolute z-10 right-0 mt-2 w-48 py-2 bg-gray-900 text-white rounded shadow-xl">
-              {currentUser ? (
-                <>
-                  <Link
-                    href="/"
-                    className="block px-4 py-2 hover:bg-gray-800"
-                    onClick={() => setDropdownOpen(false)}
-                  >
-                    Dashboard
-                  </Link>
-                  <Link
-                    href="/"
-                    className="block px-4 py-2 hover:bg-gray-800"
-                    onClick={() => setDropdownOpen(false)}
-                  >
-                    Home
-                  </Link>
-                  <a
-                    onClick={() => signOut()}
-                    className="block px-4 py-2 hover:bg-gray-800"
-                  >
-                    Logout
-                  </a>
-                </>
-              ) : (
-                <>
-                  <Link
-                    href="/Login"
-                    className="block px-4 py-2 hover:bg-gray-800"
-                  >
-                    Login
-                  </Link>
-                  <Link
-                    href="/ScegliUtente"
-                    className="block px-4 py-2 hover:bg-gray-800"
-                  >
-                    Signup
-                  </Link>
-                </>
-              )}
+              <Link
+                href="/"
+                className="block px-4 py-2 hover:bg-gray-800"
+                onClick={() => setDropdownOpen(false)}
+              >
+                Dashboard
+              </Link>
+              <Link
+                href="/"
+                className="block px-4 py-2 hover:bg-gray-800"
+                onClick={() => setDropdownOpen(false)}
+              >
+                Home
+              </Link>
+              <Link
+                href="/Impostazioni"
+                className="block px-4 py-2 hover:bg-gray-800"
+                onClick={() => setDropdownOpen(false)}
+              >
+                Impostazioni
+              </Link>
+              <a
+                onClick={() => signOut()}
+                className="block px-4 py-2 hover:bg-gray-800"
+              >
+                Logout
+              </a>
             </div>
           )}
         </div>
@@ -92,4 +85,4 @@ const Navbar: React.FC<navbarPros> = ({ currentUser }) => {
   );
 };
 
-export default Navbar;
+export default NavbarPrivato;

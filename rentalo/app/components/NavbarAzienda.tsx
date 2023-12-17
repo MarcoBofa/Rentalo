@@ -1,21 +1,25 @@
 "use client";
+import { useContext } from "react";
 import { Squash as Hamburger } from "hamburger-react";
 import { useState } from "react";
 import { signOut } from "next-auth/react";
 import { safeUser } from "@/types";
-import Image from "next/image";
+import UserContext from "../context/useContext";
 
 import Link from "next/link";
+import Image from "next/image";
 
 interface navbarPros {
   currentUser?: safeUser | null;
 }
 
-const Navbar: React.FC<navbarPros> = ({ currentUser }) => {
+const NavbarAzienda: React.FC<navbarPros> = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const { currentUser } = useContext(UserContext);
+  console.log(currentUser);
 
   return (
-    <div className="fixed top-0 left-0 right-0 z-50 bg-gray-900 text-white py-4 px-6">
+    <div className="bg-gray-900 text-white py-4 px-6 w-full">
       <div className="mx-auto flex justify-between items-center">
         <Link href="/" className="text-3xl font-bold flex items-center">
           <Image
@@ -59,7 +63,28 @@ const Navbar: React.FC<navbarPros> = ({ currentUser }) => {
                     className="block px-4 py-2 hover:bg-gray-800"
                     onClick={() => setDropdownOpen(false)}
                   >
+                    Noleggi
+                  </Link>
+                  <Link
+                    href="/"
+                    className="block px-4 py-2 hover:bg-gray-800"
+                    onClick={() => setDropdownOpen(false)}
+                  >
+                    Annunci
+                  </Link>
+                  <Link
+                    href="/"
+                    className="block px-4 py-2 hover:bg-gray-800"
+                    onClick={() => setDropdownOpen(false)}
+                  >
                     Home
+                  </Link>
+                  <Link
+                    href="/Impostazioni"
+                    className="block px-4 py-2 hover:bg-gray-800"
+                    onClick={() => setDropdownOpen(false)}
+                  >
+                    Impostazioni
                   </Link>
                   <a
                     onClick={() => signOut()}
@@ -92,4 +117,4 @@ const Navbar: React.FC<navbarPros> = ({ currentUser }) => {
   );
 };
 
-export default Navbar;
+export default NavbarAzienda;

@@ -25,3 +25,7 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+.logo {
+  fill: blue; /* Change color */
+}

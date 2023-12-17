@@ -1,5 +1,6 @@
 import Link from "next/link";
 import "../app/globals.css";
+import Image from "next/image";
 
 function ScegliUtente() {
   return (
@@ -7,8 +8,15 @@ function ScegliUtente() {
       <div className="absolute top-0 left-0 m-8">
         <Link
           href="/"
-          className="text-5xl font-bold text-white hover:text-orange-800"
+          className="text-5xl font-bold text-white hover:text-gray-700 flex items-center"
         >
+          <Image
+            width={74}
+            height={74}
+            src="/logo.png"
+            alt="Rentalo Logo"
+            className="mr-1 color: white"
+          />{" "}
           Rentalo
         </Link>
       </div>
@@ -33,7 +41,7 @@ function ScegliUtente() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Noleggiatore */}
-          <div className="bg-gray-100 p-8 rounded-lg shadow-lg text-center hover:bg-green-50">
+          <div className="bg-gray-100 p-8 rounded-lg shadow-lg text-center hover:bg-blue-50">
             <h2 className="text-3xl font-semibold mb-6 text-gray-800">
               Noleggiatore
             </h2>
@@ -41,15 +49,15 @@ function ScegliUtente() {
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
               suscipit nisl vitae augue.
             </p>
-            <Link href="/IscrivitiNoleggiatore">
-              <button className="bg-orange-600 text-white px-6 py-3 rounded-lg shadow-lg hover:bg-green-700">
+            <Link href="/RegistraNoleggiatore">
+              <button className="bg-orange-600 text-white px-6 py-3 rounded-lg shadow-lg hover:bg-blue-800">
                 Registrati
               </button>
             </Link>
           </div>
 
           {/* Privato */}
-          <div className="bg-gray-100 p-8 rounded-lg shadow-lg text-center hover:bg-green-50">
+          <div className="bg-gray-100 p-8 rounded-lg shadow-lg text-center hover:bg-blue-50">
             <h2 className="text-3xl font-semibold mb-6 text-gray-800">
               Privato
             </h2>
@@ -57,15 +65,15 @@ function ScegliUtente() {
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
               suscipit nisl vitae augue.
             </p>
-            <Link href="/IscrivitiPrivato">
-              <button className="bg-orange-600 text-white px-6 py-3 rounded-lg shadow-lg hover:bg-green-700">
+            <Link href="/RegistraPrivato">
+              <button className="bg-orange-600 text-white px-6 py-3 rounded-lg shadow-lg hover:bg-blue-800">
                 Registrati
               </button>
             </Link>
           </div>
 
           {/* Impresa */}
-          <div className="bg-gray-100 p-8 rounded-lg shadow-lg text-center hover:bg-green-50">
+          <div className="bg-gray-100 p-8 rounded-lg shadow-lg text-center hover:bg-blue-50">
             <h2 className="text-3xl font-semibold mb-6 text-gray-800">
               Azienda
             </h2>
@@ -74,7 +82,7 @@ function ScegliUtente() {
               suscipit nisl vitae augue.
             </p>
             <Link href="/RegistraAzienda">
-              <button className="bg-orange-600 text-white px-6 py-3 rounded-lg shadow-lg hover:bg-green-700">
+              <button className="bg-orange-600 text-white px-6 py-3 rounded-lg shadow-lg hover:bg-blue-800">
                 Registrati
               </button>
             </Link>

@@ -16,6 +16,8 @@ model User {
   surname   String?
   email     String   @unique
   image     String?  
+  piva      String?
+  birthDate String?
   role      String   @default("noleggiatore")
   createdAt DateTime @default(now()) 
   updatedAt DateTime @updatedAt
