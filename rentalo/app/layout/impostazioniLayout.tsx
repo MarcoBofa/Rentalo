@@ -29,7 +29,7 @@ const ImpostazioniLayout: React.FC<ImpostazioniProps> = ({ children }) => {
 
   let privatoSet = (
     <>
-      <div className="flex flex-col">
+      <div className="flex flex-row">
         <aside className="w-1/5 min-h-screen top-21 left-0 bg-gray-800 text-white">
           <ul className="space-y-2 text-sm">
             <li>
@@ -73,7 +73,7 @@ const ImpostazioniLayout: React.FC<ImpostazioniProps> = ({ children }) => {
 
   let aziendaSet = (
     <>
-      <div className="flex flex-col">
+      <div className="flex flex-row">
         <aside className="w-1/5 min-h-screen top-21 left-0 bg-gray-800 text-white">
           <ul className="space-y-2 text-sm">
             <li>
@@ -125,7 +125,7 @@ const ImpostazioniLayout: React.FC<ImpostazioniProps> = ({ children }) => {
 
   let noleggiatoreSet = (
     <>
-      <div className="flex flex-col">
+      <div className="flex flex-row">
         <aside className="w-1/5 min-h-screen top-21 left-0 bg-gray-800 text-white">
           <ul className="space-y-2 text-sm">
             <li>
