@@ -4,6 +4,7 @@ import { useState } from "react";
 import { signOut } from "next-auth/react";
 import { safeUser } from "@/types";
 import Image from "next/image";
+import navbarsvg from "../../public/navbar.svg";
 
 import Link from "next/link";
 
@@ -13,21 +14,16 @@ interface navbarPros {
 
 const Navbar: React.FC<navbarPros> = ({ currentUser }) => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const rightOffset = `calc(100vw - 100% - ${1500}px)`;
 
   return (
-    <div className="fixed top-0 left-0 right-0 z-50 bg-gray-900 text-white py-4 px-6">
+    <div className="fixed top-0 left-0 right-0 z-50 navbar-background bg-gray-900 text-white py-4 px-6">
       <div className="mx-auto flex justify-between items-center">
-        <Link href="/" className="text-3xl font-bold flex items-center">
-          <Image
-            width={50}
-            height={50}
-            src="/logo-o.png"
-            alt="Rentalo Logo"
-            className="mr-1 color: white"
-          />{" "}
+        <Link href="/" className="text-4xl font-bold flex ml-10 items-center">
+          <Image width={58} height={58} src="/logo-o.png" alt="Rentalo Logo" />{" "}
           Rentalo
         </Link>
-        <div className="relative">
+        <div className="relative mr-10 ">
           <div
             className="rounded-full text-xl bg-gray-800 px-3 py-1 flex items-center cursor-pointer"
             onClick={() => setDropdownOpen(!dropdownOpen)}
@@ -44,46 +40,22 @@ const Navbar: React.FC<navbarPros> = ({ currentUser }) => {
             </div>
           </div>
           {dropdownOpen && (
-            <div className="absolute z-10 right-0 mt-2 w-48 py-2 bg-gray-900 text-white rounded shadow-xl">
-              {currentUser ? (
-                <>
-                  <Link
-                    href="/"
-                    className="block px-4 py-2 hover:bg-gray-800"
-                    onClick={() => setDropdownOpen(false)}
-                  >
-                    Dashboard
-                  </Link>
-                  <Link
-                    href="/"
-                    className="block px-4 py-2 hover:bg-gray-800"
-                    onClick={() => setDropdownOpen(false)}
-                  >
-                    Home
-                  </Link>
-                  <a
-                    onClick={() => signOut()}
-                    className="block px-4 py-2 hover:bg-gray-800"
-                  >
-                    Logout
-                  </a>
-                </>
-              ) : (
-                <>
-                  <Link
-                    href="/Login"
-                    className="block px-4 py-2 hover:bg-gray-800"
-                  >
-                    Login
-                  </Link>
-                  <Link
-                    href="/ScegliUtente"
-                    className="block px-4 py-2 hover:bg-gray-800"
-                  >
-                    Signup
-                  </Link>
-                </>
-              )}
+            <div
+              className="absolute z-10 -right-10 w-[300px] py-2 bg-gray-900 text-white rounded shadow-xl"
+              style={{
+                top: 70, // Directly below the navbar
+                left: -114, // Aligned with the right edge of the viewport
+              }}
+            >
+              <Link href="/Login" className="block px-4 py-2 hover:bg-gray-800">
+                Login
+              </Link>
+              <Link
+                href="/ScegliUtente"
+                className="block px-4 py-2 hover:bg-gray-800"
+              >
+                Signup
+              </Link>
             </div>
           )}
         </div>

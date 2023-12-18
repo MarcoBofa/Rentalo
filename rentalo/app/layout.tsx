@@ -1,6 +1,6 @@
 import React, { ReactNode } from "react";
 import "./globals.css";
-import { Inter, Nunito } from "next/font/google";
+import { Inter, Nunito, Roboto_Condensed } from "next/font/google";
 import ToasterProvider from "@/providers/ToasterProvider";
 import Footer from "@/app/components/footer";
 import NavbarPrivato from "@/app/components/NavbarPrivato";
@@ -12,6 +12,7 @@ import { UserProvider } from "./context/useContext"; // Adjust the path
 
 const inter = Inter({ subsets: ["latin"] });
 const font = Nunito({ subsets: ["latin"] });
+const homeFont = Roboto_Condensed({ subsets: ["latin"] });
 
 interface RootLayoutProps {
   children: ReactNode;

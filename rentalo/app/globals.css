@@ -2,6 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "Bebas Neue";
+  src: url("/fonts/BebasNeue/BebasNeue-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+
+.titlehome {
+  font-family: "Baba Neue", sans-serif;
+}
+
+.homebtn:hover {
+  background-color: #1a202c; /* Maintain the gray-900 color on hover */
+  border: 2px solid #f97316;
+  border-color: #f97316; /* Maintain the orange-500 border color on hover */
+  color: white; /* Maintain the white text color on hover */
+}
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -28,4 +46,10 @@ body {
 
 .logo {
   fill: blue; /* Change color */
+}
+
+.navbar-background {
+  background-image: url("../public/navbar.svg");
+  background-size: cover;
+  background-position: center;
 }
