@@ -20,7 +20,13 @@ const Navbar: React.FC<navbarPros> = ({ currentUser }) => {
     <div className="fixed top-0 left-0 right-0 z-50 navbar-background bg-gray-900 text-white py-4 px-6">
       <div className="mx-auto flex justify-between items-center">
         <Link href="/" className="text-4xl font-bold flex ml-10 items-center">
-          <Image width={58} height={58} src="/logo-o.png" alt="Rentalo Logo" />{" "}
+          <Image
+            width={55}
+            height={55}
+            src="/logo-o.png"
+            alt="Rentalo Logo"
+            className="mb-1 mr-1"
+          />{" "}
           Rentalo
         </Link>
         <div className="relative mr-10 ">

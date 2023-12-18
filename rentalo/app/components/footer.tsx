@@ -9,11 +9,11 @@ const Footer: FC = () => {
         <div className="w-full sm:w-1/3 text-center sm:text-left">
           <Link href="/" className="text-3xl font-bold flex items-center">
             <Image
-              width={50}
-              height={50}
+              width={48}
+              height={48}
               src="/logo-o.png"
               alt="Rentalo Logo"
-              className="mr-1 color: white"
+              className="mr-1 color: white mb-1 mr-1"
             />{" "}
             Rentalo
           </Link>
