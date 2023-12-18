@@ -20,10 +20,16 @@ const NavbarPrivato: React.FC<navbarPros> = () => {
   //console.log(currentUser);
 
   return (
-    <div className="bg-gray-900 text-white py-4 px-6 w-full">
+    <div className="bg-gray-900 navbar-background text-white py-4 px-6 w-full">
       <div className="mx-auto flex justify-between items-center">
         <Link href="/" className="text-3xl font-bold flex items-center">
-          <Image width={50} height={50} src="/logo-o.png" alt="Rentalo Logo" />{" "}
+          <Image
+            width={50}
+            height={50}
+            src="/logo-o.png"
+            alt="Rentalo Logo"
+            className="mr-1"
+          />{" "}
           Rentalo
         </Link>
         <div className="relative">
