@@ -24,11 +24,11 @@ const NavbarPrivato: React.FC<navbarPros> = () => {
       <div className="mx-auto flex justify-between items-center">
         <Link href="/" className="text-3xl font-bold flex items-center">
           <Image
-            width={50}
-            height={50}
+            width={48}
+            height={48}
             src="/logo-o.png"
             alt="Rentalo Logo"
-            className="mr-1"
+            className="mb-1 mr-1"
           />{" "}
           Rentalo
         </Link>
