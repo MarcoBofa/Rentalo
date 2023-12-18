@@ -86,7 +86,7 @@ const RegistraAzienda: React.FC = () => {
             </Link>
           </div>
           <h2 className="text-3xl font-bold text-black mb-6">
-            Crea il tuo account aziendale!
+            Crea il tuo account come impresa
           </h2>
           <form onSubmit={handleSubmit(onSubmit)}>
             <div className="flex space-x-4">
