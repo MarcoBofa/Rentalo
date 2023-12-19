@@ -4,10 +4,13 @@ import Image from "next/image";
 
 const Footer: FC = () => {
   return (
-    <footer className="bg-gray-800 py-8 px-4 sm:px-6 lg:px-8 text-gray-300">
+    <footer className="bg-gray-800 py-8 px-4 px-6 lg:px-8 text-gray-300">
       <div className="flex flex-wrap justify-between items-center">
-        <div className="w-full sm:w-1/3 text-center sm:text-left">
-          <Link href="/" className="text-3xl font-bold flex items-center">
+        <div className="w-1/3 text-left">
+          <Link
+            href="/"
+            className=" text-2xl lg:text-3xl font-bold flex items-center"
+          >
             <Image
               width={48}
               height={48}
