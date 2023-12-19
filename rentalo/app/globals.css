@@ -36,3 +36,9 @@
   background-size: cover;
   background-position: center;
 }
+
+.form-background {
+  background-image: url("../public/form.svg");
+  background-size: cover;
+  background-position: center;
+}

@@ -1,7 +1,7 @@
 "use client";
 import React, { FC, useState } from "react";
 import { useForm } from "react-hook-form";
-import "../../globals.css";
+import "@/app/globals.css";
 import ToasterProvider from "@/providers/ToasterProvider";
 import toast from "react-hot-toast";
 import axios from "axios";
@@ -116,7 +116,7 @@ const InfoForm: FC = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
+    <div className="flex flex-col form-background items-center justify-center min-h-screen bg-gray-100">
       <ToasterProvider />
       <div className="w-full max-w-2xl">
         <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8 text-center">
