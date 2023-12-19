@@ -16,7 +16,6 @@ interface navbarPros {
 const NavbarAzienda: React.FC<navbarPros> = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const { currentUser } = useContext(UserContext);
-  console.log(currentUser);
 
   return (
     <div className="bg-gray-900 text-white navbar-background py-4 px-6 w-full">
