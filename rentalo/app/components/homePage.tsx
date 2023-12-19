@@ -18,10 +18,10 @@ const homePage: FC = () => {
         />
         <div className="absolute top-0 left-0 w-full h-full bg-gray-900 opacity-90"></div>
         <div className="absolute top-0 left-0 w-full h-full flex flex-col justify-center items-center p-4">
-          <h1 className="text-white text-3xl md:text-7xl titlehome font-bold mb-5 text-center">
+          <h1 className="text-white sm-text-2xl md:text-7xl titlehome font-bold mb-5 text-center">
             BENVENUTO SU RENTALO
           </h1>
-          <h2 className="text-white text-lg md:text-1xl font-bold mb-2 text-center">
+          <h2 className="text-white sm:text-base md:text-1xl font-bold mb-2 text-center">
             Trova tutti i mecchinari di cui hai bisogno e gestisci i tuoi
             annunci comodamente dalla piattaforma
           </h2>
