@@ -21,7 +21,7 @@ const Navbar: React.FC<navbarPros> = ({ currentUser }) => {
       <div className="mx-auto flex justify-between items-center">
         <Link
           href="/"
-          className="lg:text-4xl sm:text-2xl font-bold flex ml-10 items-center"
+          className="lg:text-4xl sm:text-3xl font-bold flex items-center"
         >
           <Image
             width={55}
@@ -32,7 +32,7 @@ const Navbar: React.FC<navbarPros> = ({ currentUser }) => {
           />{" "}
           Rentalo
         </Link>
-        <div className="relative mr-10 ">
+        <div className="relative ">
           <div
             className="rounded-full text-xl bg-gray-800 px-3 py-1 flex items-center cursor-pointer"
             onClick={() => setDropdownOpen(!dropdownOpen)}
@@ -50,7 +50,7 @@ const Navbar: React.FC<navbarPros> = ({ currentUser }) => {
           </div>
           {dropdownOpen && (
             <div
-              className="absolute z-10 -right-10 w-[300px] py-2 bg-gray-900 text-white rounded shadow-xl"
+              className="absolute z-10  w-[300px] py-2 bg-gray-900 text-white rounded shadow-xl"
               style={{
                 top: 70, // Directly below the navbar
                 left: -114, // Aligned with the right edge of the viewport
