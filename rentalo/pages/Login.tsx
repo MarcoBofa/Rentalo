@@ -42,14 +42,11 @@ const Login: React.FC = () => {
   };
 
   const onSubmit = async (data: IFormLogin) => {
-    console.log(data);
-
     try {
       const callback = await signIn("credentials", {
         ...data,
         redirect: false,
       });
-      console.log(callback);
 
       if (callback?.ok) {
         toast.success("Logged in!");
@@ -67,7 +64,6 @@ const Login: React.FC = () => {
 
   const handleModalSubmit = (data: ModalForm) => {
     // Handle modal form submission
-    console.log(data);
     setIsModalOpen(false);
   };
 

@@ -17,7 +17,6 @@ const NavbarPrivato: React.FC<navbarPros> = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const context = useContext(UserContext);
   const currentUser = context?.currentUser;
-  //console.log(currentUser);
 
   return (
     <div className="bg-gray-900 navbar-background text-white py-4 px-6 w-full">

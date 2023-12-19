@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import Footer from "@/app/components/footer";
 import "../globals.css";
+import InfoForm from "./homepage/infoForm";
 
 const homePage: FC = () => {
   return (
@@ -32,7 +33,10 @@ const homePage: FC = () => {
           </div>
         </div>
       </div>
-      <div className="bg-white w-full h-[500px]"></div>
+
+      <div className="bg-white w-full">
+        <InfoForm />
+      </div>
       <div className="relative">
         <Image
           src="/Cantiere-mezzi-lavoro.jpeg"
