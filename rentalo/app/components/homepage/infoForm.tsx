@@ -122,7 +122,7 @@ const InfoForm: FC = () => {
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-4">
       <ToasterProvider />
       <div className="w-full max-w-2xl">
-        <h2 className="text-4xl font-semibold text-gray-900 mb-8 text-center">
+        <h2 className="text-4xl sm:text-2xl font-semibold text-gray-900 mb-8 text-center">
           Richiedi informazioni su un macchinario
         </h2>
         <form
