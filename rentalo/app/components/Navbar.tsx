@@ -19,9 +19,11 @@ const Navbar: React.FC<navbarPros> = ({ currentUser }) => {
   return (
     <div className="fixed top-0 left-0 right-0 z-50 navbar-background bg-gray-900 text-white py-4 px-6">
       <div className="mx-auto flex justify-between items-center">
-        <Link href="/" className="text-4xl font-bold flex ml-10 items-center">
+        <Link
+          href="/"
+          className="lg:text-4xl md:text-2xl font-bold flex ml-10 items-center"
+        >
           <Image
-            layout="responsive"
             width={55}
             height={55}
             src="/logo-o.png"

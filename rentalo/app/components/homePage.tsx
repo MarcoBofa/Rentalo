@@ -27,7 +27,7 @@ const homePage: FC = () => {
           </h2>
           <div className="mt-10">
             <Link href="/ScegliUtente">
-              <button className="text-black bg-orange-500 py-2 px-4 w-full md:w-[250px] h-[55px] homebtn">
+              <button className="text-black bg-orange-500 py-2 px-4 w-[250px] h-[55px] homebtn">
                 Registrati
               </button>
             </Link>
