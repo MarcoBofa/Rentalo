@@ -7,17 +7,18 @@ import InfoForm from "./homepage/infoForm";
 
 const homePage: FC = () => {
   return (
-    <div className="relative">
-      <div className="relative">
+    <div className="flex flex-col">
+      <div className="">
         <Image
           src="/cantiere-stradale.jpg"
+          layout="responsive"
           width={1920}
           height={1080}
           alt="Home"
         />
         <div className="absolute top-0 left-0 w-full h-full bg-gray-900 opacity-90"></div>
         <div className="absolute top-0 left-0 w-full h-full flex flex-col justify-center items-center">
-          <h1 className="text-white text-7xl titlehome font-bold mb-5">
+          <h1 className="text-white text-lg md:text-7xl titlehome font-bold mb-5">
             BENVENUTO SU RENTALO
           </h1>
           <h1 className="text-white text-1xl font-bold mb-2">
@@ -40,6 +41,7 @@ const homePage: FC = () => {
       <div className="relative">
         <Image
           src="/Cantiere-mezzi-lavoro.jpeg"
+          layout="responsive"
           alt="Home"
           width={1800}
           height={300}
