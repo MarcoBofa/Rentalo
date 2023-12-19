@@ -7,7 +7,7 @@ import InfoForm from "./homepage/infoForm";
 
 const homePage: FC = () => {
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col bg-grey-100">
       <div className="relative">
         <Image
           src="/cantiere-stradale.jpg"
@@ -27,7 +27,7 @@ const homePage: FC = () => {
           </h2>
           <div className="mt-10">
             <Link href="/ScegliUtente">
-              <button className="text-black bg-orange-500 py-2 px-4 w-[250px] h-[55px] homebtn">
+              <button className="text-black bg-orange-500 py-2 px-4 w-[250px] sm:w-[175px] h-[55px] homebtn">
                 Registrati
               </button>
             </Link>
@@ -35,7 +35,7 @@ const homePage: FC = () => {
         </div>
       </div>
 
-      <div className="bg-white w-full p-4">
+      <div className="bg-white w-full">
         <InfoForm />
       </div>
 

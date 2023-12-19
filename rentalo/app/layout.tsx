@@ -9,6 +9,7 @@ import NavbarNoleggiatore from "@/app/components/NavbarNoleggiatore";
 import NavbarAzienda from "@/app/components/NavbarAzienda";
 import getUser from "./actions/getUser";
 import { UserProvider } from "./context/useContext"; // Adjust the path
+import Head from "next/head";
 
 const inter = Inter({ subsets: ["latin"] });
 const font = Nunito({ subsets: ["latin"] });
@@ -42,6 +43,10 @@ export default async function RootLayout({ children }: RootLayoutProps) {
 
   return (
     <UserProvider value={{ currentUser: currentUser }}>
+      <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Rentalo</title>
+      </Head>
       <html lang="en">
         <body className={font.className}>
           <ToasterProvider />
