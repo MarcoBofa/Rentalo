@@ -51,7 +51,7 @@ model Macchinario {
   email     String   
   telefono  String  
   regione   String
-  noleggio  Boolean  @default(true)
+  //noleggio  Boolean  @default(true)
   tipo     String
   descrizione String 
   createdAt DateTime @default(now())

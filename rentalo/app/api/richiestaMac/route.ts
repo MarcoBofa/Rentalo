@@ -3,7 +3,7 @@ import prisma from "@/app/libs/prismadb";
 
 export async function POST(request: Request) {
   const body = await request.json();
-  const { nome, telefono, email, regione, descrizione, noleggio, tipo } = body;
+  const { nome, telefono, email, regione, descrizione, tipo } = body;
 
   if (
     nome == null ||
@@ -11,18 +11,17 @@ export async function POST(request: Request) {
     email == null ||
     regione == null ||
     descrizione == null ||
-    noleggio == null ||
     tipo == null
   ) {
     return NextResponse.json({ error: "Missing fields" }, { status: 400 });
   }
 
-  let n = true;
-  if (noleggio === "noleggio") {
-    n = true;
-  } else {
-    n = false;
-  }
+  // let n = true;
+  // if (noleggio === "noleggio") {
+  //   n = true;
+  // } else {
+  //   n = false;
+  // }
 
   const m = await prisma.macchinario.create({
     data: {
@@ -30,7 +29,6 @@ export async function POST(request: Request) {
       telefono,
       email,
       regione,
-      noleggio: n,
       tipo,
       descrizione,
     },

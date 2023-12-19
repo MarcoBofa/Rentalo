@@ -21,32 +21,32 @@ const Footer: FC = () => {
             Rentalo
           </Link>
         </div>
-        <div className="w-full sm:w-1/3 text-center mb-4 sm:mb-0">
+        <div className="w-1/3 text-center mb-4 mb-0">
           <div className="flex justify-center mb-2">
-            <button className="bg-gray-700 w-8 h-8 rounded-full flex items-center justify-center mr-2">
-              <span className="text-2xl font-bold">L</span>
+            <button className="bg-gray-700 w-[25px] lg:w-[32px] h-[25px] lg:h-[32px] rounded-full flex items-center justify-center mr-2">
+              <span className="text-xl lg:text-2xl font-bold">L</span>
             </button>
-            <button className="bg-gray-700 w-8 h-8 rounded-full flex items-center justify-center">
-              <span className="text-2xl font-bold">O</span>
+            <button className="bg-gray-700  w-[25px] lg:w-[32px] h-[25px] lg:h-[32px] rounded-full flex items-center justify-center">
+              <span className="text-xl lg:text-2xl font-bold">O</span>
             </button>
           </div>
           <div className="flex justify-center">
-            <button className="bg-gray-700 w-8 h-8 rounded-full flex items-center justify-center mr-2">
-              <span className="text-2xl font-bold">G</span>
+            <button className="bg-gray-700  w-[25px] lg:w-[32px] h-[25px] lg:h-[32px] rounded-full flex items-center justify-center mr-2">
+              <span className=" text-xl lg:text-2xl font-bold">G</span>
             </button>
-            <button className="bg-gray-700 w-8 h-8 rounded-full flex items-center justify-center">
-              <span className="text-2xl font-bold">O</span>
+            <button className="bg-gray-700 w-[25px] lg:w-[32px] h-[25px] lg:h-[32px] rounded-full flex items-center justify-center">
+              <span className="text-xl lg:text-2xl font-bold">O</span>
             </button>
           </div>
         </div>
-        <div className="w-full sm:w-1/3 text-center sm:text-right">
+        <div className="w-1/3 text-sm lg:text-base text-right">
           <p className="mb-2">University of Illinois Chicago</p>
           <p className="mb-2">1200 West Harrison St</p>
           <p className="mb-2">Chicago, IL 60607</p>
           <p className="mb-2">United States of America</p>
         </div>
       </div>
-      <div className="w-full text-gray-500 text-center">
+      <div className="w-full text-sm lg:text-base text-gray-500 text-center">
         <p>
           © 2023 All rights reserved -{" "}
           <Link href="/" className="text-gray-500 hover:text-gray-100">
