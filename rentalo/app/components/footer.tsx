@@ -1,13 +1,21 @@
 import React, { FC } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 const Footer: FC = () => {
   return (
     <footer className="bg-gray-800 py-8 px-4 sm:px-6 lg:px-8 text-gray-300">
       <div className="flex flex-wrap justify-between items-center">
         <div className="w-full sm:w-1/3 text-center sm:text-left">
-          <Link href="/">
-            <h3 className="text-3xl font-bold mb-2">TradeIt</h3>
+          <Link href="/" className="text-3xl font-bold flex items-center">
+            <Image
+              width={48}
+              height={48}
+              src="/logo-o.png"
+              alt="Rentalo Logo"
+              className="mr-1 color: white mb-1 mr-1"
+            />{" "}
+            Rentalo
           </Link>
         </div>
         <div className="w-full sm:w-1/3 text-center mb-4 sm:mb-0">
