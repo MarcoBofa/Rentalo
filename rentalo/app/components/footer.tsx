@@ -4,12 +4,12 @@ import Image from "next/image";
 
 const Footer: FC = () => {
   return (
-    <footer className="bg-gray-800 py-8 px-4 px-6 lg:px-8 text-gray-300">
+    <footer className="bg-gray-800 py-8 px-4 px-1 lg:px-8 text-gray-300">
       <div className="flex flex-wrap justify-between items-center">
         <div className="w-1/3 text-left">
           <Link
             href="/"
-            className=" text-2xl lg:text-3xl font-bold flex items-center"
+            className=" text-xl lg:text-3xl font-bold flex items-center"
           >
             <Image
               width={48}
@@ -39,11 +39,11 @@ const Footer: FC = () => {
             </button>
           </div>
         </div>
-        <div className="w-1/3 text-sm lg:text-base text-right">
-          <p className="mb-2">University of Illinois Chicago</p>
-          <p className="mb-2">1200 West Harrison St</p>
-          <p className="mb-2">Chicago, IL 60607</p>
-          <p className="mb-2">United States of America</p>
+        <div className="w-1/3 text-xs lg:text-base text-right">
+          <p className="mb-2">Rentalo</p>
+          <p className="mb-2">Via Bella 35</p>
+          <p className="mb-2">Milano, MI 20149</p>
+          <p className="mb-2">Italia</p>
         </div>
       </div>
       <div className="w-full text-sm lg:text-base text-gray-500 text-center">
