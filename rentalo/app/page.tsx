@@ -3,7 +3,7 @@ import HomePage from "./components/homePage";
 
 export default function Home() {
   return (
-    <div>
+    <div className="flex flex-col pt-[88px]">
       <HomePage />
     </div>
   );
