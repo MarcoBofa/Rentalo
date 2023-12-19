@@ -119,14 +119,14 @@ const InfoForm: FC = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-4">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
       <ToasterProvider />
       <div className="w-full max-w-2xl">
-        <h2 className="text-4xl sm:text-2xl font-semibold text-gray-900 mb-8 text-center">
+        <h2 className="text-4xl font-semibold text-gray-900 mb-8 text-center">
           Richiedi informazioni su un macchinario
         </h2>
         <form
-          className="bg-white shadow-md rounded-xl px-8 pt-6 pb-8 mb-4"
+          className="bg-white shadow-md rounded-md px-8 pt-6 pb-8 mb-4"
           onSubmit={handleSubmit(onSubmit)}
         >
           <div className="flex flex-wrap -mx-3 mb-4">
