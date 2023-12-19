@@ -11,23 +11,22 @@ const homePage: FC = () => {
       <div className="relative">
         <Image
           src="/cantiere-stradale.jpg"
-          layout="responsive"
           width={1920}
           height={1080}
           alt="Home"
         />
         <div className="absolute top-0 left-0 w-full h-full bg-gray-900 opacity-90"></div>
         <div className="absolute top-0 left-0 w-full h-full flex flex-col justify-center items-center p-4">
-          <h1 className="text-white sm:text-2xl md:text-7xl titlehome font-bold mb-5 text-center">
+          <h1 className="text-white text-2xl md:text-7xl titlehome font-bold mb-5 text-center">
             BENVENUTO SU RENTALO
           </h1>
-          <h2 className="text-white sm:text-base md:text-1xl font-bold mb-2 text-center">
+          <h2 className="text-white text-base md:text-1xl font-bold mb-2 text-center">
             Trova tutti i mecchinari di cui hai bisogno e gestisci i tuoi
             annunci comodamente dalla piattaforma
           </h2>
           <div className="mt-10">
             <Link href="/ScegliUtente">
-              <button className="text-black bg-orange-500 py-2 px-4 w-[250px] sm:w-[175px] h-[55px] homebtn">
+              <button className="text-black bg-orange-500 py-2 px-4 w-[150px] md:w-[250px] h-[55px] homebtn">
                 Registrati
               </button>
             </Link>
