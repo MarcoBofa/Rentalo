@@ -21,7 +21,7 @@ const Navbar: React.FC<navbarPros> = ({ currentUser }) => {
       <div className="mx-auto flex justify-between items-center">
         <Link
           href="/"
-          className="lg:text-4xl md:text-2xl font-bold flex ml-10 items-center"
+          className="lg:text-4xl sm:text-2xl font-bold flex ml-10 items-center"
         >
           <Image
             width={55}
