@@ -292,7 +292,7 @@ const InfoForm: FC = () => {
 
             {/* Invia Button - Centered */}
             <button
-              className="bg-orange-500 hover:bg-orange-700 text-white w-[200px] text-lg font-bold ml-[120px] py-3 px-6 rounded focus:outline-none focus:shadow-outline"
+              className="bg-orange-500 hover:bg-orange-700 text-white w-[150px] lg:w-[200px] text-lg font-bold ml-[120px] py-3 px-6 rounded focus:outline-none focus:shadow-outline"
               type="submit"
             >
               Invia
@@ -301,7 +301,7 @@ const InfoForm: FC = () => {
             {/* Add Macchinario Button - Right */}
             <button
               type="button"
-              className="bg-blue-500 hover:bg-blue-700 text-white p-2 rounded"
+              className="bg-blue-500 hover:bg-blue-700 text-sm lg:text-base text-white lg:p-2 rounded"
               onClick={() => append({ regione: "", tipo: "", descrizione: "" })}
             >
               Aggiungi Macchinario
