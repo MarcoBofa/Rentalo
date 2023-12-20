@@ -10,10 +10,16 @@ import NavbarAzienda from "@/app/components/NavbarAzienda";
 import getUser from "./actions/getUser";
 import { UserProvider } from "./context/useContext"; // Adjust the path
 import Head from "next/head";
+import type { Metadata } from "next";
 
 const inter = Inter({ subsets: ["latin"] });
 const font = Nunito({ subsets: ["latin"] });
 const homeFont = Roboto_Condensed({ subsets: ["latin"] });
+
+export const metadata: Metadata = {
+  title: "Rentalo",
+  description: "noleggio macchinari da cantiere",
+};
 
 interface RootLayoutProps {
   children: ReactNode;
