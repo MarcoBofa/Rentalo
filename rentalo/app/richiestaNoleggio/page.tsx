@@ -301,7 +301,7 @@ const InfoForm: FC = () => {
             {/* Add Macchinario Button - Right */}
             <button
               type="button"
-              className="bg-blue-500 hover:bg-blue-700 text-sm lg:text-base text-white lg:p-2 rounded"
+              className="bg-blue-500 hover:bg-blue-700 text-sm lg:text-base text-white p-1 lg:p-2 rounded"
               onClick={() => append({ regione: "", tipo: "", descrizione: "" })}
             >
               Aggiungi Macchinario
