@@ -18,7 +18,7 @@ const NavbarAzienda: React.FC<navbarPros> = () => {
   const { currentUser } = useContext(UserContext);
 
   return (
-    <div className="fixed top-0 left-0 right-0 z-50 navbar-background bg-gray-900 text-white py-4 px-6">
+    <div className="fixed top-0 left-0 right-0 z-50 navbar-background bg-gray-900 text-white py-4 px-1 lg:px-6">
       <div className="mx-auto flex justify-between items-center">
         <Link href="/" className="text-3xl font-bold flex items-center">
           <Image width={50} height={50} src="/logo-o.png" alt="Rentalo Logo" />{" "}

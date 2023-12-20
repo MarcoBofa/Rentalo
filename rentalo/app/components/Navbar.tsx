@@ -17,7 +17,7 @@ const Navbar: React.FC<navbarPros> = ({ currentUser }) => {
   const rightOffset = `calc(100vw - 100% - ${1500}px)`;
 
   return (
-    <div className="fixed top-0 left-0 right-0 z-50 navbar-background bg-gray-900 text-white py-4 px-6">
+    <div className="fixed top-0 left-0 right-0 z-50 navbar-background bg-gray-900 text-white py-4 px-1 lg:px-6">
       <div className="mx-auto flex justify-between items-center">
         <Link
           href="/"
