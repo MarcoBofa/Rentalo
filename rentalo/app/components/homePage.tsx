@@ -2,6 +2,7 @@ import React, { FC } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import Footer from "@/app/components/footer";
+import { GoArrowRight, GoArrowLeft } from "react-icons/go";
 import "../globals.css";
 import InfoForm from "./homepage/infoForm";
 
@@ -26,15 +27,17 @@ const homePage: FC = () => {
             Noleggia tutti i macchinari da cantiere di cui hai bisogno in pochi
             click!
           </h2>
-          <div className="flex flex-row ">
+          <div className="flex flex-row space-x-4">
             <Link href="/richiestaNoleggio">
-              <button className="text-black text-sm lg:text-base rounded-sm font-bold bg-orange-600 py-2 px-4 w-[150px] md:w-[250px] h-[40px] lg:h-[55px] homebtn mr-[90px]">
+              <button className="group flex justify-center items-center text-black text-sm lg:text-base rounded-sm font-bold bg-orange-600 py-2 px-4 w-[180px] md:w-[250px] h-[40px] lg:h-[55px] homebtn mr-[70px] lg:mr-[90px]">
+                <GoArrowLeft className="transition-transform mr-9 group-hover:-translate-x-4 scale-150" />
                 Richiedi Noleggio
               </button>
             </Link>
             <Link href="/ScegliUtente">
-              <button className="text-black text-sm lg:text-base rounded-sm font-bold bg-orange-600 py-2 px-4 w-[150px] md:w-[250px] h-[40px] lg:h-[55px] homebtn">
+              <button className="group flex justify-center items-center text-black text-sm lg:text-base rounded-sm font-bold bg-orange-600 py-2 px-4 w-[180px] md:w-[250px] h-[40px] lg:h-[55px] homebtn">
                 Registrati
+                <GoArrowRight className="transition-transform ml-9 group-hover:translate-x-4 scale-150" />
               </button>
             </Link>
           </div>
