@@ -11,7 +11,7 @@ module.exports = {
         "gray-85": "#242424",
         "gray-95": "#141414",
         "gray-96": "#131313",
-        nav: "#161b43",
+        nav: "#21253a",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

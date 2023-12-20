@@ -17,7 +17,7 @@ const homePage: FC = () => {
             alt="Home"
           />
         </div>
-        <div className="absolute top-0 left-0 w-full h-full bg-gray-900 opacity-90"></div>
+        <div className="absolute top-0 left-0 w-full h-full bg-gray-800 opacity-90"></div>
         <div className="absolute top-0 left-0 w-full h-full flex flex-col justify-center items-center p-4">
           <h1 className="text-white text-3xl md:text-7xl titlehome font-bold mb-10 text-center">
             BENVENUTO SU RENTALO
