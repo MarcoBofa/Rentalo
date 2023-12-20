@@ -286,7 +286,7 @@ const InfoForm: FC = () => {
             </div>
           ))}
 
-          <div className="flex lg:items-center justify-between mt-4">
+          <div className="flex items-center justify-between mt-4">
             {/* Placeholder div to balance the layout */}
             <div></div>
 
