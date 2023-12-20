@@ -29,15 +29,15 @@ const homePage: FC = () => {
           </h2>
           <div className="flex flex-row space-x-4">
             <Link href="/richiestaNoleggio">
-              <button className="group flex justify-center items-center text-black text-sm lg:text-base rounded-sm font-bold bg-orange-600 py-2 px-4 w-[180px] md:w-[250px] h-[40px] lg:h-[55px] homebtn mr-[70px] lg:mr-[90px]">
-                <GoArrowLeft className="transition-transform mr-9 group-hover:-translate-x-4 scale-150" />
+              <button className="group flex justify-center items-center text-black text-sm lg:text-base rounded-sm font-bold bg-orange-600 py-2 px-4 w-[180px] md:w-[250px] h-[40px] lg:h-[55px] homebtn mr-[60px] lg:mr-[90px]">
+                <GoArrowLeft className="transition-transform mr-2 lg:mr-9 group-hover:-translate-x-4 scale-150" />
                 Richiedi Noleggio
               </button>
             </Link>
             <Link href="/ScegliUtente">
               <button className="group flex justify-center items-center text-black text-sm lg:text-base rounded-sm font-bold bg-orange-600 py-2 px-4 w-[180px] md:w-[250px] h-[40px] lg:h-[55px] homebtn">
                 Registrati
-                <GoArrowRight className="transition-transform ml-9 group-hover:translate-x-4 scale-150" />
+                <GoArrowRight className="transition-transform mr-2 lg:ml-9 group-hover:translate-x-4 scale-150" />
               </button>
             </Link>
           </div>
