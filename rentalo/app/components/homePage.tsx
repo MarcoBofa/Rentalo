@@ -9,12 +9,14 @@ const homePage: FC = () => {
   return (
     <div className="flex flex-col bg-grey-100">
       <div className="relative">
-        <Image
-          src="/cantiere-stradale.jpg"
-          width={1920}
-          height={1080}
-          alt="Home"
-        />
+        <div className="relative w-full h-[900px] md:h-[850px]">
+          <Image
+            src="/cantiere-stradale.jpg"
+            layout="fill"
+            objectFit="cover"
+            alt="Home"
+          />
+        </div>
         <div className="absolute top-0 left-0 w-full h-full bg-gray-900 opacity-90"></div>
         <div className="absolute top-0 left-0 w-full h-full flex flex-col justify-center items-center p-4">
           <h1 className="text-white text-2xl md:text-7xl titlehome font-bold mb-10 text-center">
