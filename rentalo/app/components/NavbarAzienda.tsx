@@ -26,7 +26,7 @@ const NavbarAzienda: React.FC<navbarPros> = () => {
         </Link>
         <div className="relative">
           <div
-            className="rounded-full text-xl bg-gray-800 px-3 py-1 flex items-center cursor-pointer"
+            className="rounded-full text-xl bg-gray-700 px-3 py-1 flex items-center cursor-pointer"
             onClick={() => setDropdownOpen(!dropdownOpen)}
           >
             <span className="ml-2">
