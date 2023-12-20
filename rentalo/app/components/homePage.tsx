@@ -26,12 +26,12 @@ const homePage: FC = () => {
           </h2>
           <div className="flex flex-row ">
             <Link href="/richiestaNoleggio">
-              <button className="text-black text-sm lg:text-base font-bold bg-orange-500 py-2 px-4 w-[150px] md:w-[250px] h-[55px] homebtn mr-[90px]">
+              <button className="text-black text-sm lg:text-base rounded-sm font-bold bg-orange-500 py-2 px-4 w-[150px] md:w-[250px] h-[55px] homebtn mr-[90px]">
                 Richiedi Noleggio
               </button>
             </Link>
             <Link href="/ScegliUtente">
-              <button className="text-black text-sm lg:text-base font-bold bg-orange-500 py-2 px-4 w-[150px] md:w-[250px] h-[55px] homebtn">
+              <button className="text-black text-sm lg:text-base rounded-sm font-bold bg-orange-500 py-2 px-4 w-[150px] md:w-[250px] h-[55px] homebtn">
                 Registrati
               </button>
             </Link>

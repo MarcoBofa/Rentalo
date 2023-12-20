@@ -48,7 +48,7 @@ export default async function RootLayout({ children }: RootLayoutProps) {
         <title>Rentalo</title>
       </Head>
       <html lang="en">
-        <body className={font.className}>
+        <body className={`${font.className} bg-nav`}>
           <ToasterProvider />
           {NavbarComponent && <NavbarComponent />}
           <div className="flex flex-col min-h-screen">
