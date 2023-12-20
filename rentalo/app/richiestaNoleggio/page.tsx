@@ -286,13 +286,13 @@ const InfoForm: FC = () => {
             </div>
           ))}
 
-          <div className="flex items-center justify-between mt-4">
+          <div className="flex lg:items-center justify-between mt-4">
             {/* Placeholder div to balance the layout */}
             <div></div>
 
             {/* Invia Button - Centered */}
             <button
-              className="bg-orange-500 hover:bg-orange-700 text-white w-[150px] lg:w-[200px] text-lg font-bold ml-[120px] py-3 px-6 rounded focus:outline-none focus:shadow-outline"
+              className="bg-orange-500 hover:bg-orange-700 text-white w-[150px] lg:w-[200px] text-lg font-bold lg:ml-[120px] py-3 px-6 rounded focus:outline-none focus:shadow-outline"
               type="submit"
             >
               Invia
