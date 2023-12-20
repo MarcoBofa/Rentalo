@@ -45,19 +45,23 @@ model Account {
   @@unique([provider, providerAccountId])
 }
 
-model Macchinario {
-  id        String   @id @default(auto()) @map("_id") @db.ObjectId
-  nome      String
-  email     String   
-  telefono  String  
-  regione   String
-  //noleggio  Boolean  @default(true)
-  tipo     String
-  descrizione String 
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+model richiestaNoleggio {
+  id           String        @id @default(auto()) @map("_id") @db.ObjectId
+  nome         String
+  email        String   
+  telefono     String  
+  createdAt    DateTime      @default(now())
+  updatedAt    DateTime      @updatedAt
+  macchinari   Macchinario[]
 }
 
-
+model Macchinario {
+  id           String            @id @default(auto()) @map("_id") @db.ObjectId
+  richiestaId  String            @map("richiesta_id") @db.ObjectId
+  tipo         String
+  regione      String
+  descrizione  String
+  richiesta    richiestaNoleggio @relation(fields: [richiestaId], references: [id])
+}
 
 
