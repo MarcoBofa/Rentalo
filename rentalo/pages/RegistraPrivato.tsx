@@ -78,7 +78,7 @@ const RegistraPrivato: React.FC = () => {
 
   return (
     <div className={styles.flex + " h-screen"}>
-      <div className="w-1/2 p-10 flex flex-col items-center justify-center relative bg-black">
+      <div className="hidden lg:flex lg:w-1/2 p-10 flex flex-col lg:items-center justify-center relative bg-black">
         <div className="absolute inset-0">
           <svg
             className="w-full h-full"
@@ -157,7 +157,7 @@ const RegistraPrivato: React.FC = () => {
         </div>
       </div>
       <ToasterProvider />
-      <div className="w-1/2 bg-white p-10 flex items-center justify-center">
+      <div className="w-full lg:w-1/2 bg-white px-8 py-1 lg:p-10 flex lg:items-center justify-center">
         <div className="w-2/3 flex flex-col justify-between">
           <div className="flex justify-between mb-6">
             <Link
