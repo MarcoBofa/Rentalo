@@ -90,9 +90,12 @@ function ScegliUtente() {
         </div>
 
         <div className="mt-12 text-center">
-          <span className="text-blue-800 hover:underline cursor-pointer">
+          <Link
+            href="/Login"
+            className="text-blue-800 hover:underline cursor-pointer"
+          >
             Già Registrato? Effettua il login.
-          </span>
+          </Link>
         </div>
       </div>
     </div>
