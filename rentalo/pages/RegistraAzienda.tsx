@@ -69,8 +69,8 @@ const RegistraAzienda: React.FC = () => {
   return (
     <div className={styles.flex + " h-screen"}>
       <ToasterProvider />
-      <div className="w-1/2 bg-white p-10 flex items-center justify-center">
-        <div className="w-2/3 flex flex-col justify-between">
+      <div className="w-full lg:w-1/2 bg-white p-8 lg:p-10 flex items-center justify-center">
+        <div className="lg:w-2/3 flex flex-col justify-between">
           <div className="flex justify-between mb-6">
             <Link
               href="/ScegliUtente"
@@ -89,7 +89,7 @@ const RegistraAzienda: React.FC = () => {
             Crea il tuo account come impresa
           </h2>
           <form onSubmit={handleSubmit(onSubmit)}>
-            <div className="flex space-x-4">
+            <div className="flex space-x-4 mb-4">
               <div className="w-1/2">
                 <InputField
                   label="name"
@@ -109,7 +109,6 @@ const RegistraAzienda: React.FC = () => {
                 />
               </div>
             </div>
-            ì
             <div className="mb-4">
               <InputField
                 label="piva"
@@ -202,7 +201,7 @@ const RegistraAzienda: React.FC = () => {
           </form>
         </div>
       </div>
-      <div className="w-1/2 p-10 flex flex-col items-center justify-center relative bg-black">
+      <div className="hidden lg:flex lg:w-1/2 p-10 flex flex-col items-center justify-center relative bg-black">
         <div className="absolute inset-0">
           <svg
             className="w-full h-full"
