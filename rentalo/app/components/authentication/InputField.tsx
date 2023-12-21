@@ -44,6 +44,7 @@ const InputField: React.FC<InputFieldProps> = ({
     return (
       <div className="relative">
         <DatePicker
+          wrapperClassName="w-full"
           selected={value ? new Date(value) : null}
           onChange={(date) => {
             const formattedDate = date ? date.toISOString().split("T")[0] : "";
@@ -54,7 +55,7 @@ const InputField: React.FC<InputFieldProps> = ({
               onDateChange(date);
             }
           }}
-          className={`w-[370px] border p-4 text-black rounded transition-all duration-200 ${
+          className={`w-full border p-4 text-black rounded transition-all duration-200 ${
             focused || value ? "border-orange-500 border-3" : "border-gray-300"
           } outline-none`}
           dateFormat="yyyy-MM-dd"
