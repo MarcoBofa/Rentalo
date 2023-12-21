@@ -69,8 +69,8 @@ const RegistraNoleggiatore: React.FC = () => {
   return (
     <div className={styles.flex + " h-screen"}>
       <ToasterProvider />
-      <div className="w-full lg:w-1/2 bg-white px-8 py-2 lg:p-10 flex items-center justify-center">
-        <div className="lg:w-2/3 flex flex-col justify-between">
+      <div className="w-full lg:w-1/2 bg-white px-8 py-2  flex lg:items-center justify-center">
+        <div className="lg:w-2/3 flex flex-col lg:justify-between">
           <div className="flex justify-between mb-6">
             <Link
               href="/ScegliUtente"
