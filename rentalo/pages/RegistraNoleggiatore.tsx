@@ -69,7 +69,7 @@ const RegistraNoleggiatore: React.FC = () => {
   return (
     <div className={styles.flex + " h-screen"}>
       <ToasterProvider />
-      <div className="w-full lg:w-1/2 bg-white p-3 lg:p-10 flex items-center justify-center">
+      <div className="w-full lg:w-1/2 bg-white p-5 lg:p-10 flex items-center justify-center">
         <div className="lg:w-2/3 flex flex-col justify-between">
           <div className="flex justify-between mb-6">
             <Link
@@ -194,7 +194,7 @@ const RegistraNoleggiatore: React.FC = () => {
               }
             >
               <FaGoogle className="mr-2" />
-              Continue con Google
+              Continua con Google
             </button>
           </form>
         </div>
