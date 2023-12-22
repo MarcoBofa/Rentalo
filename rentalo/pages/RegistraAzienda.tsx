@@ -180,7 +180,7 @@ const RegistraAzienda: React.FC = () => {
             >
               Crea Account
             </button>
-            <button
+            {/* <button
               className="w-full p-2 text-white bg-gray-800 rounded-full hover:bg-blue-900 mt-4 flex items-center justify-center"
               onClick={() =>
                 signIn("github", { callbackUrl: `${router.basePath}/` })
@@ -197,7 +197,7 @@ const RegistraAzienda: React.FC = () => {
             >
               <FaGoogle className="mr-2" />
               Continue con Google
-            </button>
+            </button> */}
           </form>
         </div>
       </div>

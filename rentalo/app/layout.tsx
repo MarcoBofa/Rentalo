@@ -18,7 +18,7 @@ const homeFont = Roboto_Condensed({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Rentalo",
-  description: "noleggio macchinari da cantiere",
+  description: "Noleggio macchinari da cantiere",
 };
 
 interface RootLayoutProps {
