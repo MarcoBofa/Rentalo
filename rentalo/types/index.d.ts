@@ -27,9 +27,13 @@ export type ModalForm = {
   email?: string;
 };
 
-export type safeUser = Omit<User, "createdAt" | "updatedAt"> & {
+export type safeUser = Omit<
+  User,
+  "createdAt" | "updatedAt" | "resetPasswordTokenExpiry"
+> & {
   createdAt: string;
   updatedAt: string;
+  resetPasswordTokenExpiry?: string | null;
 };
 
 interface watchlistProps {
