@@ -22,8 +22,18 @@ model User {
   createdAt DateTime @default(now()) 
   updatedAt DateTime @updatedAt
   hashedPassword String? //optional for allowing social login
-  emailVerified DateTime?
-  accounts Account[]
+
+  // New fields for email verification
+  email_verified             Boolean @default(false)
+  emailVerificationToken    String? 
+
+  // New fields for reset password functionality
+  resetPasswordToken        String? 
+  resetPasswordTokenExpiry  DateTime?
+
+  // Existing relations
+  accounts                  Account[]
+  emailVerified             DateTime?
 }
 
 model Account {
