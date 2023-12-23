@@ -5,10 +5,6 @@ export async function POST(request: Request) {
   const body = await request.json();
   const { user, password, confirmPassword } = body;
 
-  console.log("USEEER", user);
-
-  console.log("PASS", password, "CONFIRM", confirmPassword);
-
   if (!password || !confirmPassword) {
     return Response.json({ error: "Inserire la password" }, { status: 400 });
   }
