@@ -30,6 +30,8 @@ export default async function getCurrentUser() {
       ...currentUser,
       createdAt: currentUser.createdAt.toISOString(),
       updatedAt: currentUser.updatedAt.toISOString(),
+      resetPasswordTokenExpiry:
+        currentUser.resetPasswordTokenExpiry?.toISOString(),
     };
   } catch (error: any) {
     return null;
