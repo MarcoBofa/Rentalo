@@ -6,7 +6,7 @@ import prisma from "@/app/libs/prismadb";
 
 export async function POST(request: Request) {
   const body = await request.json();
-  const { email, name, surname, password, birthDate, role } = body;
+  const { email, name, surname, password, birthDate } = body;
 
   const userExists = await prisma.user.findUnique({
     where: {
@@ -38,6 +38,9 @@ export async function POST(request: Request) {
       hashedPassword,
       birthDate,
       role: "privato",
+      emailVerificationToken: null,
+      resetPasswordToken: null,
+      resetPasswordTokenExpiry: null,
     },
   });
 

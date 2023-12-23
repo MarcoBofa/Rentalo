@@ -29,7 +29,7 @@ model User {
 
   // New fields for reset password functionality
   resetPasswordToken        String? 
-  resetPasswordTokenExpiry  DateTime?
+  resetPasswordTokenExpiry  DateTime? 
 
   // Existing relations
   accounts                  Account[]
