@@ -1,6 +1,7 @@
 import { RecoverEmailTemplate } from "@/app/email-templates/recoverEmail";
 import { Resend } from "resend";
 import prisma from "@/app/libs/prismadb";
+import crypto from "crypto";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -14,7 +15,22 @@ export async function POST(request: Request) {
     },
   });
 
+  const resetPasswordToken = crypto.randomBytes(64).toString("base64url");
+  const now = new Date();
+  const expiryDate = new Date(); // Create a new Date object for the expiry time
+  expiryDate.setMinutes(now.getMinutes() + 15); // Set the expiry time to 15 minutes later
+
   if (user) {
+    const updatedUser = await prisma.user.update({
+      where: {
+        email,
+      },
+      data: {
+        resetPasswordToken: resetPasswordToken,
+        resetPasswordTokenExpiry: expiryDate,
+      },
+    });
+
     let userName = user.name || "";
     try {
       const data = await resend.emails.send({
@@ -23,7 +39,7 @@ export async function POST(request: Request) {
         subject: "Ripristina la tua password",
         react: RecoverEmailTemplate({
           firstName: userName,
-          resetLink: "https://rentaloo.net",
+          resetLink: `https://rentaloo.net/resetPassword?token=${resetPasswordToken}`,
         }) as React.ReactElement,
       });
 

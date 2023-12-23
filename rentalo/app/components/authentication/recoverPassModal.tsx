@@ -36,7 +36,7 @@ const RecoverPassModal: FC<RecoverPassModalProps> = ({
   const onSubmit = (data: ModalForm) => {
     console.log("data", data);
     axios
-      .post("/api/send", data)
+      .post("/api/resetPasswordEmail", data)
       .then(() => {
         toast.success("Email inviata!");
       })
