@@ -6,6 +6,7 @@ import ToasterProvider from "@/providers/ToasterProvider";
 import toast from "react-hot-toast";
 import { safeUser } from "@/types";
 import axios from "axios";
+import { useRouter } from "next/router";
 
 interface resetPasswordData {
   password: string;
@@ -42,6 +43,8 @@ const ResetPassForm: React.FC<ResetPassFormProps> = ({ user }) => {
   // Watch all form fields
   const watchedFields = watch();
 
+  const router = useRouter();
+
   const handleFocus = (field: string) => {
     setFocused({ ...focused, [field]: true });
   };
@@ -51,9 +54,6 @@ const ResetPassForm: React.FC<ResetPassFormProps> = ({ user }) => {
   };
 
   const onSubmit = (data: resetPasswordData) => {
-    console.log("Form data:", data);
-    console.log("Email:", user);
-
     if (!data.password || !data.confirmPassword) {
       toast.error("Inserire la Password e la Conferma Password.");
     }
@@ -79,6 +79,8 @@ const ResetPassForm: React.FC<ResetPassFormProps> = ({ user }) => {
           error.response?.data?.error || "Si è verificato un errore";
         toast.error(message);
       });
+
+    router.push("/Login");
 
     reset();
   };

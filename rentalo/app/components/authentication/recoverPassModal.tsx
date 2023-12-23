@@ -37,9 +37,7 @@ const RecoverPassModal: FC<RecoverPassModalProps> = ({
     console.log("data", data);
     axios
       .post("/api/resetPasswordEmail", data)
-      .then(() => {
-        toast.success("Email inviata!");
-      })
+      .then(() => {})
       .catch((error) => {
         // Check if the server responded with a message, otherwise use a default message
         const message = error.response?.data?.error || "An error occurred!";
