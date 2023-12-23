@@ -6,6 +6,7 @@ import InputField from "./InputField";
 import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import ToasterProvider from "../../../providers/ToasterProvider";
+import axios from "axios";
 
 interface RecoverPassModalProps {
   isOpen: boolean;
@@ -33,27 +34,27 @@ const RecoverPassModal: FC<RecoverPassModalProps> = ({
   if (!isOpen) return null;
 
   const onSubmit = (data: ModalForm) => {
+    console.log("data", data);
+    axios
+      .post("/api/send", data)
+      .then(() => {
+        toast.success("Email inviata!");
+      })
+      .catch((error) => {
+        // Check if the server responded with a message, otherwise use a default message
+        const message = error.response?.data?.error || "An error occurred!";
+        toast.error(message);
+      });
+
     toast.success(
       "Se l'email inserita è associata ad un account, riceverai una mail con le istruzioni per il reset della password.",
       {
         duration: 5000,
       }
     );
-    console.log(data);
-    submitData(data);
     reset();
+    onClose();
   };
-  //   const handleFormSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-  //     event.preventDefault();
-
-  //     const formData = new FormData(event.currentTarget);
-  //     const data: ModalForm = {
-  //       password: formData.get("password") as string,
-  //       confirmPassword: formData.get("confirmPassword") as string,
-  //     };
-
-  //     onSubmit(data);
-  //   };
 
   return (
     <div className="fixed inset-0 z-10 bg-black bg-opacity-50 flex justify-center items-center">
@@ -66,11 +67,11 @@ const RecoverPassModal: FC<RecoverPassModalProps> = ({
           Close
         </button>
         <h2 className="text-2xl mb-6 text-orange-600 ">
-          Forgot your password?
+          Password dimenticata?
         </h2>
         <span className="text-gray-500 mb-6 block">
-          Enter your email address and we will send you a link to reset your
-          password.
+          Inserisci l'email associata al tuo account per ricevere le istruzioni
+          per il reset della password.
         </span>
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
           <div className="mb-4">
@@ -86,7 +87,7 @@ const RecoverPassModal: FC<RecoverPassModalProps> = ({
             type="submit"
             className="w-full bg-orange-500 hover:bg-orange-600 text-white text-xl py-4 px-4 rounded-md"
           >
-            Submit
+            Invia
           </button>
         </form>
       </div>

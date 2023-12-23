@@ -49,8 +49,12 @@ const authOptions: AuthOptions = {
           name: `${profile.given_name} ${profile.family_name}`,
           email: profile.email,
           image: profile.picture,
-          birthDate: null,
+          birthDate: profile.birthdate || null,
           role: profile.role ? profile.role : "privato",
+          email_verified: profile.email_verified,
+          emailVerificationToken: null,
+          resetPasswordToken: null,
+          resetPasswordTokenExpiry: null,
         };
       },
     }),
@@ -111,6 +115,8 @@ const authOptions: AuthOptions = {
   debug: process.env.NODE_ENV === "development",
   session: {
     strategy: "jwt",
+    maxAge: 3 * 24 * 60 * 60, // Session will expire after 30 days
+    updateAge: 24 * 60 * 60,
   },
   secret: process.env.NEXTAUTH_SECRET,
 };
