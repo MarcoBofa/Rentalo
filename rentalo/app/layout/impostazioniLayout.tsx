@@ -1,24 +1,9 @@
-// // pages/impostazioni.tsx
-// import "../globals.css";
-// import getUser from "../actions/getUser";
-// import { safeUser } from "@/types";
-// import Link from "next/link";
-
-// interface ImpostazioniProps {
-//   children?: React.ReactNode;
-// }
-
-// const ImpostazioniLayout: React.FC<ImpostazioniProps> = async ({
-//   children,
-// }) => {
-//   const currentUser = await getUser();
-
-// pages/impostazioni.tsx
 "use client";
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import "../globals.css";
 import UserContext from "../context/useContext";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 interface ImpostazioniProps {
   children?: React.ReactNode;
@@ -26,6 +11,13 @@ interface ImpostazioniProps {
 
 const ImpostazioniLayout: React.FC<ImpostazioniProps> = ({ children }) => {
   const { currentUser } = useContext(UserContext);
+  const router = useRouter();
+
+  useEffect(() => {
+    if (!currentUser) {
+      router.push("/Login");
+    }
+  }, [currentUser, router]);
 
   let privatoSet = (
     <>
