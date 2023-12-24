@@ -67,12 +67,12 @@ const CredenzialiSettings: React.FC = () => {
       })
       .then((response) => {
         toast.success(response.data.message);
+        reset();
+        router.refresh();
       })
       .catch((error) => {
         toast.error(error.response.data.error);
       });
-
-    reset();
   };
 
   const inputStyle = (field: keyof FormData) => {
