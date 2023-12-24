@@ -38,23 +38,24 @@ const RecoverPassModal: FC<RecoverPassModalProps> = ({
     console.log("data", data);
     axios
       .post("/api/resetPasswordEmail", data)
-      .then(() => {})
+      .then(() => {
+        toast.success(
+          "Se l'email inserita è associata ad un account, riceverai una mail con le istruzioni per il reset della password.",
+          {
+            duration: 5000,
+          }
+        );
+      })
       .catch((error) => {
         // Check if the server responded with a message, otherwise use a default message
         const message = error.response?.data?.error || "An error occurred!";
         toast.error(message, {
-          duration: 5000, // duration in milliseconds (e.g., 5000ms = 5 seconds)
+          duration: 8000, // duration in milliseconds (e.g., 5000ms = 5 seconds)
         });
         reset();
         return;
       });
 
-    toast.success(
-      "Se l'email inserita è associata ad un account, riceverai una mail con le istruzioni per il reset della password.",
-      {
-        duration: 5000,
-      }
-    );
     reset();
     onClose();
   };
