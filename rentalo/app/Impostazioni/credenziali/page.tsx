@@ -25,9 +25,11 @@ const CredenzialiSettings: React.FC = () => {
   const { currentUser } = useContext(UserContext);
   const router = useRouter();
 
-  // if (!currentUser) {
-  //   router.push("/Login");
-  // }
+  useEffect(() => {
+    if (!currentUser) {
+      router.push("/Login");
+    }
+  }, [currentUser, router]);
 
   const {
     register,
