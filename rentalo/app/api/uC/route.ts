@@ -1,4 +1,3 @@
-import { NextApiRequest, NextApiResponse } from "next";
 import getUser from "@/app/actions/getUser";
 import prisma from "@/app/libs/prismadb";
 import { NextResponse } from "next/server";
@@ -16,7 +15,7 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Not authorized" }, { status: 401 });
   }
 
-  if (!nome || !cognome) {
+  if (!nome && !cognome) {
     return NextResponse.json(
       { error: "Inserire nome o cognome" },
       { status: 400 }
