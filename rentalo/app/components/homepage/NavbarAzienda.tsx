@@ -4,16 +4,16 @@ import { Squash as Hamburger } from "hamburger-react";
 import { useState } from "react";
 import { signOut } from "next-auth/react";
 import { safeUser } from "@/types";
-import Image from "next/image";
+import UserContext from "../../context/useContext";
 
 import Link from "next/link";
-import UserContext from "../context/useContext";
+import Image from "next/image";
 
 interface navbarPros {
   currentUser?: safeUser | null;
 }
 
-const NavbarNoleggiatore: React.FC<navbarPros> = () => {
+const NavbarAzienda: React.FC<navbarPros> = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const { currentUser } = useContext(UserContext);
 
@@ -41,7 +41,13 @@ const NavbarNoleggiatore: React.FC<navbarPros> = () => {
             </div>
           </div>
           {dropdownOpen && (
-            <div className="absolute z-10 right-0 mt-2 w-48 py-2 bg-gray-900 text-white rounded shadow-xl">
+            <div
+              className="absolute z-10  w-[300px] py-2 bg-gray-900 text-white rounded shadow-xl"
+              style={{
+                top: 70, // Directly below the navbar
+                left: -110, // Aligned with the right edge of the viewport
+              }}
+            >
               {currentUser ? (
                 <>
                   <Link
@@ -57,6 +63,13 @@ const NavbarNoleggiatore: React.FC<navbarPros> = () => {
                     onClick={() => setDropdownOpen(false)}
                   >
                     Noleggi
+                  </Link>
+                  <Link
+                    href="/"
+                    className="block px-4 py-2 hover:bg-gray-800"
+                    onClick={() => setDropdownOpen(false)}
+                  >
+                    Annunci
                   </Link>
                   <Link
                     href="/"
@@ -103,4 +116,4 @@ const NavbarNoleggiatore: React.FC<navbarPros> = () => {
   );
 };
 
-export default NavbarNoleggiatore;
+export default NavbarAzienda;

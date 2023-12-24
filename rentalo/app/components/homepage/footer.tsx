@@ -1,6 +1,12 @@
 import React, { FC } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import {
+  FaFacebookF,
+  FaTwitter,
+  FaInstagram,
+  FaLinkedinIn,
+} from "react-icons/fa";
 
 const Footer: FC = () => {
   return (
@@ -24,18 +30,18 @@ const Footer: FC = () => {
         <div className="w-1/3 text-center mb-4 mb-0">
           <div className="flex justify-center mb-2">
             <button className="bg-gray-700 w-[25px] lg:w-[32px] h-[25px] lg:h-[32px] rounded-full flex items-center justify-center mr-2">
-              <span className="text-xl lg:text-2xl font-bold">L</span>
+              <FaFacebookF />
             </button>
             <button className="bg-gray-700  w-[25px] lg:w-[32px] h-[25px] lg:h-[32px] rounded-full flex items-center justify-center">
-              <span className="text-xl lg:text-2xl font-bold">O</span>
+              <FaTwitter />
             </button>
           </div>
           <div className="flex justify-center">
             <button className="bg-gray-700  w-[25px] lg:w-[32px] h-[25px] lg:h-[32px] rounded-full flex items-center justify-center mr-2">
-              <span className=" text-xl lg:text-2xl font-bold">G</span>
+              <FaInstagram />
             </button>
             <button className="bg-gray-700 w-[25px] lg:w-[32px] h-[25px] lg:h-[32px] rounded-full flex items-center justify-center">
-              <span className="text-xl lg:text-2xl font-bold">O</span>
+              <FaLinkedinIn />
             </button>
           </div>
         </div>

@@ -29,18 +29,19 @@ const ImpostazioniLayout: React.FC<ImpostazioniProps> = ({ children }) => {
 
   let privatoSet = (
     <>
-      <div className="flex flex-row">
+      <div className="flex flex-row pt-[90px]">
         <aside className="w-1/5 min-h-screen top-21 left-0 bg-gray-800 text-white">
-          <ul className="space-y-2 text-sm">
+          <ul className="space-y-1 text-sm">
             <li>
               <Link
                 href="/Impostazioni/email"
-                className="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700"
+                className="block py-2.5 mt-1 px-4 rounded transition duration-200 hover:bg-gray-700"
               >
                 Email
               </Link>
             </li>
             <li>
+              <div className=" border-t border-gray-400 ml-2 mb-1 mr-2"></div>
               <Link
                 href="/Impostazioni/password"
                 className="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700"
@@ -49,23 +50,18 @@ const ImpostazioniLayout: React.FC<ImpostazioniProps> = ({ children }) => {
               </Link>
             </li>
             <li>
+              <div className=" border-t border-gray-400 ml-2 mb-1 mr-2"></div>
               <Link
-                href="/Impostazioni/nome"
-                className="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700"
+                href="/Impostazioni/credenziali"
+                className="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700  "
               >
-                Nome
+                Credenziali
               </Link>
-            </li>
-            <li>
-              <Link
-                href="/Impostazioni/nome"
-                className="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700"
-              >
-                Cognome
-              </Link>
+              <div className=" border-t border-gray-400 ml-2 mt-1 mr-2"></div>
             </li>
           </ul>
         </aside>
+
         <main className="w-4/5">{children}</main>
       </div>
     </>
@@ -73,7 +69,7 @@ const ImpostazioniLayout: React.FC<ImpostazioniProps> = ({ children }) => {
 
   let aziendaSet = (
     <>
-      <div className="flex flex-row">
+      <div className="flex flex-row  pt-[90px]">
         <aside className="w-1/5 min-h-screen top-21 left-0 bg-gray-800 text-white">
           <ul className="space-y-2 text-sm">
             <li>
@@ -125,7 +121,7 @@ const ImpostazioniLayout: React.FC<ImpostazioniProps> = ({ children }) => {
 
   let noleggiatoreSet = (
     <>
-      <div className="flex flex-row">
+      <div className="flex flex-row pt-[90px]">
         <aside className="w-1/5 min-h-screen top-21 left-0 bg-gray-800 text-white">
           <ul className="space-y-2 text-sm">
             <li>

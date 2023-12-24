@@ -31,7 +31,7 @@ export async function POST(request: Request) {
       return Response.json(
         {
           error:
-            "Siamo spiacenti ma non è possibile ripristinare la password di un account collegato a un social, la preghiamo di provare sul sito del provider utilizzato",
+            "Siamo spiacenti ma non è possibile ripristinare la password di un account creato tramite social, la preghiamo di riprovare sul sito del provider utilizzato",
         },
         { status: 400 }
       );
