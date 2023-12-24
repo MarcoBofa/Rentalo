@@ -7,6 +7,7 @@ import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import ToasterProvider from "../../../providers/ToasterProvider";
 import axios from "axios";
+import { on } from "events";
 
 interface RecoverPassModalProps {
   isOpen: boolean;
@@ -41,7 +42,11 @@ const RecoverPassModal: FC<RecoverPassModalProps> = ({
       .catch((error) => {
         // Check if the server responded with a message, otherwise use a default message
         const message = error.response?.data?.error || "An error occurred!";
-        toast.error(message);
+        toast.error(message, {
+          duration: 5000, // duration in milliseconds (e.g., 5000ms = 5 seconds)
+        });
+        reset();
+        return;
       });
 
     toast.success(
