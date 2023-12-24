@@ -1,0 +1,40 @@
+import ResetPassForm from "@/app/components/authentication/resetPassForm";
+import prisma from "@/app/libs/prismadb";
+import React from "react";
+import { redirect } from "next/navigation";
+
+interface ResetPasswordPageProps {
+  searchParams: { [key: string]: string | string[] | undefined };
+}
+export default async function ResetPasswordPage({
+  searchParams,
+}: ResetPasswordPageProps) {
+  const spar = await searchParams;
+  if (!searchParams == null) {
+    redirect("/");
+  }
+  let user;
+  if (searchParams.token) {
+    user = await prisma.user.findFirst({
+      where: {
+        resetPasswordToken: searchParams.token as string,
+      },
+    });
+    if (!user) {
+      //redirect("/");
+      console.log("User not found");
+    } else if (
+      user.resetPasswordTokenExpiry &&
+      user.resetPasswordTokenExpiry < new Date()
+    ) {
+      //redirect("/");
+      console.log("Token expired");
+    }
+  }
+
+  return (
+    <>
+      <ResetPassForm email={user?.email} />;
+    </>
+  );
+}
