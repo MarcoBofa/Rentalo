@@ -15,12 +15,33 @@ export async function POST(request: Request) {
     },
   });
 
-  const resetPasswordToken = crypto.randomBytes(64).toString("base64url");
-  const now = new Date();
-  const expiryDate = new Date(); // Create a new Date object for the expiry time
-  expiryDate.setMinutes(now.getMinutes() + 15); // Set the expiry time to 15 minutes later
-
   if (user) {
+    const account = await prisma.account.findFirst({
+      where: {
+        userId: user.id,
+      },
+    });
+
+    if (
+      account &&
+      (account.provider == "google" ||
+        account.provider == "facebook" ||
+        account.provider == "github")
+    ) {
+      return Response.json(
+        {
+          error:
+            "Siamo spiacenti ma non è possibile ripristinare la password di un account collegato a un social, la preghiamo di provare sul sito del provider utilizzato",
+        },
+        { status: 400 }
+      );
+    }
+
+    const resetPasswordToken = crypto.randomBytes(64).toString("base64url");
+    const now = new Date();
+    const expiryDate = new Date(); // Create a new Date object for the expiry time
+    expiryDate.setMinutes(now.getMinutes() + 15); // Set the expiry time to 15 minutes later
+
     const updatedUser = await prisma.user.update({
       where: {
         email,
