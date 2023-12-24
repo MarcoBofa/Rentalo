@@ -25,7 +25,7 @@ const CredenzialiSettings: React.FC = () => {
   const router = useRouter();
 
   if (!currentUser) {
-    router.push("/login");
+    router.push("/Login");
   }
 
   const {
@@ -61,15 +61,15 @@ const CredenzialiSettings: React.FC = () => {
 
     axios
       .post("/api/uC", {
-        name: data.nome,
-        surname: data.cognome,
+        nome: data.nome,
+        cognome: data.cognome,
         user: currentUser,
       })
       .then((response) => {
         toast.success(response.data.message);
       })
       .catch((error) => {
-        toast.error(error.response.data.message);
+        toast.error(error.response.data.error);
       });
 
     reset();
