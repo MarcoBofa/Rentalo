@@ -7,7 +7,6 @@ import { useForm } from "react-hook-form";
 import toast from "react-hot-toast";
 import ToasterProvider from "../../../providers/ToasterProvider";
 import axios from "axios";
-import { on } from "events";
 
 interface RecoverPassModalProps {
   isOpen: boolean;

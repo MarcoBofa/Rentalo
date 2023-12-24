@@ -26,9 +26,14 @@ const authOptions: AuthOptions = {
           id: profile.id,
           email: profile?.email,
           name: profile?.login,
+          surname: null,
           image: profile?.avatar_url,
           birthDate: null,
           role: userRole,
+          email_verified: true,
+          emailVerificationToken: null,
+          resetPasswordToken: null,
+          resetPasswordTokenExpiry: null,
         };
       },
       clientId:
@@ -47,6 +52,7 @@ const authOptions: AuthOptions = {
         return {
           id: profile.sub,
           name: `${profile.given_name} ${profile.family_name}`,
+          surname: null,
           email: profile.email,
           image: profile.picture,
           birthDate: profile.birthdate || null,

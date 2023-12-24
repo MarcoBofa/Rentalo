@@ -2,11 +2,11 @@ import React, { ReactNode } from "react";
 import "./globals.css";
 import { Inter, Nunito, Roboto_Condensed } from "next/font/google";
 import ToasterProvider from "@/providers/ToasterProvider";
-import Footer from "@/app/components/footer";
-import NavbarPrivato from "@/app/components/NavbarPrivato";
-import Navbar from "@/app/components/Navbar";
-import NavbarNoleggiatore from "@/app/components/NavbarNoleggiatore";
-import NavbarAzienda from "@/app/components/NavbarAzienda";
+import Footer from "@/app/components/homepage/footer";
+import NavbarPrivato from "@/app/components/homepage/NavbarPrivato";
+import Navbar from "@/app/components/homepage/Navbar";
+import NavbarNoleggiatore from "@/app/components/homepage/NavbarNoleggiatore";
+import NavbarAzienda from "@/app/components/homepage/NavbarAzienda";
 import getUser from "./actions/getUser";
 import { UserProvider } from "./context/useContext"; // Adjust the path
 import Head from "next/head";

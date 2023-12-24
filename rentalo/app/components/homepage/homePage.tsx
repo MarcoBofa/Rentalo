@@ -1,9 +1,9 @@
 import React, { FC } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import Footer from "@/app/components/footer";
+import Footer from "@/app/components/homepage/footer";
 import { GoArrowRight, GoArrowLeft } from "react-icons/go";
-import "../globals.css";
+import "../../globals.css";
 
 const homePage: FC = () => {
   return (
