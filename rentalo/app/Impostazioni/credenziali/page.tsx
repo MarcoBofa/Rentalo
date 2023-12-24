@@ -21,12 +21,13 @@ const CredenzialiSettings: React.FC = () => {
     nome: false,
     cognome: false,
   });
+  const [showModal, setShowModal] = useState(false);
   const { currentUser } = useContext(UserContext);
   const router = useRouter();
 
-  if (!currentUser) {
-    router.push("/Login");
-  }
+  // if (!currentUser) {
+  //   router.push("/Login");
+  // }
 
   const {
     register,
@@ -57,7 +58,21 @@ const CredenzialiSettings: React.FC = () => {
   };
 
   const onSubmit = (data: FormData) => {
-    console.log("Form data:", data);
+    if (data.nome && currentUser && data.nome == currentUser.name) {
+      toast.error("Il nome inserito è uguale a quello attuale");
+    } else if (
+      data.cognome &&
+      currentUser &&
+      data.cognome == currentUser.surname
+    ) {
+      toast.error("Il cognome inserito è uguale a quello attuale");
+    } else {
+      setShowModal(true);
+    }
+  };
+
+  const confirmUpdate = () => {
+    const data = watchedFields;
 
     axios
       .post("/api/uC", {
@@ -68,6 +83,7 @@ const CredenzialiSettings: React.FC = () => {
       .then((response) => {
         toast.success(response.data.message);
         reset();
+        setShowModal(false);
         router.refresh();
       })
       .catch((error) => {
@@ -149,6 +165,27 @@ const CredenzialiSettings: React.FC = () => {
           </form>
         </div>
       </div>
+      {showModal && (
+        <div className="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full flex justify-center items-center">
+          <div className="flex flex-col items-center justify-center bg-white w-[350px] h-[200px] p-5 rounded-lg shadow-lg text-center">
+            <h3 className="text-lg font-bold mb-8">Confermare le modifiche?</h3>
+            <div>
+              <button
+                onClick={confirmUpdate}
+                className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mr-10"
+              >
+                Conferma
+              </button>
+              <button
+                onClick={() => setShowModal(false)}
+                className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
+              >
+                Annulla
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </ImpostazioniLayout>
   );
 };
