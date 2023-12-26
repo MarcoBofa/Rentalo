@@ -97,16 +97,16 @@ const CredenzialiSettings: React.FC = () => {
     // Using 'as' for type assertion
     const fieldValue = watchedFields[field as keyof FormData];
     return `shadow appearance-none border ${
-      focused[field] || fieldValue ? "border-orange-500" : "border-gray-300"
-    } rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline`;
+      focused[field] || fieldValue ? "border-blue-500" : "border-gray-300"
+    } rounded w-full py-2 px-3 text-xs lg:text-md text-gray-700 leading-tight focus:outline-none focus:shadow-outline`;
   };
 
   return (
     <ImpostazioniLayout>
       <div className="flex flex-col items-center min-h-screen text-textSettings bg-settings py-2">
-        <div className="flex flex-col items-center justify-center mt-[200px] w-1/2 rounded h-[350px] bg-white">
-          <h1 className="text-xl font-bold mb-2">Account</h1>
-          <h2 className="text-md mb-2 ">
+        <div className="flex flex-col items-center justify-center mt-[50px] lg:mt-[200px] w-2/3 lg:w-1/2 rounded h-[350px] bg-white">
+          <h1 className="text-lg lg:text-xl font-bold mb-2">Account</h1>
+          <h2 className="text-sm lg:text-md mb-2 ">
             Aggiorna le informazioni sul tuo account
           </h2>
           <form
@@ -115,7 +115,7 @@ const CredenzialiSettings: React.FC = () => {
           >
             <div className="mb-4">
               <label
-                className="block  text-textSettings  text-sm font-bold mb-2"
+                className="block text-textSettings text-xs lg:text-md font-bold mb-2"
                 htmlFor="nome"
               >
                 Nome
@@ -136,7 +136,7 @@ const CredenzialiSettings: React.FC = () => {
             </div>
             <div className="mb-6">
               <label
-                className="block  text-textSettings  text-sm font-bold mb-2"
+                className="block  text-textSettings text-xs lg:text-md font-bold mb-2"
                 htmlFor="cognome"
               >
                 Cognome
@@ -157,7 +157,7 @@ const CredenzialiSettings: React.FC = () => {
             </div>
             <div className="flex items-center justify-center">
               <button
-                className="bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline disabled:bg-gray-300 disabled:cursor-not-allowed"
+                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline disabled:bg-gray-300 disabled:cursor-not-allowed"
                 type="submit"
                 disabled={!isAtLeastOneFieldFilled}
               >
