@@ -20,13 +20,16 @@ const NavbarAzienda: React.FC<navbarPros> = () => {
   return (
     <div className="fixed top-0 left-0 right-0 z-50 navbar-background bg-gray-900 text-white py-4 px-1 lg:px-6">
       <div className="mx-auto flex justify-between items-center">
-        <Link href="/" className="text-3xl font-bold flex items-center">
+        <Link
+          href="/"
+          className="text-2xl lg:text-4xl font-bold flex items-center"
+        >
           <Image width={50} height={50} src="/logo-o.png" alt="Rentalo Logo" />{" "}
           Rentalo
         </Link>
         <div className="relative">
           <div
-            className="rounded-full text-xl bg-gray-700 px-3 py-1 flex items-center cursor-pointer"
+            className="rounded-full text-lg lg:text-xl bg-gray-700 px-2 lg:px-3 py-0 lg:py-1 flex items-center cursor-pointer"
             onClick={() => setDropdownOpen(!dropdownOpen)}
           >
             <span className="ml-2">

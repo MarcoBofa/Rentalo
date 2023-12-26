@@ -21,7 +21,10 @@ const NavbarPrivato: React.FC<navbarPros> = () => {
   return (
     <div className="fixed top-0 left-0 right-0 z-50 navbar-background bg-gray-900 text-white py-4 px-1 lg:px-6">
       <div className="mx-auto flex justify-between items-center">
-        <Link href="/" className="text-3xl font-bold flex items-center">
+        <Link
+          href="/"
+          className="text-2xl lg:text-4xl font-bold flex items-center"
+        >
           <Image
             width={48}
             height={48}
@@ -33,13 +36,13 @@ const NavbarPrivato: React.FC<navbarPros> = () => {
         </Link>
         <div className="relative">
           <div
-            className="rounded-full text-xl bg-gray-700 px-3 py-1 flex items-center cursor-pointer"
+            className="rounded-full text-lg lg:text-xl bg-gray-700 px-2 lg:px-3 py-0 lg:py-1 flex items-center cursor-pointer"
             onClick={() => setDropdownOpen(!dropdownOpen)}
           >
             <span className="ml-2">
               {currentUser ? `${currentUser.name}` : "Login"}
             </span>
-            <div style={{ marginRight: "-8px" }}>
+            <div className="mr-[-8px]">
               <Hamburger
                 toggled={dropdownOpen}
                 toggle={setDropdownOpen}
@@ -49,7 +52,7 @@ const NavbarPrivato: React.FC<navbarPros> = () => {
           </div>
           {dropdownOpen && (
             <div
-              className="absolute z-10  w-[300px] py-2 bg-gray-900 text-white rounded shadow-xl"
+              className="absolute z-10 w-[300px] py-2 bg-gray-900 text-white rounded shadow-xl"
               style={{
                 top: 70, // Directly below the navbar
                 left: -110, // Aligned with the right edge of the viewport
