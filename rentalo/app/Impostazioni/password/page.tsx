@@ -56,7 +56,7 @@ const PasswordSettings: React.FC = () => {
 
   return (
     <ImpostazioniLayout>
-      <div className="flex flex-col items-center min-h-screen text-textSettings bg-settings py-2 py-2 px-2 lg:px-0">
+      <div className="flex flex-col items-center min-h-screen text-textSettings bg-settings py-2 py-2 px-1 lg:px-0">
         <div className="flex flex-col items-center justify-center mt-[50px] lg:mt-[200px] w-3/4 lg:w-1/2 rounded lg:h-[350px] lg:h-[350px] p-[10px] lg:p-[40px] bg-white">
           <h1 className="text-lg lg:text-xl font-bold mb-2">Password</h1>
           <h2 className="text-sm lg:text-base mb-4 px-2">
