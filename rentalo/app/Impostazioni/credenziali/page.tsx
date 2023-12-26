@@ -103,10 +103,10 @@ const CredenzialiSettings: React.FC = () => {
 
   return (
     <ImpostazioniLayout>
-      <div className="flex flex-col items-center min-h-screen text-textSettings bg-settings py-2">
-        <div className="flex flex-col items-center justify-center mt-[50px] lg:mt-[200px] w-2/3 lg:w-1/2 rounded h-[350px] bg-white">
+      <div className="flex flex-col items-center min-h-screen text-textSettings bg-settings py-2 px-2 lg:px-0">
+        <div className="flex flex-col items-center justify-center mt-[50px] lg:mt-[200px] w-3/4  lg:w-1/2 rounded h-[350px] bg-white">
           <h1 className="text-lg lg:text-xl font-bold mb-2">Account</h1>
-          <h2 className="text-sm lg:text-base mb-2 ">
+          <h2 className="text-sm lg:text-base mb-2 px-2">
             Aggiorna le informazioni sul tuo account
           </h2>
           <form
