@@ -1,13 +1,16 @@
 "use client";
 import React, { createContext, ReactNode } from "react";
 import { safeUser } from "@/types"; // Adjust the import path to your `SafeUser` type
+import { Account } from "@prisma/client";
 
 interface UserContextType {
   currentUser: safeUser | null;
+  userAccount: Account | null;
 }
 
 const defaultContextValue: UserContextType = {
   currentUser: null,
+  userAccount: null,
 };
 
 const UserContext = createContext<UserContextType>(defaultContextValue);

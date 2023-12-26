@@ -11,6 +11,7 @@ import getUser from "./actions/getUser";
 import { UserProvider } from "./context/useContext"; // Adjust the path
 import Head from "next/head";
 import type { Metadata } from "next";
+import getUserAccount from "./actions/getUserAccount";
 
 const inter = Inter({ subsets: ["latin"] });
 const font = Nunito({ subsets: ["latin"] });
@@ -27,6 +28,7 @@ interface RootLayoutProps {
 
 export default async function RootLayout({ children }: RootLayoutProps) {
   const currentUser = await getUser();
+  const userAccount = await getUserAccount();
 
   let NavbarComponent;
   if (!currentUser) {
@@ -48,7 +50,12 @@ export default async function RootLayout({ children }: RootLayoutProps) {
   }
 
   return (
-    <UserProvider value={{ currentUser: currentUser }}>
+    <UserProvider
+      value={{
+        currentUser: currentUser,
+        userAccount: userAccount ? userAccount : null,
+      }}
+    >
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Rentalo</title>

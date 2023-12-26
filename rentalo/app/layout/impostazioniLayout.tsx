@@ -3,7 +3,7 @@ import React, { useContext, useEffect } from "react";
 import "../globals.css";
 import UserContext from "../context/useContext";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 
 interface ImpostazioniProps {
   children?: React.ReactNode;
@@ -12,6 +12,7 @@ interface ImpostazioniProps {
 const ImpostazioniLayout: React.FC<ImpostazioniProps> = ({ children }) => {
   const { currentUser } = useContext(UserContext);
   const router = useRouter();
+  const pathname = usePathname();
 
   useEffect(() => {
     if (!currentUser) {
@@ -19,24 +20,33 @@ const ImpostazioniLayout: React.FC<ImpostazioniProps> = ({ children }) => {
     }
   }, [currentUser, router]);
 
+  const linkClass = (href: string) => {
+    const baseStyle =
+      "block py-2.5 px-4 rounded text-sm lg:text-base transition duration-200";
+    const activeStyle = "bg-gray-300 text-blue-500 font-bold"; // Style for active link
+    const hoverStyle = "hover:bg-gray-300 hover:text-blue-500 hover:font-bold"; // Style for hover
+
+    return `${baseStyle} ${pathname === href ? activeStyle : hoverStyle}`;
+  };
+
   let privatoSet = (
     <>
       <div className="flex flex-row pt-[90px]">
-        <aside className="w-1/5 min-h-screen top-21 left-0 bg-gray-800 text-white">
+        <aside className="w-1/4 lg:w-1/6 min-h-screen top-21 left-0 bg-white text-black">
           <ul className="space-y-1 text-sm">
-            <li>
+            {/* <li>
               <Link
                 href="/Impostazioni/email"
                 className="block py-2.5 mt-1 px-4 rounded transition duration-200 hover:bg-gray-700"
               >
                 Email
               </Link>
-            </li>
+            </li> */}
             <li>
               <div className=" border-t border-gray-400 ml-2 mb-1 mr-2"></div>
               <Link
                 href="/Impostazioni/password"
-                className="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700"
+                className={linkClass("/Impostazioni/password")}
               >
                 Password
               </Link>
@@ -45,7 +55,7 @@ const ImpostazioniLayout: React.FC<ImpostazioniProps> = ({ children }) => {
               <div className=" border-t border-gray-400 ml-2 mb-1 mr-2"></div>
               <Link
                 href="/Impostazioni/credenziali"
-                className="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700  "
+                className={linkClass("/Impostazioni/credenziali")}
               >
                 Credenziali
               </Link>
@@ -54,59 +64,47 @@ const ImpostazioniLayout: React.FC<ImpostazioniProps> = ({ children }) => {
           </ul>
         </aside>
 
-        <main className="w-4/5">{children}</main>
+        <main className="w-1/4 lg:w-5/6">{children}</main>
       </div>
     </>
   );
 
   let aziendaSet = (
     <>
-      <div className="flex flex-row  pt-[90px]">
-        <aside className="w-1/5 min-h-screen top-21 left-0 bg-gray-800 text-white">
-          <ul className="space-y-2 text-sm">
-            <li>
+      <div className="flex flex-row pt-[90px]">
+        <aside className="w-1/4 lg:w-1/6 min-h-screen top-21 left-0 bg-white text-black">
+          <ul className="space-y-1 text-sm">
+            {/* <li>
               <Link
                 href="/Impostazioni/email"
-                className="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700"
+                className="block py-2.5 mt-1 px-4 rounded transition duration-200 hover:bg-gray-700"
               >
                 Email
               </Link>
-            </li>
+            </li> */}
             <li>
+              <div className=" border-t border-gray-400 ml-2 mb-1 mr-2"></div>
               <Link
                 href="/Impostazioni/password"
-                className="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700"
+                className="block py-2.5 px-4 text-sm lg:text-base rounded transition duration-200 hover:bg-gray-300 hover:text-blue-500 hover:font-bold"
               >
                 Password
               </Link>
             </li>
             <li>
+              <div className=" border-t border-gray-400 ml-2 mb-1 mr-2"></div>
               <Link
-                href="/Impostazioni/piva"
-                className="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700"
+                href="/Impostazioni/credenziali"
+                className="block py-2.5 px-4 rounded text-sm lg:text-base transition duration-200 hover:bg-gray-300 hover:text-blue-500 hover:font-bold "
               >
-                P.IVA
+                Credenziali
               </Link>
-            </li>
-            <li>
-              <Link
-                href="/Impostazioni/nome"
-                className="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700"
-              >
-                Nome
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/Impostazioni/nome"
-                className="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700"
-              >
-                Cognome
-              </Link>
+              <div className=" border-t border-gray-400 ml-2 mt-1 mr-2"></div>
             </li>
           </ul>
         </aside>
-        <main className="w-4/5">{children}</main>
+
+        <main className="w-1/4 lg:w-5/6">{children}</main>
       </div>
     </>
   );
@@ -114,43 +112,39 @@ const ImpostazioniLayout: React.FC<ImpostazioniProps> = ({ children }) => {
   let noleggiatoreSet = (
     <>
       <div className="flex flex-row pt-[90px]">
-        <aside className="w-1/5 min-h-screen top-21 left-0 bg-gray-800 text-white">
-          <ul className="space-y-2 text-sm">
-            <li>
+        <aside className="w-1/4 lg:w-1/6 min-h-screen top-21 left-0 bg-white text-black">
+          <ul className="space-y-1 text-sm">
+            {/* <li>
               <Link
                 href="/Impostazioni/email"
-                className="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700"
+                className="block py-2.5 mt-1 px-4 rounded transition duration-200 hover:bg-gray-700"
               >
                 Email
               </Link>
-            </li>
+            </li> */}
             <li>
+              <div className=" border-t border-gray-400 ml-2 mb-1 mr-2"></div>
               <Link
                 href="/Impostazioni/password"
-                className="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700"
+                className="block py-2.5 px-4 text-sm lg:text-base rounded transition duration-200 hover:bg-gray-300 hover:text-blue-500 hover:font-bold"
               >
                 Password
               </Link>
             </li>
             <li>
+              <div className=" border-t border-gray-400 ml-2 mb-1 mr-2"></div>
               <Link
-                href="/Impostazioni/nome"
-                className="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700"
+                href="/Impostazioni/credenziali"
+                className="block py-2.5 px-4 rounded text-sm lg:text-base transition duration-200 hover:bg-gray-300 hover:text-blue-500 hover:font-bold "
               >
-                Nome
+                Credenziali
               </Link>
-            </li>
-            <li>
-              <Link
-                href="/Impostazioni/nome"
-                className="block py-2.5 px-4 rounded transition duration-200 hover:bg-gray-700"
-              >
-                Cognome
-              </Link>
+              <div className=" border-t border-gray-400 ml-2 mt-1 mr-2"></div>
             </li>
           </ul>
         </aside>
-        <main className="w-4/5">{children}</main>
+
+        <main className="w-1/4 lg:w-5/6">{children}</main>
       </div>
     </>
   );
