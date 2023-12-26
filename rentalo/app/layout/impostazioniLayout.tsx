@@ -43,7 +43,7 @@ const ImpostazioniLayout: React.FC<ImpostazioniProps> = ({ children }) => {
               </Link>
             </li> */}
             <li>
-              <div className=" border-t border-gray-400 ml-2 mb-1 mr-2"></div>
+              <div className=" border-t border-gray-400 ml-1 lg:ml-2 mb-1 mr-2"></div>
               <Link
                 href="/Impostazioni/password"
                 className={linkClass("/Impostazioni/password")}
@@ -52,14 +52,14 @@ const ImpostazioniLayout: React.FC<ImpostazioniProps> = ({ children }) => {
               </Link>
             </li>
             <li>
-              <div className=" border-t border-gray-400 ml-2 mb-1 mr-2"></div>
+              <div className=" border-t border-gray-400 ml-1 lg:ml-2 mb-1 mr-2"></div>
               <Link
                 href="/Impostazioni/credenziali"
                 className={linkClass("/Impostazioni/credenziali")}
               >
                 Credenziali
               </Link>
-              <div className=" border-t border-gray-400 ml-2 mt-1 mr-2"></div>
+              <div className=" border-t border-gray-400 ml-1 lg:ml-2 mt-1 mr-2"></div>
             </li>
           </ul>
         </aside>
@@ -92,14 +92,14 @@ const ImpostazioniLayout: React.FC<ImpostazioniProps> = ({ children }) => {
               </Link>
             </li>
             <li>
-              <div className=" border-t border-gray-400 ml-2 mb-1 mr-2"></div>
+              <div className=" border-t border-gray-400 ml-1 lg:ml-2 mb-1 mr-2"></div>
               <Link
                 href="/Impostazioni/credenziali"
                 className="block py-2.5 px-4 rounded text-sm lg:text-base transition duration-200 hover:bg-gray-300 hover:text-blue-500 hover:font-bold "
               >
                 Credenziali
               </Link>
-              <div className=" border-t border-gray-400 ml-2 mt-1 mr-2"></div>
+              <div className=" border-t border-gray-400 ml-1 lg:ml-2 mt-1 mr-2"></div>
             </li>
           </ul>
         </aside>
@@ -123,7 +123,7 @@ const ImpostazioniLayout: React.FC<ImpostazioniProps> = ({ children }) => {
               </Link>
             </li> */}
             <li>
-              <div className=" border-t border-gray-400 ml-2 mb-1 mr-2"></div>
+              <div className=" border-t border-gray-400 ml-1 lg:ml-2 mb-1 mr-2"></div>
               <Link
                 href="/Impostazioni/password"
                 className="block py-2.5 px-4 text-sm lg:text-base rounded transition duration-200 hover:bg-gray-300 hover:text-blue-500 hover:font-bold"
@@ -132,14 +132,14 @@ const ImpostazioniLayout: React.FC<ImpostazioniProps> = ({ children }) => {
               </Link>
             </li>
             <li>
-              <div className=" border-t border-gray-400 ml-2 mb-1 mr-2"></div>
+              <div className=" border-t border-gray-400 ml-1 lg:ml-2 mb-1 mr-2"></div>
               <Link
                 href="/Impostazioni/credenziali"
                 className="block py-2.5 px-4 rounded text-sm lg:text-base transition duration-200 hover:bg-gray-300 hover:text-blue-500 hover:font-bold "
               >
                 Credenziali
               </Link>
-              <div className=" border-t border-gray-400 ml-2 mt-1 mr-2"></div>
+              <div className=" border-t border-gray-400 ml-1 lg:ml-2 mt-1 mr-2"></div>
             </li>
           </ul>
         </aside>
