@@ -64,7 +64,7 @@ const ImpostazioniLayout: React.FC<ImpostazioniProps> = ({ children }) => {
           </ul>
         </aside>
 
-        <main className="w-3/4 lg:w-5/6">{children}</main>
+        <main className="w-full lg:w-5/6">{children}</main>
       </div>
     </>
   );

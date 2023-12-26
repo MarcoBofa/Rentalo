@@ -50,7 +50,7 @@ const Navbar: React.FC<navbarPros> = ({ currentUser }) => {
           </div>
           {dropdownOpen && (
             <div
-              className="absolute z-10  w-[300px] py-2 bg-gray-900 text-white rounded shadow-xl"
+              className="absolute z-10 w-[300px] py-2 bg-gray-900 text-white rounded shadow-xl"
               style={{
                 top: 70, // Directly below the navbar
                 left: -114, // Aligned with the right edge of the viewport

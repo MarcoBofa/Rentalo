@@ -103,8 +103,8 @@ const CredenzialiSettings: React.FC = () => {
 
   return (
     <ImpostazioniLayout>
-      <div className="flex flex-col items-center min-h-screen text-textSettings bg-settings py-2 px-1 lg:px-0">
-        <div className="flex flex-col items-center justify-center mt-[50px] lg:mt-[200px] w-3/4  lg:w-1/2 rounded h-[350px] bg-white">
+      <div className="flex flex-col items-center min-h-screen text-textSettings bg-settings py-2 px-4 lg:px-0">
+        <div className="flex flex-col items-center justify-center mt-[50px] lg:mt-[200px] w-full  lg:w-1/2 rounded h-[450px] lg:h-[400px] p-[10px] lg:p-[35px] bg-white">
           <h1 className="text-lg lg:text-xl font-bold mb-2">Account</h1>
           <h2 className="text-sm lg:text-base mb-2 px-2">
             Aggiorna le informazioni sul tuo account
@@ -157,7 +157,7 @@ const CredenzialiSettings: React.FC = () => {
             </div>
             <div className="flex items-center justify-center">
               <button
-                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline disabled:bg-gray-300 disabled:cursor-not-allowed"
+                className="bg-blue-500 hover:bg-blue-700 text-white text-sm lg:text-base font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline disabled:bg-gray-300 disabled:cursor-not-allowed"
                 type="submit"
                 disabled={!isAtLeastOneFieldFilled}
               >
