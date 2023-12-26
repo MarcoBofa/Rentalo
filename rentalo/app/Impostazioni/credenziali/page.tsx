@@ -109,13 +109,10 @@ const CredenzialiSettings: React.FC = () => {
           <h2 className="text-sm lg:text-base mb-2 px-2">
             Aggiorna le informazioni sul tuo account
           </h2>
-          <form
-            onSubmit={handleSubmit(onSubmit)}
-            className="w-full p-8 pt-2 pb-1 "
-          >
+          <form onSubmit={handleSubmit(onSubmit)} className="w-full pt-2 pb-1 ">
             <div className="mb-4">
               <label
-                className="block text-textSettings text-sm lg:text-base font-bold mb-2"
+                className="block text-textSettings text-sm lg:text-base font-semibold mb-2"
                 htmlFor="nome"
               >
                 Nome
@@ -136,7 +133,7 @@ const CredenzialiSettings: React.FC = () => {
             </div>
             <div className="mb-6">
               <label
-                className="block  text-textSettings text-sm lg:text-base font-bold mb-2"
+                className="block  text-textSettings text-sm lg:text-base font-semibold mb-2"
                 htmlFor="cognome"
               >
                 Cognome

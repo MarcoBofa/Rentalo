@@ -4,6 +4,9 @@ import "../globals.css";
 import UserContext from "../context/useContext";
 import Link from "next/link";
 import { useRouter, usePathname } from "next/navigation";
+import { FaLock } from "react-icons/fa"; // Example: FontAwesome lock icon
+import { MdAccountCircle } from "react-icons/md"; // Example: Material Design account circle icon
+import { ClimbingBoxLoader } from "react-spinners";
 
 interface ImpostazioniProps {
   children?: React.ReactNode;
@@ -22,7 +25,7 @@ const ImpostazioniLayout: React.FC<ImpostazioniProps> = ({ children }) => {
 
   const linkClass = (href: string) => {
     const baseStyle =
-      "block py-2.5 px-4 rounded text-sm lg:text-base transition duration-200";
+      "flex flex-row items-center block py-2.5 px-4 lg:px-8 rounded text-sm lg:text-base transition duration-200";
     const activeStyle = "bg-gray-300 text-blue-500 font-bold"; // Style for active link
     const hoverStyle = "hover:bg-gray-300 hover:text-blue-500 hover:font-bold"; // Style for hover
 
@@ -48,6 +51,7 @@ const ImpostazioniLayout: React.FC<ImpostazioniProps> = ({ children }) => {
                 href="/Impostazioni/password"
                 className={linkClass("/Impostazioni/password")}
               >
+                <FaLock className="mr-[11px] mb-[2px]" />
                 Password
               </Link>
             </li>
@@ -57,6 +61,7 @@ const ImpostazioniLayout: React.FC<ImpostazioniProps> = ({ children }) => {
                 href="/Impostazioni/credenziali"
                 className={linkClass("/Impostazioni/credenziali")}
               >
+                <MdAccountCircle className="mr-2 text-xl" />
                 Credenziali
               </Link>
               <div className=" border-t border-gray-400 ml-1 lg:ml-2 mt-1 mr-2"></div>
@@ -83,11 +88,12 @@ const ImpostazioniLayout: React.FC<ImpostazioniProps> = ({ children }) => {
               </Link>
             </li> */}
             <li>
-              <div className=" border-t border-gray-400 ml-2 mb-1 mr-2"></div>
+              <div className=" border-t border-gray-400 ml-1 lg:ml-2 mb-1 mr-2"></div>
               <Link
                 href="/Impostazioni/password"
-                className="block py-2.5 px-4 text-sm lg:text-base rounded transition duration-200 hover:bg-gray-300 hover:text-blue-500 hover:font-bold"
+                className={linkClass("/Impostazioni/password")}
               >
+                <FaLock className="mr-[11px] mb-[2px]" />
                 Password
               </Link>
             </li>
@@ -95,8 +101,9 @@ const ImpostazioniLayout: React.FC<ImpostazioniProps> = ({ children }) => {
               <div className=" border-t border-gray-400 ml-1 lg:ml-2 mb-1 mr-2"></div>
               <Link
                 href="/Impostazioni/credenziali"
-                className="block py-2.5 px-4 rounded text-sm lg:text-base transition duration-200 hover:bg-gray-300 hover:text-blue-500 hover:font-bold "
+                className={linkClass("/Impostazioni/credenziali")}
               >
+                <MdAccountCircle className="mr-2 text-xl" />
                 Credenziali
               </Link>
               <div className=" border-t border-gray-400 ml-1 lg:ml-2 mt-1 mr-2"></div>
@@ -104,7 +111,7 @@ const ImpostazioniLayout: React.FC<ImpostazioniProps> = ({ children }) => {
           </ul>
         </aside>
 
-        <main className="w-3/4 lg:w-5/6">{children}</main>
+        <main className="w-full lg:w-5/6">{children}</main>
       </div>
     </>
   );
@@ -126,8 +133,9 @@ const ImpostazioniLayout: React.FC<ImpostazioniProps> = ({ children }) => {
               <div className=" border-t border-gray-400 ml-1 lg:ml-2 mb-1 mr-2"></div>
               <Link
                 href="/Impostazioni/password"
-                className="block py-2.5 px-4 text-sm lg:text-base rounded transition duration-200 hover:bg-gray-300 hover:text-blue-500 hover:font-bold"
+                className={linkClass("/Impostazioni/password")}
               >
+                <FaLock className="mr-[11px] mb-[2px]" />
                 Password
               </Link>
             </li>
@@ -135,8 +143,9 @@ const ImpostazioniLayout: React.FC<ImpostazioniProps> = ({ children }) => {
               <div className=" border-t border-gray-400 ml-1 lg:ml-2 mb-1 mr-2"></div>
               <Link
                 href="/Impostazioni/credenziali"
-                className="block py-2.5 px-4 rounded text-sm lg:text-base transition duration-200 hover:bg-gray-300 hover:text-blue-500 hover:font-bold "
+                className={linkClass("/Impostazioni/credenziali")}
               >
+                <MdAccountCircle className="mr-2 text-xl" />
                 Credenziali
               </Link>
               <div className=" border-t border-gray-400 ml-1 lg:ml-2 mt-1 mr-2"></div>
@@ -144,7 +153,7 @@ const ImpostazioniLayout: React.FC<ImpostazioniProps> = ({ children }) => {
           </ul>
         </aside>
 
-        <main className="w-3/4 lg:w-5/6">{children}</main>
+        <main className="w-full lg:w-5/6">{children}</main>
       </div>
     </>
   );
@@ -152,7 +161,7 @@ const ImpostazioniLayout: React.FC<ImpostazioniProps> = ({ children }) => {
   if (!currentUser) {
     return (
       <div className="flex flex-col items-center justify-center min-h-screen text-red-500 text-5xl py-2">
-        Effettua il login per accedere alle impostazioni.
+        <ClimbingBoxLoader color="#f2f3f8" size={30} speedMultiplier={2} />
       </div>
     );
   }
