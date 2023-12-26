@@ -59,7 +59,7 @@ const PasswordSettings: React.FC = () => {
       <div className="flex flex-col items-center min-h-screen text-textSettings bg-settings py-2">
         <div className="flex flex-col items-center justify-center mt-[50px] lg:mt-[200px] w-2/3 lg:w-1/2 rounded lg:h-[350px] lg:h-[350px] p-[40px] bg-white">
           <h1 className="text-lg lg:text-xl font-bold mb-2">Password</h1>
-          <h2 className="text-sm lg:text-md mb-4 ">
+          <h2 className="text-sm lg:text-base mb-4">
             Cambia la password associata al tuo account
           </h2>
           {userAccount ? (
@@ -76,13 +76,13 @@ const PasswordSettings: React.FC = () => {
           <form onSubmit={onSubmit} className="w-full pt-2 pb-1 ">
             <div className="mb-4">
               <label
-                className="block text-textSettings mb-1 text-xs lg:text-md font-semibold"
+                className="block text-textSettings mb-1 text-xs lg:text-base font-semibold"
                 htmlFor="nome"
               >
                 Email
               </label>
               <input
-                className="shadow appearance-none border rounded w-full py-2 px-3 text-xs lg:text-md text-gray-700 leading-tight focus:outline-none mb-4 focus:shadow-outline`"
+                className="shadow appearance-none border rounded w-full py-2 px-3 text-xs lg:text-sm text-gray-700 leading-tight focus:outline-none mb-4 focus:shadow-outline`"
                 id="nome"
                 type="text"
                 placeholder={
