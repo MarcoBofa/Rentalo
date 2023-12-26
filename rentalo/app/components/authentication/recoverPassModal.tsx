@@ -62,12 +62,12 @@ const RecoverPassModal: FC<RecoverPassModalProps> = ({
   return (
     <div className="fixed inset-0 z-10 bg-black bg-opacity-50 flex justify-center items-center">
       <ToasterProvider></ToasterProvider>
-      <div className="bg-white p-8 rounded-lg max-w-md w-full">
+      <div className="bg-white p-8 rounded-lg max-w-md w-full relative">
         <button
           onClick={onClose}
-          className="bg-red-500 text-white py-1 px-3 rounded-full text-sm absolute top-4 right-4"
+          className=" absolute top-1 right-1 bg-red-500 text-white py-1 px-3 rounded-full text-sm "
         >
-          Close
+          Chiudi
         </button>
         <h2 className="text-2xl mb-6 text-orange-600 ">
           Password dimenticata?
