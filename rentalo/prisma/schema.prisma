@@ -65,13 +65,27 @@ model richiestaNoleggio {
   macchinari   Macchinario[]
 }
 
+model propostaNoleggio {
+  id           String        @id @default(auto()) @map("_id") @db.ObjectId
+  nome         String
+  email        String   
+  telefono     String
+  impresa      Boolean  
+  createdAt    DateTime      @default(now())
+  updatedAt    DateTime      @updatedAt
+  macchinari   Macchinario[]
+}
+
 model Macchinario {
-  id           String            @id @default(auto()) @map("_id") @db.ObjectId
-  richiestaId  String            @map("richiesta_id") @db.ObjectId
-  tipo         String
-  regione      String
-  descrizione  String
-  richiesta    richiestaNoleggio @relation(fields: [richiestaId], references: [id])
+  id              String            @id @default(auto()) @map("_id") @db.ObjectId
+  richiestaId     String?           @map("richiesta_id") @db.ObjectId
+  propostaId      String?           @map("proposta_id") @db.ObjectId
+  tipo            String
+  regione         String
+  descrizione     String
+  operatore       Boolean
+  richiesta       richiestaNoleggio? @relation(fields: [richiestaId], references: [id])
+  proposta        propostaNoleggio?  @relation(fields: [propostaId], references: [id])
 }
 
 

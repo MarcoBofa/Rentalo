@@ -3,12 +3,15 @@ import prisma from "@/app/libs/prismadb";
 
 export async function POST(request: Request) {
   const body = await request.json();
-  const { nome, telefono, email, macchinario } = body; // Note that this should be 'macchinari' to match the model
+  const { nome, telefono, email, macchinario, businessType } = body; // Note that this should be 'macchinari' to match the model
+
+  //console.log("BODDYYY", body);
 
   if (
     nome == null ||
     telefono == null ||
     email == null ||
+    businessType == null ||
     macchinario[0].regione == "" ||
     macchinario[0].operatore == "" ||
     macchinario[0].tipo == "" ||
@@ -17,7 +20,12 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Missing fields" }, { status: 400 });
   }
 
+  let impresa = true;
   let operatore: Boolean[] = [];
+
+  if (businessType == "concessionaria") {
+    impresa = false;
+  }
 
   macchinario.forEach((macchinario: { operatore: string }) => {
     if (macchinario.operatore == "si") {
@@ -27,12 +35,12 @@ export async function POST(request: Request) {
     }
   });
 
-  // Create the richiestaNoleggio and associated macchinari
-  const m = await prisma.richiestaNoleggio.create({
+  const m = await prisma.propostaNoleggio.create({
     data: {
       nome,
       telefono,
       email,
+      impresa: impresa,
       // Create the related Macchinario records
       macchinari: {
         create: macchinario.map(
