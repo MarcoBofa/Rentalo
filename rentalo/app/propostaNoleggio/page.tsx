@@ -8,15 +8,16 @@ import axios from "axios";
 
 interface macchinario {
   regione: string;
+  operatore: string;
   descrizione: string;
   tipo: string;
-  operatore: string;
 }
 
 interface InfoFormData {
   nome: string;
   telefono: string;
   email: string;
+  businessType: string;
   macchinario: macchinario[];
 }
 
@@ -43,6 +44,7 @@ const InfoForm: FC = () => {
       nome: "",
       telefono: "",
       email: "",
+      businessType: "",
       macchinario: [{ regione: "", operatore: "", tipo: "", descrizione: "" }],
     },
   });
@@ -91,17 +93,18 @@ const InfoForm: FC = () => {
       data.nome == "" ||
       data.telefono == "" ||
       data.email == "" ||
-      data.macchinario[lenght].operatore == "" ||
+      data.businessType == "" ||
       data.macchinario[lenght].regione == "" ||
+      data.macchinario[lenght].operatore == "" ||
       data.macchinario[lenght].tipo == "" ||
       data.macchinario[lenght].descrizione == ""
     ) {
-      toast.error("Riempire tutti i campi per mandare la richiesta");
+      toast.error("Riempire tutti i campi per inviare la richiesta");
       return;
     }
 
     axios
-      .post("/api/richiestaMac", data)
+      .post("/api/propostaNoleggio", data)
       .then(() => {
         toast.success("Richiesta Inviata!");
       })
@@ -128,7 +131,7 @@ const InfoForm: FC = () => {
       <ToasterProvider />
       <div className="w-full max-w-2xl">
         <h2 className="text-xl md:text-3xl font-bold text-gray-900 mb-8 text-center">
-          Indicaci il macchinario che vuoi noleggiare
+          Indicaci il macchinario che vorresti mettere a noleggio
         </h2>
         <form
           className="bg-white shadow-md rounded-md px-8 pt-6 pb-8 mb-4"
@@ -186,6 +189,39 @@ const InfoForm: FC = () => {
               onFocus={() => handleFocus("email")}
               onBlur={() => handleBlur("email")}
             />
+          </div>
+
+          <div className="mb-4 flex justify-start items-center">
+            <div className="flex items-center w-1/2 mb-[0.125rem] block min-h-[1.5rem] ">
+              <input
+                className="mr-[5px] h-5 w-5"
+                type="radio"
+                id="concessionaria"
+                value="concessionaria"
+                {...register("businessType")}
+              />
+              <label
+                className="mt-px inline-block pl-[0.15rem] hover:cursor-pointer"
+                htmlFor="concessionaria"
+              >
+                Concessionaria
+              </label>
+            </div>
+            <div className="flex items-center ml-7 w-1/2 justify-start mb-[0.125rem] block min-h-[1.5rem]">
+              <input
+                className="mr-[5px] h-5 w-5"
+                type="radio"
+                id="impresa"
+                value="impresa"
+                {...register("businessType")}
+              />
+              <label
+                className="mt-px inline-block pl-[0.15rem] hover:cursor-pointer"
+                htmlFor="impresa"
+              >
+                Impresa
+              </label>
+            </div>
           </div>
 
           {fields.map((item, index) => (

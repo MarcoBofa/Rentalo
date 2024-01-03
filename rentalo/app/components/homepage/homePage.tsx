@@ -22,9 +22,11 @@ const homePage: FC = () => {
           <h1 className="text-white text-3xl md:text-7xl titlehome font-bold mb-10 text-center">
             BENVENUTO SU RENTALO
           </h1>
-          <h2 className="text-white md:text-1xl font-bold mb-[60px] text-center">
-            Noleggia tutti i macchinari da cantiere di cui hai bisogno in pochi
-            click!
+          <h2 className="text-white md:text-[22px] font-bold mb-[10px] text-center">
+            Vuoi noleggiare o prendere a noleggio una macchina da cantiere?
+          </h2>
+          <h2 className="text-white md:text-[19px] font-semibold mb-[60px] text-center">
+            Scopri Rentalo e noleggia in pochi click anche con operatore.
           </h2>
           <div className="flex flex-row space-x-4">
             <Link href="/richiestaNoleggio">
@@ -33,9 +35,9 @@ const homePage: FC = () => {
                 Richiedi Noleggio
               </button>
             </Link>
-            <Link href="/ScegliUtente">
+            <Link href="/propostaNoleggio">
               <button className="group flex justify-center items-center text-black text-sm lg:text-base rounded-sm font-bold bg-orange-500 py-2 px-4 w-[180px] md:w-[250px] h-[40px] lg:h-[55px] homebtn">
-                Registrati
+                Proponi Noleggio
                 <GoArrowRight className="transition-transform ml-2 lg:ml-9 group-hover:translate-x-4 scale-150" />
               </button>
             </Link>
