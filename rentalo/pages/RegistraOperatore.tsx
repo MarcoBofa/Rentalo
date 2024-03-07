@@ -14,7 +14,7 @@ import { signIn } from "next-auth/react";
 import { FaGithub, FaGoogle } from "react-icons/fa";
 import { useRouter } from "next/router";
 
-const RegistraNoleggiatore: React.FC = () => {
+const RegistraOperatore: React.FC = () => {
   const [termsBtn, setTermsBtn] = useState(false);
   const {
     register,
@@ -86,7 +86,7 @@ const RegistraNoleggiatore: React.FC = () => {
             </Link>
           </div>
           <h2 className="text-3xl font-bold text-black mb-6">
-            Crea il tuo account da noleggiatore!
+            Crea il tuo account da operatore!
           </h2>
           <form onSubmit={handleSubmit(onSubmit)}>
             <div className="mb-4 flex space-x-4">
@@ -281,4 +281,4 @@ const RegistraNoleggiatore: React.FC = () => {
   );
 };
 
-export default RegistraNoleggiatore;
+export default RegistraOperatore;

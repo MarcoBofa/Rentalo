@@ -40,7 +40,7 @@ function ScegliUtente() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* Noleggiatore */}
+          {/* Operatore */}
           <div className="bg-gray-100 p-8 rounded-lg shadow-lg text-center hover:bg-blue-50">
             <h2 className="text-3xl font-semibold mb-6 text-gray-800">
               Operatore
@@ -49,7 +49,7 @@ function ScegliUtente() {
               Creando un account come operatore avrai la possibilità di guidare
               macchinari nel caso il noleggio tra due parti abbia necessità.
             </p>
-            <Link href="/RegistraNoleggiatore">
+            <Link href="/RegistraOperatore">
               <button className="bg-orange-600 text-white px-6 py-3 rounded-lg shadow-lg hover:bg-blue-800">
                 Registrati
               </button>
