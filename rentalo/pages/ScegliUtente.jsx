@@ -15,7 +15,7 @@ function ScegliUtente() {
             height={74}
             src="/logo.png"
             alt="Rentalo Logo"
-            className="mr-1 color: white"
+            className="mr-1 color: white;"
           />{" "}
           Rentalo
         </Link>
@@ -43,11 +43,11 @@ function ScegliUtente() {
           {/* Noleggiatore */}
           <div className="bg-gray-100 p-8 rounded-lg shadow-lg text-center hover:bg-blue-50">
             <h2 className="text-3xl font-semibold mb-6 text-gray-800">
-              Noleggiatore
+              Operatore
             </h2>
             <p className="text-lg mb-6 text-gray-700">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
-              suscipit nisl vitae augue.
+              Creando un account come operatore avrai la possibilità di guidare
+              macchinari nel caso il noleggio tra due parti abbia necessità.
             </p>
             <Link href="/RegistraNoleggiatore">
               <button className="bg-orange-600 text-white px-6 py-3 rounded-lg shadow-lg hover:bg-blue-800">
@@ -62,8 +62,9 @@ function ScegliUtente() {
               Privato
             </h2>
             <p className="text-lg mb-6 text-gray-700">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
-              suscipit nisl vitae augue.
+              Creando un account come privato avrai la possibilità di noleggiare
+              tutti i macchinari di cui hai bisogno. Avrai inoltre una pratica
+              schermata dove gestire tutte le tue inforamazioni.
             </p>
             <Link href="/RegistraPrivato">
               <button className="bg-orange-600 text-white px-6 py-3 rounded-lg shadow-lg hover:bg-blue-800">
@@ -78,8 +79,9 @@ function ScegliUtente() {
               Azienda
             </h2>
             <p className="text-lg mb-6 text-gray-700">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
-              suscipit nisl vitae augue.
+              Creando un account aziendale avrai la possibilità di mettere a
+              noleggio e gestire il tuo parco macchine. Sarai inoltre in grado
+              di prendere a noleggio macchinari da altre concessionarie.
             </p>
             <Link href="/RegistraAzienda">
               <button className="bg-orange-600 text-white px-6 py-3 rounded-lg shadow-lg hover:bg-blue-800">
