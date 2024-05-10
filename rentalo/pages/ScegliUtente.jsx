@@ -29,12 +29,12 @@ function ScegliUtente() {
         </svg>
       </div>
 
-      <div className="w-full max-w-6xl p-8 bg-white rounded-lg shadow-lg z-10 relative">
-        <div className="text-center mb-20">
-          <h1 className="text-5xl font-bold text-gray-800 mb-4">
+      <div className="lg:w-45/6 mt-[80px] p-8 bg-white rounded-lg shadow-lg z-10 relative">
+        <div className="text-center sm:mb-2 lg:mb-20">
+          <h1 className="sm:text-3xl lg:text-5xl font-bold text-gray-800 sm:mb-2 lg:mb-4">
             Noleggia Attrezzature e Macchinari
           </h1>
-          <p className="text-xl text-gray-600 mb-10">
+          <p className="text-xl text-gray-600 sm:mb-3 lg:mb-10">
             Seleziona il tipo di account per continuare la registrazione
           </p>
         </div>
@@ -42,10 +42,10 @@ function ScegliUtente() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Operatore */}
           <div className="bg-gray-100 p-8 rounded-lg shadow-lg text-center hover:bg-blue-50">
-            <h2 className="text-3xl font-semibold mb-6 text-gray-800">
+            <h2 className="sm:text-2xl lg:text-3xl font-semibold mb-6 text-gray-800">
               Operatore
             </h2>
-            <p className="text-lg mb-6 text-gray-700">
+            <p className="text-lg  mb-6 text-gray-700">
               Creando un account come operatore avrai la possibilità di guidare
               macchinari nel caso il noleggio tra due parti abbia necessità.
             </p>
@@ -58,7 +58,7 @@ function ScegliUtente() {
 
           {/* Privato */}
           <div className="bg-gray-100 p-8 rounded-lg shadow-lg text-center hover:bg-blue-50">
-            <h2 className="text-3xl font-semibold mb-6 text-gray-800">
+            <h2 className="sm:text-2xl lg:text-3xl font-semibold mb-6 text-gray-800">
               Privato
             </h2>
             <p className="text-lg mb-6 text-gray-700">
@@ -75,7 +75,7 @@ function ScegliUtente() {
 
           {/* Impresa */}
           <div className="bg-gray-100 p-8 rounded-lg shadow-lg text-center hover:bg-blue-50">
-            <h2 className="text-3xl font-semibold mb-6 text-gray-800">
+            <h2 className="sm:text-2xl lg:text-3xl font-semibold mb-6 text-gray-800">
               Azienda
             </h2>
             <p className="text-lg mb-6 text-gray-700">
