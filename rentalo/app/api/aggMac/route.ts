@@ -53,5 +53,5 @@ export async function POST(request: Request) {
     console.log("messagee", m);
   }
 
-  return NextResponse.json("User already exists");
+  return NextResponse.json({ message: "Macchinario aggiunto" });
 }
