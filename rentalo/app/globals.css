@@ -54,3 +54,12 @@
   background-size: cover;
   background-position: center;
 }
+
+.hoverable-button:hover + .display-on-hover {
+  opacity: 1;
+  transition: opacity 0.2s ease-in-out;
+}
+.display-on-hover {
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+}

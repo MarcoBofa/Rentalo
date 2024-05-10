@@ -30,7 +30,7 @@ export async function POST(request: Request) {
       name,
       surname,
       hashedPassword,
-      role: "noleggiatore",
+      role: "operatore",
     },
   });
 

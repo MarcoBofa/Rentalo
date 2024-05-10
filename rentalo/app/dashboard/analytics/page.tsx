@@ -1,5 +1,5 @@
 "use client";
-import ImpostazioniLayout from "@/app/layout/impostazioniLayout";
+import DashboardLayout from "@/app/layout/dashboardLayout";
 import { useContext, useEffect, useState } from "react";
 import UserContext from "@/app/context/useContext";
 import { useForm } from "react-hook-form";
@@ -16,7 +16,7 @@ type FocusedState = {
   [key: string]: boolean;
 };
 
-const CredenzialiSettings: React.FC = () => {
+const Analytics: React.FC = () => {
   const [focused, setFocused] = useState<FocusedState>({
     nome: false,
     cognome: false,
@@ -102,10 +102,10 @@ const CredenzialiSettings: React.FC = () => {
   };
 
   return (
-    <ImpostazioniLayout>
+    <DashboardLayout>
       <div className="flex flex-col items-center min-h-screen text-textSettings bg-settings py-2 px-4 lg:px-0">
         <div className="flex flex-col items-center justify-center mt-[50px] lg:mt-[200px] w-full  lg:w-1/2 rounded h-[450px] lg:h-[400px] p-[10px] lg:p-[35px] bg-white">
-          <h1 className="text-lg lg:text-xl font-bold mb-2">Account</h1>
+          <h1 className="text-lg lg:text-xl font-bold mb-2">Analytics</h1>
           <h2 className="text-sm lg:text-base mb-2 px-2">
             Aggiorna le informazioni sul tuo account
           </h2>
@@ -185,8 +185,8 @@ const CredenzialiSettings: React.FC = () => {
           </div>
         </div>
       )}
-    </ImpostazioniLayout>
+    </DashboardLayout>
   );
 };
 
-export default CredenzialiSettings;
+export default Analytics;

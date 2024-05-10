@@ -30,7 +30,7 @@ const RegistraOperatore: React.FC = () => {
       email: "",
       password: "",
       confirmPassword: "",
-      role: "noleggiatore",
+      role: "operatore",
     },
   });
   const router = useRouter();
@@ -51,7 +51,7 @@ const RegistraOperatore: React.FC = () => {
     }
 
     axios
-      .post("/api/registraNoleggiatore", data)
+      .post("/api/registraOperatore", data)
       .then(() => {
         toast.success("Account creato!");
         router.push("/Login");

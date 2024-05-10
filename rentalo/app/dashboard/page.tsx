@@ -1,23 +1,23 @@
 import React from "react";
-import ImpostazioniLayout from "@/app/layout/impostazioniLayout";
+import DashboardLayout from "@/app/layout/dashboardLayout";
 import Link from "next/link";
 
-const DefaultImpostazioniPage: React.FC = () => {
+const DefaultDashboardPage: React.FC = () => {
   return (
-    <ImpostazioniLayout>
+    <DashboardLayout>
       <div className="flex flex-col items-center min-h-screen text-textSettings bg-settings py-2 px-4 lg:px-0">
         <div className="flex flex-col items-center justify-center mt-[50px] lg:mt-[200px]  w-full lg:w-1/2 rounded h-[350px] p-[10px] lg:p-[40px] bg-white">
-          <h1 className="text-xl font-bold mb-2">Impostazioni</h1>
+          <h1 className="text-xl font-bold mb-2">Dashboard</h1>
           <h2 className="text-md mb-10 ">
-            Modifica le informazioni del tuo profilo
+            Gestisci tutto quello che riguarda il tuo profilo.
           </h2>
           <div className="flex flex-row mb-4">
-            <Link href="/Impostazioni/password" className="mr-5 lg:mr-10">
+            <Link href="/dashboard/password" className="mr-5 lg:mr-10">
               <button className="bg-blue-500 hover:bg-blue-700 text-sm lg:text-base text-white font-bold py-2 px-4 rounded">
                 Password
               </button>
             </Link>
-            <Link href="/Impostazioni/credenziali">
+            <Link href="/dashboard/credenziali">
               <button className="bg-blue-500 hover:bg-blue-700 text-sm lg:text-base text-white font-bold py-2 px-4 rounded">
                 Credenziali
               </button>
@@ -25,8 +25,8 @@ const DefaultImpostazioniPage: React.FC = () => {
           </div>
         </div>
       </div>
-    </ImpostazioniLayout>
+    </DashboardLayout>
   );
 };
 
-export default DefaultImpostazioniPage;
+export default DefaultDashboardPage;

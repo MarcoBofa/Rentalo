@@ -32,7 +32,13 @@ model User {
   resetPasswordTokenExpiry  DateTime? 
 
   // Existing relations
+  macchina                  macchina[]
   accounts                  Account[]
+  sollevamento              sollevamento[]
+  attrezzatura              attrezzatura[]
+  autocarri                 autocarri[]
+  pale                      pale[]
+  
   emailVerified             DateTime?
 }
 
@@ -88,4 +94,91 @@ model Macchinario {
   proposta        propostaNoleggio?  @relation(fields: [propostaId], references: [id])
 }
 
+//macchinario was already in use
+model macchina {
+  id          String        @id @default(auto()) @map("_id") @db.ObjectId
+  modello     String
+  produttore  String
+  tipo        String
+  peso        Int
+  dimensioni  String
+  aziendaId   String @db.ObjectId
+  azienda    User? @relation(fields: [aziendaId], references: [id])
 
+}
+
+
+model annuncio {
+  id          String        @id @default(auto()) @map("_id") @db.ObjectId
+  titolo      String
+  descrizione String
+  prezzo      Int
+  immagini    String[]
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+  aziendaId   String @db.ObjectId
+
+}
+
+model sollevamento {
+  id          String        @id @default(auto()) @map("_id") @db.ObjectId
+  nome        String
+  tipo        String
+  descrizione String
+  portata        Int?
+  lunghezza   Int?
+  altezza     Int?
+  produttore  String?
+  attributi   Json?
+  aziendaId   String @db.ObjectId
+  azienda    User? @relation(fields: [aziendaId], references: [id])
+
+}
+
+model attrezzatura {
+  id          String        @id @default(auto()) @map("_id") @db.ObjectId
+  nome        String
+  descrizione String
+  peso        Int?
+  produttore  String?
+  attributi   Json?
+  aziendaId   String @db.ObjectId
+  azienda    User? @relation(fields: [aziendaId], references: [id])
+
+}
+
+model autocarri {
+  id          String        @id @default(auto()) @map("_id") @db.ObjectId
+  nome     String
+  descrizione String
+  peso        Int?
+  produttore  String?
+  attributi   Json?
+  aziendaId   String @db.ObjectId
+  azienda    User? @relation(fields: [aziendaId], references: [id])
+
+}
+
+model pale {
+  id          String        @id @default(auto()) @map("_id") @db.ObjectId
+  nome        String
+  descrizione String
+  peso        Int?
+  produttore  String?
+  attributi   Json?
+  aziendaId   String @db.ObjectId
+  azienda    User? @relation(fields: [aziendaId], references: [id])
+
+}
+
+// model recensione {
+//   id          String        @id @default(auto()) @map("_id") @db.ObjectId
+//   punteggio   Int
+//   commento    String
+//   createdAt   DateTime      @default(now())
+//   updatedAt   DateTime      @updatedAt
+//   aziendaId   String @db.ObjectId
+//   clienteId   String @db.ObjectId
+//   azienda     User? @relation(fields: [aziendaId], references: [id])
+//   cliente     User? @relation(fields: [clienteId], references: [id])
+// }

@@ -59,7 +59,7 @@ const NavbarPrivato: React.FC<navbarPros> = () => {
               }}
             >
               <Link
-                href="/"
+                href="/dashboard"
                 className="block px-4 py-2 hover:bg-gray-800"
                 onClick={() => setDropdownOpen(false)}
               >
@@ -73,7 +73,7 @@ const NavbarPrivato: React.FC<navbarPros> = () => {
                 Home
               </Link>
               <Link
-                href="/Impostazioni/password"
+                href="/dashboard/password"
                 className="block px-4 py-2 hover:bg-gray-800"
                 onClick={() => setDropdownOpen(false)}
               >

@@ -8,7 +8,7 @@ interface UserSettingsProps {
 const noleggiatoreSettings: React.FC<UserSettingsProps> = (props) => {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen py-2">
-      <h1 className="text-6xl font-bold">Impostazioni Noleggiatore</h1>
+      <h1 className="text-6xl font-bold">Impostazioni Operatore</h1>
     </div>
   );
 };

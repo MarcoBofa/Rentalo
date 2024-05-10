@@ -1,15 +1,15 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import ImpostazioniLayout from "@/app/layout/impostazioniLayout";
+import DashboardLayout from "@/app/layout/dashboardLayout";
 
 const EmailSettings: React.FC = () => {
   return (
-    <ImpostazioniLayout>
+    <DashboardLayout>
       <div className="flex flex-col items-center justify-center min-h-screen py-2">
         EMAAAAIL
       </div>
-    </ImpostazioniLayout>
+    </DashboardLayout>
   );
 };
 

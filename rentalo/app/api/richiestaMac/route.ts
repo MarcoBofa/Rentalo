@@ -3,7 +3,7 @@ import prisma from "@/app/libs/prismadb";
 
 export async function POST(request: Request) {
   const body = await request.json();
-  const { nome, telefono, email, macchinario } = body; // Note that this should be 'macchinari' to match the model
+  const { nome, telefono, email, macchinario } = body;
 
   if (
     nome == null ||

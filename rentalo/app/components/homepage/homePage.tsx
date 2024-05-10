@@ -4,18 +4,16 @@ import Image from "next/image";
 import Footer from "@/app/components/homepage/footer";
 import { GoArrowRight, GoArrowLeft } from "react-icons/go";
 import "../../globals.css";
+import AOS from "aos";
+import ScopriSection from "./ScopriSection";
+import { motion } from "framer-motion";
 
 const homePage: FC = () => {
   return (
     <div className="flex flex-col bg-grey-100">
       <div className="relative">
         <div className="relative w-full h-[800px] lg:h-[850px]">
-          <Image
-            src="/cantiere-stradale.jpg"
-            layout="fill"
-            objectFit="cover"
-            alt="Home"
-          />
+          <Image src="/cantiere-stradale.jpg" fill={true} alt="Home" />
         </div>
         <div className="absolute top-0 left-0 w-full h-full bg-gray-800 opacity-90"></div>
         <div className="absolute top-0 left-0 w-full h-full flex flex-col justify-center items-center p-4">
@@ -45,12 +43,10 @@ const homePage: FC = () => {
         </div>
       </div>
 
-      <div className="bg-white h-[500px] w-full">
-        <h1 className="text-black text-2xl md:text-5xl titlehome font-bold mb-5 text-center pt-10">
-          DA DEFINIRE
-        </h1>
+      <div className="bg-white h-[900px] w-full">
+        {" "}
+        <ScopriSection />
       </div>
-
       <div className="relative">
         <Image
           src="/Cantiere-mezzi-lavoro.jpeg"

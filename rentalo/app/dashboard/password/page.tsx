@@ -1,5 +1,5 @@
 "use client";
-import ImpostazioniLayout from "@/app/layout/impostazioniLayout";
+import DashboardLayout from "@/app/layout/dashboardLayout";
 import { useContext, useEffect, useState } from "react";
 import UserContext from "@/app/context/useContext";
 import { useForm } from "react-hook-form";
@@ -55,7 +55,7 @@ const PasswordSettings: React.FC = () => {
   };
 
   return (
-    <ImpostazioniLayout>
+    <DashboardLayout>
       <div className="flex flex-col items-center min-h-screen text-textSettings bg-settings py-2 py-2 px-4 lg:px-0">
         <div className="flex flex-col items-center justify-center mt-[50px] lg:mt-[200px] w-full lg:w-1/2 rounded h-[400px] lg:h-[350px] p-[10px] lg:p-[40px] bg-white">
           <h1 className="text-lg lg:text-xl font-bold mb-2">Password</h1>
@@ -127,7 +127,7 @@ const PasswordSettings: React.FC = () => {
           </div>
         </div>
       )}
-    </ImpostazioniLayout>
+    </DashboardLayout>
   );
 };
 

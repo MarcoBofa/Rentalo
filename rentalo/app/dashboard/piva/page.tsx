@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import ImpostazioniLayout from "@/app/layout/impostazioniLayout";
+import ImpostazioniLayout from "@/app/layout/dashboardLayout";
 
 const pivaSettings: React.FC = () => {
   return (

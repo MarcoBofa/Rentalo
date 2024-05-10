@@ -12,6 +12,7 @@ import { UserProvider } from "./context/useContext"; // Adjust the path
 import Head from "next/head";
 import type { Metadata } from "next";
 import getUserAccount from "./actions/getUserAccount";
+import "aos/dist/aos.css";
 
 const inter = Inter({ subsets: ["latin"] });
 const font = Nunito({ subsets: ["latin"] });
@@ -41,7 +42,7 @@ export default async function RootLayout({ children }: RootLayoutProps) {
       case "azienda":
         NavbarComponent = NavbarAzienda;
         break;
-      case "noleggiatore":
+      case "operatore":
         NavbarComponent = NavbarNoleggiatore;
         break;
       default:

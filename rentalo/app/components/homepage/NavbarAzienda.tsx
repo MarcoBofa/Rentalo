@@ -54,14 +54,21 @@ const NavbarAzienda: React.FC<navbarPros> = () => {
               {currentUser ? (
                 <>
                   <Link
-                    href="/"
+                    href="/dashboard"
                     className="block px-4 py-2 hover:bg-gray-800"
                     onClick={() => setDropdownOpen(false)}
                   >
                     Dashboard
                   </Link>
                   <Link
-                    href="/"
+                    href="/dashboard/parco-macchine"
+                    className="block px-4 py-2 hover:bg-gray-800"
+                    onClick={() => setDropdownOpen(false)}
+                  >
+                    Parco Macchine
+                  </Link>
+                  <Link
+                    href="/dashboard/macchinari-noleggiati"
                     className="block px-4 py-2 hover:bg-gray-800"
                     onClick={() => setDropdownOpen(false)}
                   >
@@ -72,17 +79,10 @@ const NavbarAzienda: React.FC<navbarPros> = () => {
                     className="block px-4 py-2 hover:bg-gray-800"
                     onClick={() => setDropdownOpen(false)}
                   >
-                    Annunci
-                  </Link>
-                  <Link
-                    href="/"
-                    className="block px-4 py-2 hover:bg-gray-800"
-                    onClick={() => setDropdownOpen(false)}
-                  >
                     Home
                   </Link>
                   <Link
-                    href="/Impostazioni/password"
+                    href="/dashboard/password"
                     className="block px-4 py-2 hover:bg-gray-800"
                     onClick={() => setDropdownOpen(false)}
                   >
