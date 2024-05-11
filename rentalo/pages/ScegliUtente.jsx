@@ -8,7 +8,7 @@ function ScegliUtente() {
       <div className="absolute top-0 left-0 ml-1 mt-4 lg:m-8">
         <Link
           href="/"
-          className="sm:text-5xl font-bold text-white hover:text-gray-700 flex items-center"
+          className="xs:text-5xl font-bold text-white hover:text-gray-700 flex items-center"
         >
           <Image
             width={74}
