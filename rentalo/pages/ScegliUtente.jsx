@@ -5,7 +5,7 @@ import Image from "next/image";
 function ScegliUtente() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-orange-600 to-gray-700 relative">
-      <div className="absolute top-0 left-0 m-8">
+      <div className="absolute top-0 left-0 ml-1 mt-4 lg:m-8">
         <Link
           href="/"
           className="text-5xl font-bold text-white hover:text-gray-700 flex items-center"
@@ -31,7 +31,7 @@ function ScegliUtente() {
 
       <div className="lg:w-45/6 mt-[80px] p-8 bg-white rounded-lg shadow-lg z-10 relative">
         <div className="text-center sm:mb-2 lg:mb-20">
-          <h1 className="text-2xl lg:text-5xl font-bold text-gray-800 sm:mb-2 lg:mb-4">
+          <h1 className="text-3xl lg:text-5xl font-bold text-gray-800 sm:mb-2 lg:mb-4">
             Noleggia Attrezzature e Macchinari
           </h1>
           <p className="text-xl text-gray-600 sm:mb-3 lg:mb-10">
