@@ -35,7 +35,6 @@ export async function POST(request: Request) {
   }
 
   if (categoria === "Attrezzatura") {
-    console.log("ciaospcapsncsapnc", categoria);
     const m = await prisma.attrezzatura.create({
       data: {
         nome,
@@ -50,8 +49,41 @@ export async function POST(request: Request) {
         },
       },
     });
-    console.log("messagee", m);
+  } else if (categoria === "Sollevamento") {
+    const m = await prisma.sollevamento.create({
+      data: {
+        nome,
+        descrizione,
+        portata: Number(portata),
+        produttore,
+        peso: Number(peso),
+        altezzaLavoro: altezzaLavoro ? altezzaLavoro : null,
+        dimensioneCarro: dimensioneCarro ? dimensioneCarro : null,
+        attributi: customFields,
+        azienda: {
+          connect: {
+            id: user.id,
+          },
+        },
+      },
+    });
+  } else if (categoria === "Autocarri") {
+    const m = await prisma.autocarri.create({
+      data: {
+        nome,
+        descrizione,
+        portata: Number(portata),
+        produttore,
+        peso: Number(peso),
+        dimensioneCarro: dimensioneCarro ? dimensioneCarro : null,
+        attributi: customFields,
+        azienda: {
+          connect: {
+            id: user.id,
+          },
+        },
+      },
+    });
   }
-
   return NextResponse.json({ message: "Macchinario aggiunto" });
 }

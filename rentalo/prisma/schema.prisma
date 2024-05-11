@@ -123,11 +123,13 @@ model annuncio {
 model sollevamento {
   id          String        @id @default(auto()) @map("_id") @db.ObjectId
   nome        String
-  tipo        String
   descrizione String
-  portata        Int?
+  peso        Int?
+  portata     Int?
   lunghezza   Int?
   altezza     Int?
+  altezzaLavoro     Int?
+  dimensioneCarro   String?
   produttore  String?
   attributi   Json?
   aziendaId   String @db.ObjectId
@@ -152,6 +154,9 @@ model autocarri {
   nome     String
   descrizione String
   peso        Int?
+  portata     Int?
+  altezzaLavoro     Int?
+  dimensioneCarro   String?
   produttore  String?
   attributi   Json?
   aziendaId   String @db.ObjectId
