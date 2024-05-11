@@ -8,7 +8,7 @@ function ScegliUtente() {
       <div className="absolute top-0 left-0 ml-1 mt-4 lg:m-8">
         <Link
           href="/"
-          className="text-5xl font-bold text-white hover:text-gray-700 flex items-center"
+          className="sm:text-5xl font-bold text-white hover:text-gray-700 flex items-center"
         >
           <Image
             width={74}
@@ -42,7 +42,7 @@ function ScegliUtente() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Operatore */}
           <div className="bg-gray-100 p-8 rounded-lg shadow-lg text-center hover:bg-blue-50">
-            <h2 className="sm:text-2xl lg:text-3xl font-semibold mb-6 text-gray-800">
+            <h2 className="text-2xl lg:text-3xl font-semibold mb-6 text-gray-800">
               Operatore
             </h2>
             <p className="text-lg  mb-6 text-gray-700">
@@ -58,7 +58,7 @@ function ScegliUtente() {
 
           {/* Privato */}
           <div className="bg-gray-100 p-8 rounded-lg shadow-lg text-center hover:bg-blue-50">
-            <h2 className="sm:text-2xl lg:text-3xl font-semibold mb-6 text-gray-800">
+            <h2 className="ext-2xl lg:text-3xl font-semibold mb-6 text-gray-800">
               Privato
             </h2>
             <p className="text-lg mb-6 text-gray-700">
@@ -75,7 +75,7 @@ function ScegliUtente() {
 
           {/* Impresa */}
           <div className="bg-gray-100 p-8 rounded-lg shadow-lg text-center hover:bg-blue-50">
-            <h2 className="sm:text-2xl lg:text-3xl font-semibold mb-6 text-gray-800">
+            <h2 className="text-2xl lg:text-3xl font-semibold mb-6 text-gray-800">
               Azienda
             </h2>
             <p className="text-lg mb-6 text-gray-700">

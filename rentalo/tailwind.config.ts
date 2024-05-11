@@ -27,6 +27,14 @@ module.exports = {
         "7/8": "87.5%",
         "9/10": "90%",
       },
+      screens: {
+        xs: "480px", // Example of an extra small breakpoint
+        sm: "640px",
+        md: "768px",
+        lg: "1024px",
+        xl: "1280px",
+        "2xl": "1536px",
+      },
       opacity: {
         85: ".85",
       },
