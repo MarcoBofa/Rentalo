@@ -34,7 +34,7 @@ function ScegliUtente() {
           <h1 className="text-3xl lg:text-5xl font-bold text-gray-800 mb-2 lg:mb-4">
             Noleggia Attrezzature e Macchinari
           </h1>
-          <p className="text-xl text-gray-600 sm:mb-3 lg:mb-10">
+          <p className="text-xl text-gray-600 mb-3 lg:mb-10">
             Seleziona il tipo di account per continuare la registrazione
           </p>
         </div>
