@@ -5,7 +5,7 @@ import Image from "next/image";
 function ScegliUtente() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-orange-600 to-gray-700 relative">
-      <div className="absolute top-0 left-0 sm:ml-1 sm:mt-4 lg:m-8">
+      <div className="absolute top-0 left-0 md:ml-1 md:mt-4 lg:m-8">
         <Link
           href="/"
           className="text-5xl font-bold text-white hover:text-gray-700 flex items-center"
