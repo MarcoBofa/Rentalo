@@ -33,7 +33,7 @@ const DashboardLayout: React.FC<DashboardProps> = ({ children }) => {
     // const baseStyle =
     // "flex flex-row items-center block py-2.5 px-4 lg:px-8 rounded text-sm lg:text-base transition duration-200";
     const baseStyle =
-      "p-2 lg:p-[15px] flex flex-row space-x-[10px] rounded text-xs lg:text-base transition duration-200";
+      "p-2 lg:p-[15px] flex flex-row space-x-1 lg:space-x-[10px] rounded text-xs lg:text-base transition duration-200";
     const inactiveStyle = "text-textSettings1"; // Custom color for inactive link
     const activeStyle = "bg-gray-200 text-blue-500 font-semibold"; // Style for active link
     const hoverStyle =
@@ -48,7 +48,7 @@ const DashboardLayout: React.FC<DashboardProps> = ({ children }) => {
     // const baseStyle =
     // "flex flex-row items-center block py-2.5 px-4 lg:px-8 rounded text-sm lg:text-base transition duration-200";
     const baseStyle =
-      "p-[15px] ml-6 flex flex-row space-x-[5px] rounded text-sm lg:text-base transition duration-200";
+      "p-[15px] ml-6 flex flex-row space-x-[5px] rounded text-xxs lg:text-sm transition duration-200";
     const inactiveStyle = "text-textSettings1"; // Custom color for inactive link
     const activeStyle = "underline text-blue-500 font-semibold"; // Style for active link
     const hoverStyle =
@@ -122,10 +122,7 @@ const DashboardLayout: React.FC<DashboardProps> = ({ children }) => {
               className={linkClass("/dashboard/parco-macchine")}
             >
               <div>
-                <GiMineTruck
-                  className="mr-[8px] mt-[-2px] text-lg "
-                  size={26}
-                />
+                <GiMineTruck className="lg:mr-[4px] mt-[-1px] lg:mt-[-2px] text-base lg:text-2.5xl" />
               </div>
               <div>La mia flotta</div>
             </Link>
@@ -134,31 +131,25 @@ const DashboardLayout: React.FC<DashboardProps> = ({ children }) => {
               className={subLinkClass("/dashboard/parco-macchine/aggiungi")}
             >
               <div>
-                <MdBorderColor
-                  className="mr-[4px] mt-[1px] text-lg "
-                  size={15}
-                />
+                <MdBorderColor className="mr-[1px] lg:mr-[4px] mt-[2px] lg:mt-[1px] text-xs lg:text-base" />
               </div>
-              <div className="text-sm">Aggiungi Macchinario</div>
+              <div> Aggiungi Macchinario</div>
             </Link>
             <Link
               href="/dashboard/parco-macchine/gestisci"
               className={subLinkClass("/dashboard/parco-macchine/gestisci")}
             >
               <div>
-                <MdBurstMode
-                  className="mr-[3px] ml-[-3px] mt-[-1px] text-lg "
-                  size={20}
-                />
+                <MdBurstMode className="mr-[1px] lg:mr-[4px] mt-[1px] lg:mt-[-1px] text-sm lg:text-xl" />
               </div>
-              <div className="text-sm">Gestisci parco macchine</div>
+              <div> Gestisci parco macchine</div>
             </Link>
             <Link
               href="/dashboard/macchinari-noleggiati"
               className={linkClass("/dashboard/macchinari-noleggiati")}
             >
               <div>
-                <GiTowTruck className="mr-[8px] mt-[-2px] text-lg " size={26} />
+                <GiTowTruck className="lg:mr-[4px] mt-[-2px] lg:mt-[-3px] text-lg lg:text-2.5xl" />
               </div>
               <div>Macchinari noleggiati</div>
             </Link>
@@ -167,10 +158,7 @@ const DashboardLayout: React.FC<DashboardProps> = ({ children }) => {
               className={linkClass("/dashboard/analytics")}
             >
               <div>
-                <MdAnalytics
-                  className="mr-[8px] mt-[-2px] text-lg "
-                  size={26}
-                />
+                <MdAnalytics className="lg:mr-[4px] mt-[-2px] lg:mt-[-2px] text-lg lg:text-2.5xl" />
               </div>
               <div>Analytics</div>
             </Link>
