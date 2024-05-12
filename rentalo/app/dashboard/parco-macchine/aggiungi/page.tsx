@@ -287,7 +287,7 @@ const aggiungiMacchinario: React.FC = () => {
                   <div className="flex hoverable-button justify-center items-center w-[13px] h-[13px] ml-1 mb-2 rounded-full bg-gray-200 text-xs leading-none cursor-pointer">
                     i
                   </div>
-                  <span className="display-on-hover absolute top-0 lg:top-[5px] left-[60px] z-10 left-full ml-2 w-[120px] lg:w-[220px] p-2 text-white mt-[-10px] bg-gray-400 text-xs rounded-lg shadow">
+                  <span className="display-on-hover absolute top-0 lg:top-[5px] left-[60px] z-10 left-full ml-2 w-[80px] lg:w-[220px] p-2 text-white mt-[-10px] bg-gray-400 text-xs rounded-lg shadow">
                     Inserisci il peso del macchinario in{" "}
                     <span className="font-bold underline">kg.</span>
                   </span>
@@ -310,7 +310,7 @@ const aggiungiMacchinario: React.FC = () => {
                 )}
               </div>
             </div>
-            {categoria === "Sollevamento" && (
+            {categoria === "" && (
               <>
                 <div className="mb-6">
                   <div className="flex relative flex-row items-center">
@@ -374,7 +374,7 @@ const aggiungiMacchinario: React.FC = () => {
                       <div className="flex hoverable-button justify-center items-center w-[13px] h-[13px] ml-1 mb-2 rounded-full bg-gray-200 text-xs leading-none cursor-pointer">
                         i
                       </div>
-                      <span className="z-10 display-on-hover absolute top-0 left-[130px] lg:left-[150px] ml-2 text-center w-[105px] lg:w-[160px] p-2 text-white mt-[-10px] bg-gray-400 text-xs rounded-lg shadow">
+                      <span className="z-10 display-on-hover absolute top-[-45px] left-[20px] lg:top-0 lg:left-[150px] ml-2 text-center w-[140px] lg:w-[160px] p-2 text-white mt-[-10px] bg-gray-400 text-xs rounded-lg shadow">
                         Inserisci le dimensioni in metri separate da{" "}
                         <span className="font-bold underline">x</span>
                       </span>
