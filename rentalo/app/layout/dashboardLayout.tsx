@@ -33,7 +33,7 @@ const DashboardLayout: React.FC<DashboardProps> = ({ children }) => {
     // const baseStyle =
     // "flex flex-row items-center block py-2.5 px-4 lg:px-8 rounded text-sm lg:text-base transition duration-200";
     const baseStyle =
-      "p-3 lg:p-[15px] mb-2 flex flex-row space-x-1 lg:space-x-[10px] rounded text-xs lg:text-base transition duration-200";
+      "p-3 xs:pl-1 lg:p-[15px] mb-2 flex flex-row space-x-1 lg:space-x-[10px] rounded text-xs lg:text-base transition duration-200";
     const inactiveStyle = "text-textSettings1"; // Custom color for inactive link
     const activeStyle = "bg-gray-200 text-blue-500 font-semibold"; // Style for active link
     const hoverStyle =
@@ -62,8 +62,8 @@ const DashboardLayout: React.FC<DashboardProps> = ({ children }) => {
     <>
       <div className="flex flex-row">
         <div className="flex flex-col pt-[90px] w-1/4 lg:w-1/6 min-h-screen top-21 left-0 bg-white text-textSettings1 mt-[30px] space-y-[40px] lg:space-y-[100px]">
-          <aside className="px-1 lg:px-[20px] flex flex-col">
-            <span className="font-semibold pl-[8px] lg:pl-[15px] mb-[15px] lg:mb-[20px]">
+          <aside className="px-1 lg:px-[20px] flex flex-col ">
+            <span className="font-semibold pl-[8px] lg:pl-[15px] mb-[15px] xs:text-center lg:mb-[20px]">
               DASHBOARD
             </span>
             <Link
@@ -86,7 +86,7 @@ const DashboardLayout: React.FC<DashboardProps> = ({ children }) => {
             </Link>
           </aside>
           <aside className="px-1 lg:px-[20px] flex flex-col">
-            <span className="font-semibold pl-[8px] lg:pl-[15px] mb-[15px] lg:mb-[20px]">
+            <span className="font-semibold pl-[8px] lg:pl-[15px] mb-[15px] xs:text-center lg:mb-[20px]">
               ACCOUNT
             </span>
             <Link
@@ -119,7 +119,7 @@ const DashboardLayout: React.FC<DashboardProps> = ({ children }) => {
       <div className="flex flex-row">
         <div className="flex flex-col pt-[90px] w-1/4 lg:w-1/6 min-h-screen top-21 left-0 bg-white text-textSettings1 mt-[30px] space-y-[40px] lg:space-y-[100px]">
           <aside className="px-1 lg:px-[20px] flex flex-col">
-            <span className="font-semibold pl-[8px] lg:pl-[15px] mb-[15px] lg:mb-[20px]">
+            <span className="font-semibold pl-[8px] lg:pl-[15px] mb-[15px] xs:text-center lg:mb-[20px]">
               DASHBOARD
             </span>
             <Link
@@ -169,7 +169,7 @@ const DashboardLayout: React.FC<DashboardProps> = ({ children }) => {
             </Link>
           </aside>
           <aside className="px-1 lg:px-[20px] flex flex-col">
-            <span className="font-semibold pl-[8px] lg:pl-[15px] mb-[15px] lg:mb-[20px]">
+            <span className="font-semibold pl-[8px] lg:pl-[15px] mb-[15px] xs:text-center lg:mb-[20px]">
               ACCOUNT
             </span>
             <Link
@@ -202,7 +202,7 @@ const DashboardLayout: React.FC<DashboardProps> = ({ children }) => {
       <div className="flex flex-row">
         <div className="flex flex-col pt-[90px] w-1/4 lg:w-1/6 min-h-screen top-21 left-0 bg-white text-textSettings1 mt-[30px] space-y-[40px] lg:space-y-[100px]">
           <aside className="px-1 lg:px-[20px] flex flex-col">
-            <span className="font-semibold pl-[8px] lg:pl-[15px] mb-[15px] lg:mb-[20px]">
+            <span className="font-semibold pl-[8px] lg:pl-[15px] mb-[15px] xs:text-center lg:mb-[20px]">
               DASHBOARD
             </span>
             <Link
@@ -225,7 +225,7 @@ const DashboardLayout: React.FC<DashboardProps> = ({ children }) => {
             </Link>
           </aside>
           <aside className="px-1 lg:px-[20px] flex flex-col">
-            <span className="font-semibold pl-[8px] lg:pl-[15px] mb-[15px] lg:mb-[20px]">
+            <span className="font-semibold pl-[8px] lg:pl-[15px] mb-[15px] xs:text-center lg:mb-[20px]">
               ACCOUNT
             </span>
             <Link
