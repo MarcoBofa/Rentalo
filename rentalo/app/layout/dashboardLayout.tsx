@@ -11,6 +11,8 @@ import { MdAnalytics } from "react-icons/md";
 import { FaUserAlt } from "react-icons/fa";
 import { MdAccountCircle } from "react-icons/md"; // Example: Material Design account circle icon
 import { ClimbingBoxLoader } from "react-spinners";
+import { MdBorderColor } from "react-icons/md";
+import { MdBurstMode } from "react-icons/md";
 
 interface DashboardProps {
   children?: React.ReactNode;
@@ -36,6 +38,21 @@ const DashboardLayout: React.FC<DashboardProps> = ({ children }) => {
     const activeStyle = "bg-gray-200 text-blue-500 font-semibold"; // Style for active link
     const hoverStyle =
       "hover:bg-gray-200 hover:text-blue-500 hover:font-semibold"; // Style for hover
+
+    return `${baseStyle} ${
+      pathname?.includes(href) ? activeStyle : `${inactiveStyle} ${hoverStyle}`
+    }`;
+  };
+
+  const subLinkClass = (href: string) => {
+    // const baseStyle =
+    // "flex flex-row items-center block py-2.5 px-4 lg:px-8 rounded text-sm lg:text-base transition duration-200";
+    const baseStyle =
+      "p-[15px] ml-6 flex flex-row space-x-[5px] rounded text-sm lg:text-base transition duration-200";
+    const inactiveStyle = "text-textSettings1"; // Custom color for inactive link
+    const activeStyle = "underline text-blue-500 font-semibold"; // Style for active link
+    const hoverStyle =
+      "hover:underline hover:text-blue-500 hover:font-semibold"; // Style for hover
 
     return `${baseStyle} ${
       pathname === href ? activeStyle : `${inactiveStyle} ${hoverStyle}`
@@ -111,6 +128,30 @@ const DashboardLayout: React.FC<DashboardProps> = ({ children }) => {
                 />
               </div>
               <div>La mia flotta</div>
+            </Link>
+            <Link
+              href="/dashboard/parco-macchine/aggiungi"
+              className={subLinkClass("/dashboard/parco-macchine/aggiungi")}
+            >
+              <div>
+                <MdBorderColor
+                  className="mr-[4px] mt-[1px] text-lg "
+                  size={15}
+                />
+              </div>
+              <div className="text-sm">Aggiungi Macchinario</div>
+            </Link>
+            <Link
+              href="/dashboard/parco-macchine/gestisci"
+              className={subLinkClass("/dashboard/parco-macchine/gestisci")}
+            >
+              <div>
+                <MdBurstMode
+                  className="mr-[3px] ml-[-3px] mt-[-1px] text-lg "
+                  size={20}
+                />
+              </div>
+              <div className="text-sm">Gestisci parco macchine</div>
             </Link>
             <Link
               href="/dashboard/macchinari-noleggiati"
