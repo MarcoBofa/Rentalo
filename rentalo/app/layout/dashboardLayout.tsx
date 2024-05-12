@@ -48,7 +48,7 @@ const DashboardLayout: React.FC<DashboardProps> = ({ children }) => {
     // const baseStyle =
     // "flex flex-row items-center block py-2.5 px-4 lg:px-8 rounded text-sm lg:text-base transition duration-200";
     const baseStyle =
-      "p-[15px] ml-6 flex flex-row space-x-[5px] rounded text-xxs lg:text-sm transition duration-200";
+      "p-[5px] lg:p-[15px] ml-2 lg:ml-6 flex flex-row space-x-[5px] rounded text-xxs lg:text-sm transition duration-200";
     const inactiveStyle = "text-textSettings1"; // Custom color for inactive link
     const activeStyle = "underline text-blue-500 font-semibold"; // Style for active link
     const hoverStyle =
