@@ -114,8 +114,8 @@ const DashboardLayout: React.FC<DashboardProps> = ({ children }) => {
   let aziendaSet = (
     <>
       <div className="flex flex-row">
-        <div className="flex flex-col pt-[90px] w-1/4 lg:w-1/6 min-h-screen top-21 left-0 bg-white text-textSettings1 mt-[30px] space-y-[100px]">
-          <aside className="px-[20px] flex flex-col ">
+        <div className="flex flex-col pt-[90px] w-1/4 lg:w-1/6 min-h-screen top-21 left-0 bg-white text-textSettings1 mt-[30px] space-y-[40px] lg:space-y-[100px]">
+          <aside className="px-1 lg:px-[20px] flex flex-col ">
             <span className="font-semibold pl-[15px] mb-[20px]">DASHBOARD</span>
             <Link
               href="/dashboard/parco-macchine"
