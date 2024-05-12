@@ -115,7 +115,7 @@ const DashboardLayout: React.FC<DashboardProps> = ({ children }) => {
     <>
       <div className="flex flex-row">
         <div className="flex flex-col pt-[90px] w-1/4 lg:w-1/6 min-h-screen top-21 left-0 bg-white text-textSettings1 mt-[30px] space-y-[40px] lg:space-y-[100px]">
-          <aside className="px-1 lg:px-[20px] flex flex-col ">
+          <aside className="px-1 lg:px-[20px] flex flex-col">
             <span className="font-semibold pl-[15px] mb-[20px]">DASHBOARD</span>
             <Link
               href="/dashboard/parco-macchine"
@@ -163,14 +163,14 @@ const DashboardLayout: React.FC<DashboardProps> = ({ children }) => {
               <div>Analytics</div>
             </Link>
           </aside>
-          <aside className="px-[20px] flex flex-col ">
+          <aside className="px-1 lg:px-[20px] flex flex-col">
             <span className="font-semibold pl-[15px] mb-[20px]">ACCOUNT</span>
             <Link
               href="/dashboard/password"
               className={linkClass("/dashboard/password")}
             >
               <div>
-                <FaLock className="mr-[8px] mt-[2px] text-lg" size={18} />
+                <FaLock className="lg:mr-[4px] mt-[-1px] lg:mt-[1px] text-sm lg:text-xl" />
               </div>
               <div>Password</div>
             </Link>
@@ -179,7 +179,7 @@ const DashboardLayout: React.FC<DashboardProps> = ({ children }) => {
               className={linkClass("/dashboard/credenziali")}
             >
               <div>
-                <FaUserAlt className="mr-[8px] mt-[2px] text-lg " size={18} />
+                <FaUserAlt className="lg:mr-[4px] mt-[-1px] lg:mt-[1px] text-sm lg:text-xl" />
               </div>
               <div>Credenziali</div>
             </Link>
