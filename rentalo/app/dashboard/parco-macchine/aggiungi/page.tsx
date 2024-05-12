@@ -206,7 +206,7 @@ const aggiungiMacchinario: React.FC = () => {
   return (
     <DashboardLayout>
       <div className="flex flex-col items-center min-h-screen text-textSettings bg-settings py-2 px-4 lg:px-0">
-        <div className="flex flex-col items-center justify-center mb-[44px] mt-[50px] lg:mt-[150px] w-full  lg:w-1/2 rounded  p-[10px] lg:p-[35px] bg-white">
+        <div className="flex flex-col items-center justify-center mb-[44px] mt-[80px] md:mt-[110px] lg:mt-[150px] w-full md:w-2/3 lg:w-1/2 rounded  p-[10px] lg:p-[35px] bg-white">
           <h1 className="text-lg lg:text-xl font-bold mb-2">
             Aggiungi un macchinario al tuo parco macchine.
           </h1>
