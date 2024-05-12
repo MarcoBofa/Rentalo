@@ -61,51 +61,55 @@ const DashboardLayout: React.FC<DashboardProps> = ({ children }) => {
 
   let privatoSet = (
     <>
-      <div className="flex flex-row pt-[90px] min-h-screen">
-        <aside className="w-1/4 lg:w-1/6 top-21 left-0 bg-white text-black">
-          <ul className="space-y-1 text-sm flex-grow">
-            {/* <li>
-              <Link
-                href="/Impostazioni/email"
-                className="block py-2.5 mt-1 px-4 rounded transition duration-200 hover:bg-gray-700"
-              >
-                Email
-              </Link>
-            </li> */}
-            <li>
-              <div className=" border-t ml-1 lg:ml-2 mb-1 mr-2"></div>
-              <Link
-                href="/dashboard"
-                className={linkClass("/dashboard/password")}
-              >
-                <FaLock className="mr-[11px] mb-[2px]" />
-                Dashboard
-              </Link>
-            </li>
-            <li>
-              <div className=" border-t ml-1 lg:ml-2 mb-1 mr-2"></div>
-              <Link
-                href="/dashboard/password"
-                className={linkClass("/dashboard/password")}
-              >
-                <FaLock className="mr-[11px] mb-[2px]" />
-                Password
-              </Link>
-            </li>
-            <li>
-              <div className=" border-t ml-1 lg:ml-2 mb-1 mr-2"></div>
-              <Link
-                href="/dashboard/credenziali"
-                className={linkClass("/dashboard/credenziali")}
-              >
-                <FaUserAlt className="mr-2 text-xl" />
-                Credenziali
-              </Link>
-              <div className=" border-t ml-1 lg:ml-2 mt-1 mr-2"></div>
-            </li>
-          </ul>
-        </aside>
-
+      <div className="flex flex-row">
+        <div className="flex flex-col pt-[90px] w-1/4 lg:w-1/6 min-h-screen top-21 left-0 bg-white text-textSettings1 mt-[30px] space-y-[40px] lg:space-y-[100px]">
+          <aside className="px-1 lg:px-[20px] flex flex-col">
+            <span className="font-semibold pl-[8px] lg:pl-[15px] mb-[15px] lg:mb-[20px]">
+              DASHBOARD
+            </span>
+            <Link
+              href="/dashboard/macchinari-noleggiati"
+              className={linkClass("/dashboard/macchinari-noleggiati")}
+            >
+              <div>
+                <GiTowTruck className="lg:mr-[4px] mt-[-2px] lg:mt-[-3px] text-lg lg:text-2.5xl" />
+              </div>
+              <div>Macchinari noleggiati</div>
+            </Link>
+            <Link
+              href="/dashboard/analytics"
+              className={linkClass("/dashboard/analytics")}
+            >
+              <div>
+                <MdAnalytics className="lg:mr-[4px] mt-[-2px] lg:mt-[-2px] text-lg lg:text-2.5xl" />
+              </div>
+              <div>Analytics</div>
+            </Link>
+          </aside>
+          <aside className="px-1 lg:px-[20px] flex flex-col">
+            <span className="font-semibold pl-[8px] lg:pl-[15px] mb-[15px] lg:mb-[20px]">
+              ACCOUNT
+            </span>
+            <Link
+              href="/dashboard/password"
+              className={linkClass("/dashboard/password")}
+            >
+              <div>
+                <FaLock className="lg:mr-[4px] mt-[-1px] lg:mt-[1px] text-sm lg:text-xl" />
+              </div>
+              <div>Password</div>
+            </Link>
+            <Link
+              href="/dashboard/credenziali"
+              className={linkClass("/dashboard/credenziali")}
+            >
+              <div>
+                <FaUserAlt className="lg:mr-[4px] mt-[-1px] lg:mt-[1px] text-sm lg:text-xl" />
+              </div>
+              <div>Credenziali</div>
+            </Link>
+          </aside>
+        </div>
         <main className="w-full lg:w-5/6">{children}</main>
       </div>
     </>
@@ -196,41 +200,55 @@ const DashboardLayout: React.FC<DashboardProps> = ({ children }) => {
 
   let noleggiatoreSet = (
     <>
-      <div className="flex flex-row pt-[90px]">
-        <aside className="w-1/4 lg:w-1/6 min-h-screen top-21 left-0 bg-white text-black ">
-          <ul className="space-y-1 text-sm">
-            {/* <li>
-              <Link
-                href="/Impostazioni/email"
-                className="block py-2.5 mt-1 px-4 rounded transition duration-200 hover:bg-gray-700"
-              >
-                Email
-              </Link>
-            </li> */}
-            <li className="">
-              <div className="border-t ml-1 lg:ml-2 mb-1 mr-2"></div>
-              <Link
-                href="/dashboard/password"
-                className={linkClass("/dashboard/password")}
-              >
-                <FaLock className="mr-[11px] mb-[2px]" />
-                Password
-              </Link>
-            </li>
-            <li>
-              <div className=" border-t  ml-1 lg:ml-2 mb-1 mr-2"></div>
-              <Link
-                href="/dashboard/credenziali"
-                className={linkClass("/dashboard/credenziali")}
-              >
-                <MdAccountCircle className="mr-2 text-xl" />
-                Credenziali
-              </Link>
-              <div className=" border-t ml-1 lg:ml-2 mt-1 mr-2"></div>
-            </li>
-          </ul>
-        </aside>
-
+      <div className="flex flex-row">
+        <div className="flex flex-col pt-[90px] w-1/4 lg:w-1/6 min-h-screen top-21 left-0 bg-white text-textSettings1 mt-[30px] space-y-[40px] lg:space-y-[100px]">
+          <aside className="px-1 lg:px-[20px] flex flex-col">
+            <span className="font-semibold pl-[8px] lg:pl-[15px] mb-[15px] lg:mb-[20px]">
+              DASHBOARD
+            </span>
+            <Link
+              href="/dashboard/macchinari-noleggiati"
+              className={linkClass("/dashboard/macchinari-noleggiati")}
+            >
+              <div>
+                <GiTowTruck className="lg:mr-[4px] mt-[-2px] lg:mt-[-3px] text-lg lg:text-2.5xl" />
+              </div>
+              <div>Macchinari noleggiati</div>
+            </Link>
+            <Link
+              href="/dashboard/analytics"
+              className={linkClass("/dashboard/analytics")}
+            >
+              <div>
+                <MdAnalytics className="lg:mr-[4px] mt-[-2px] lg:mt-[-2px] text-lg lg:text-2.5xl" />
+              </div>
+              <div>Analytics</div>
+            </Link>
+          </aside>
+          <aside className="px-1 lg:px-[20px] flex flex-col">
+            <span className="font-semibold pl-[8px] lg:pl-[15px] mb-[15px] lg:mb-[20px]">
+              ACCOUNT
+            </span>
+            <Link
+              href="/dashboard/password"
+              className={linkClass("/dashboard/password")}
+            >
+              <div>
+                <FaLock className="lg:mr-[4px] mt-[-1px] lg:mt-[1px] text-sm lg:text-xl" />
+              </div>
+              <div>Password</div>
+            </Link>
+            <Link
+              href="/dashboard/credenziali"
+              className={linkClass("/dashboard/credenziali")}
+            >
+              <div>
+                <FaUserAlt className="lg:mr-[4px] mt-[-1px] lg:mt-[1px] text-sm lg:text-xl" />
+              </div>
+              <div>Credenziali</div>
+            </Link>
+          </aside>
+        </div>
         <main className="w-full lg:w-5/6">{children}</main>
       </div>
     </>
