@@ -66,6 +66,6 @@
 
 .important-style {
   position: absolute;
-  left: 0;
+  left: 10;
   z-index: 10;
 }

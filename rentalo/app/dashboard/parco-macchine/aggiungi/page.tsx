@@ -287,7 +287,7 @@ const aggiungiMacchinario: React.FC = () => {
                   <div className="flex hoverable-button justify-center items-center w-[13px] h-[13px] ml-1 mb-2 rounded-full bg-gray-200 text-xs leading-none cursor-pointer">
                     i
                   </div>
-                  <span className=" important-style display-on-hover absolute top-[-100px] left-0 lg:left-[150px] ml-2 w-[100px] p-2 text-white bg-gray-400 text-xs rounded-lg shadow">
+                  <span className="important-style display-on-hover absolute top-[-73px] left-[25px] lg:left-[150px] ml-2 w-[110px] p-2 text-white bg-gray-400 text-xs rounded-lg shadow">
                     Inserisci il peso del macchinario in{" "}
                     <span className="font-bold underline">kg.</span>
                   </span>
@@ -323,7 +323,7 @@ const aggiungiMacchinario: React.FC = () => {
                     <div className="flex hoverable-button justify-center items-center w-[13px] h-[13px] ml-1 mb-2 rounded-full bg-gray-200 text-xs leading-none cursor-pointer">
                       i
                     </div>
-                    <span className="z-10 display-on-hover absolute top-0 lg:top-[5px] left-[0px] lg:left-[150px] left-full ml-3 w-auto p-2 text-white mt-[-10px] bg-gray-400 text-xs rounded-lg shadow">
+                    <span className="important-style display-on-hover absolute top-0 lg:top-[5px] left-[120px] lg:left-[150px] left-full ml-3 w-[150px] p-2 text-white mt-[-10px] bg-gray-400 text-xs rounded-lg shadow">
                       Inserisci l'altezza di lavoro in{" "}
                       <span className="font-bold underline">metri</span>.
                     </span>
