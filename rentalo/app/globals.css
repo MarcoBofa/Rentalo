@@ -69,3 +69,9 @@
   left: 10;
   z-index: 10;
 }
+
+.important {
+  position: absolute !important;
+  left: 10 !important;
+  z-index: 10 !important;
+}
