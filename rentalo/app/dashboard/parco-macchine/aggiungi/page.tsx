@@ -374,7 +374,7 @@ const aggiungiMacchinario: React.FC = () => {
                       <div className="flex hoverable-button justify-center items-center w-[13px] h-[13px] ml-1 mb-2 rounded-full bg-gray-200 text-xs leading-none cursor-pointer">
                         i
                       </div>
-                      <span className="z-10 display-on-hover absolute top-[-45px] left-[20px] lg:top-0 lg:left-[150px] ml-2 text-center w-[140px] lg:w-[160px] p-2 text-white mt-[-10px] bg-gray-400 text-xs rounded-lg shadow">
+                      <span className="z-10 display-on-hover absolute top-[-45px] left-[5px] lg:top-0 lg:left-[150px] ml-2 text-center w-[140px] lg:w-[160px] p-2 text-white mt-[-10px] bg-gray-400 text-xs rounded-lg shadow">
                         Inserisci le dimensioni in metri separate da{" "}
                         <span className="font-bold underline">x</span>
                       </span>
