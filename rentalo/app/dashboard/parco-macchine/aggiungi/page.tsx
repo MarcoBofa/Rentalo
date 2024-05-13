@@ -323,7 +323,7 @@ const aggiungiMacchinario: React.FC = () => {
                     <div className="flex hoverable-button justify-center items-center w-[13px] h-[13px] ml-1 mb-2 rounded-full bg-gray-200 text-xs leading-none cursor-pointer">
                       i
                     </div>
-                    <span className="important display-on-hover absolute top-0 lg:top-[5px] left-[117px] lg:left-[150px] left-full ml-3 w-[160px] p-2 text-white mt-[-10px] bg-gray-400 text-xs rounded-lg shadow">
+                    <span className="important display-on-hover absolute top-0 lg:top-[5px] left-[170px] lg:left-[150px] left-full ml-3 w-[160px] p-2 text-white mt-[-10px] bg-gray-400 text-xs rounded-lg shadow">
                       Inserisci l'altezza di lavoro in{" "}
                       <span className="font-bold underline">metri</span>.
                     </span>

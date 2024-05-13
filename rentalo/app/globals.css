@@ -72,6 +72,6 @@
 
 .important {
   position: absolute;
-  left: 0;
+  left: 125px;
   z-index: 10;
 }
