@@ -277,7 +277,7 @@ const aggiungiMacchinario: React.FC = () => {
                 />
               </div>
               <div className="w-1/2">
-                <div className="flex relative flex-row items-center">
+                <div className="flex flex-row items-center relative">
                   <label
                     className="block text-textSettings text-sm lg:text-base font-semibold mb-2"
                     htmlFor="peso"
@@ -287,7 +287,7 @@ const aggiungiMacchinario: React.FC = () => {
                   <div className="flex hoverable-button justify-center items-center w-[13px] h-[13px] ml-1 mb-2 rounded-full bg-gray-200 text-xs leading-none cursor-pointer">
                     i
                   </div>
-                  <span className="display-on-hover absolute top-0 lg:top-[5px] left-[50px] z-10 left-full ml-2 w-[80px] lg:w-[220px] p-2 text-white mt-[-10px] bg-gray-400 text-xs rounded-lg shadow">
+                  <span className="display-on-hover absolute top-[-45px] left-[80px] lg:top-0 lg:left-[150px] z-10 left-full ml-2 w-[80px] lg:w-[220px] p-2 text-white mt-[-10px] bg-gray-400 text-xs rounded-lg shadow">
                     Inserisci il peso del macchinario in{" "}
                     <span className="font-bold underline">kg.</span>
                   </span>
