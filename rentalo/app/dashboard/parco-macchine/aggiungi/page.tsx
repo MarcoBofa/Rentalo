@@ -287,7 +287,7 @@ const aggiungiMacchinario: React.FC = () => {
                   <div className="flex hoverable-button justify-center items-center w-[13px] h-[13px] ml-1 mb-2 rounded-full bg-gray-200 text-xs leading-none cursor-pointer">
                     i
                   </div>
-                  <span className="display-on-hover absolute top-[-85px] left-[-20px] lg:top-0 lg:left-[150px] z-10 left-full ml-2 w-[80px] lg:w-[220px] p-2 text-white mt-[-10px] bg-gray-400 text-xs rounded-lg shadow">
+                  <span className="display-on-hover absolute top-[-85px] left-[0px] lg:top-0 lg:left-[150px] z-10 left-full ml-2 w-[80px] lg:w-[220px] p-2 text-white mt-[-10px] bg-gray-400 text-xs rounded-lg shadow">
                     Inserisci il peso del macchinario in{" "}
                     <span className="font-bold underline">kg.</span>
                   </span>
@@ -310,7 +310,7 @@ const aggiungiMacchinario: React.FC = () => {
                 )}
               </div>
             </div>
-            {categoria === "Sollevamento" && (
+            {categoria === "" && (
               <>
                 <div className="mb-6">
                   <div className="flex relative flex-row items-center">
@@ -323,7 +323,7 @@ const aggiungiMacchinario: React.FC = () => {
                     <div className="flex hoverable-button justify-center items-center w-[13px] h-[13px] ml-1 mb-2 rounded-full bg-gray-200 text-xs leading-none cursor-pointer">
                       i
                     </div>
-                    <span className="display-on-hover absolute top-0 lg:top-[5px] left-[130px] z-10 lg:left-[150px] left-full ml-3 w-auto p-2 text-white mt-[-10px] bg-gray-400 text-xs rounded-lg shadow">
+                    <span className="z-10 display-on-hover absolute top-0 lg:top-[5px] left-[0px] lg:left-[150px] left-full ml-3 w-auto p-2 text-white mt-[-10px] bg-gray-400 text-xs rounded-lg shadow">
                       Inserisci l'altezza di lavoro in{" "}
                       <span className="font-bold underline">metri</span>.
                     </span>
