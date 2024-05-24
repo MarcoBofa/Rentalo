@@ -12,7 +12,7 @@ const homePage: FC = () => {
   return (
     <div className="flex flex-col bg-grey-100">
       <div className="relative">
-        <div className="relative w-full h-[800px] lg:h-[850px]">
+        <div className="relative w-full h-[400px] md:h-[600px] lg:h-[850px]">
           <Image src="/cantiere-stradale.jpg" fill={true} alt="Home" />
         </div>
         <div className="absolute top-0 left-0 w-full h-full bg-gray-800 opacity-90"></div>
