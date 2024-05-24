@@ -56,6 +56,18 @@ const aggiungiMacchinario: React.FC = () => {
   //   (value) => value.trim() !== ""
   // );
 
+  const fetch = () => {
+    axios
+      .get("/api/getMac")
+      .then((response) => {
+        setMacchinari(response.data);
+        toast.success("fectheddd");
+      })
+      .catch((error) => {
+        console.error("Error fetching machinery data:", error);
+      });
+  };
+
   return (
     <DashboardLayout>
       <div className="flex flex-col items-center h-full text-textSettings bg-settings py-2 px-4 lg:px-0">
@@ -150,6 +162,7 @@ const aggiungiMacchinario: React.FC = () => {
             <p className="text-center mt-10">Caricamento...</p>
           )}
         </div>
+        <button onClick={fetch}>fetch</button>
       </div>
     </DashboardLayout>
   );
