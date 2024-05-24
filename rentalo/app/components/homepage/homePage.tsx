@@ -43,7 +43,7 @@ const homePage: FC = () => {
         </div>
       </div>
 
-      <div className="bg-white h-[900px] w-full">
+      <div className="bg-white h-full w-full pb-[200px]">
         {" "}
         <ScopriSection />
       </div>

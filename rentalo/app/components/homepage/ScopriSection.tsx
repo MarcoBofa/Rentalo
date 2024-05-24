@@ -41,7 +41,7 @@ const ScopriSection: FC = () => {
           </span>{" "}
           che puoi noleggiare su Rentalo
         </h1>
-        <div className="flex flex-row items-center justify-center">
+        <div className="flex flex-wrap items-center justify-center">
           <div className="flex flex-row justify-center items-center">
             <div className="flex flex-col items-center space-y-[10px] w-[300px] h-[400px]  border border-gray-200 m-5">
               <div className="relative w-9/10 h-[200px] mt-[10px]">
