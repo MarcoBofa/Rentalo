@@ -23,6 +23,8 @@ export async function POST(request: Request) {
     user,
   } = body;
 
+  console.log("pesoooooooo", peso);
+
   if (nome == "" || categoria == "" || descrizione == "" || produttore == "") {
     return NextResponse.json(
       { error: "Campi obbligatori mancanti" },
@@ -39,6 +41,7 @@ export async function POST(request: Request) {
       data: {
         nome,
         descrizione,
+        tipo: "attrezzatura",
         peso: Number(peso),
         produttore,
         attributi: customFields,
@@ -55,8 +58,9 @@ export async function POST(request: Request) {
         nome,
         descrizione,
         portata: Number(portata),
+        tipo: "sollevamento",
         produttore,
-        peso: Number(peso),
+        peso: peso,
         altezzaLavoro: altezzaLavoro ? altezzaLavoro : null,
         dimensioneCarro: dimensioneCarro ? dimensioneCarro : null,
         attributi: customFields,
@@ -73,6 +77,7 @@ export async function POST(request: Request) {
         nome,
         descrizione,
         portata: Number(portata),
+        tipo: "autocarri",
         produttore,
         peso: Number(peso),
         dimensioneCarro: dimensioneCarro ? dimensioneCarro : null,

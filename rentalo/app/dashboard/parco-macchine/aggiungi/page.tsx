@@ -84,6 +84,8 @@ const aggiungiMacchinario: React.FC = () => {
     } else {
       setError("");
     }
+
+    setValue("peso", event.target.value);
   };
 
   const checkFieldsAltezza = (event: any) => {
@@ -102,6 +104,8 @@ const aggiungiMacchinario: React.FC = () => {
     } else {
       setAltezzaError("");
     }
+
+    setValue("altezzaLavoro", event.target.value);
   };
 
   const checkBtn = () => {

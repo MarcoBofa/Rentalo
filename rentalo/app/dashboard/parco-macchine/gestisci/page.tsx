@@ -8,10 +8,15 @@ import axios from "axios";
 import toast from "react-hot-toast";
 import "@/app/globals.css";
 
+type FocusedState = {
+  [key: string]: boolean;
+};
+
 interface FormData {
   [key: string]: any;
+  id: string;
   nome: string;
-  categoria: string;
+  tipo: string;
   descrizione: string;
   portata?: string;
   peso?: number;
@@ -22,12 +27,9 @@ interface FormData {
   customFields: Array<{ id: string; name: string; value: string }>;
 }
 
-type FocusedState = {
-  [key: string]: boolean;
-};
-
 const aggiungiMacchinario: React.FC = () => {
   const [focused, setFocused] = useState<FocusedState>({});
+  const [macchinari, setMacchinari] = useState<FormData[]>([]);
 
   const [showModal, setShowModal] = useState(false);
   const { currentUser } = useContext(UserContext);
@@ -38,170 +40,21 @@ const aggiungiMacchinario: React.FC = () => {
   useEffect(() => {
     if (!currentUser) {
       router.push("/Login");
+    } else {
+      axios
+        .get("/api/getMac")
+        .then((response) => {
+          setMacchinari(response.data);
+        })
+        .catch((error) => {
+          console.error("Error fetching machinery data:", error);
+        });
     }
   }, [currentUser, router]);
-
-  const {
-    register,
-    handleSubmit,
-    reset,
-    resetField,
-    control,
-    setValue,
-    watch,
-    formState: { errors },
-  } = useForm<FormData>({
-    defaultValues: {
-      nome: "",
-      categoria: "",
-      descrizione: "",
-      portata: "",
-      produttore: "",
-      dimensioneCarro: "",
-      dimensioneCassone: "",
-      customFields: [],
-    },
-  });
-
-  // Watch all form fields
-  const watchedFields = watch();
-  const categoria = watch("categoria");
-  const pesoWatch = watch("peso");
-
-  const checkFields = (event: any) => {
-    const value = parseFloat(event.target.value);
-    const regex = /[^0-9.]/;
-    const regexDots = /^(?:\.\d*|\d*\.$|(\d*\.){2,})/;
-
-    if (event.target.value === "") {
-      setError("");
-    } else if (value < 0) {
-      setError("Valore deve essere maggiore di 0.");
-    } else if (regex.test(event.target.value)) {
-      setError("Inserire un valore numerico.");
-    } else if (regexDots.test(event.target.value)) {
-      setError("Inserire un valore numerico valido.");
-    } else {
-      setError("");
-    }
-  };
-
-  const checkFieldsAltezza = (event: any) => {
-    const value = parseFloat(event.target.value);
-    const regex = /[^0-9.]/;
-    const regexDots = /^(?:\.\d*|\d*\.$|(\d*\.){2,})/;
-
-    if (event.target.value === "") {
-      setAltezzaError("");
-    } else if (value < 0) {
-      setAltezzaError("Valore deve essere maggiore di 0.");
-    } else if (regex.test(event.target.value)) {
-      setAltezzaError("Inserire un valore numerico.");
-    } else if (regexDots.test(event.target.value)) {
-      setAltezzaError("Inserire un valore numerico valido.");
-    } else {
-      setAltezzaError("");
-    }
-  };
-
-  const checkBtn = () => {
-    if (pesoError || altezzaLavoroError) {
-      return true;
-    } else {
-      return false;
-    }
-  };
 
   // const isAtLeastOneFieldFilled = Object.values(watchedFields).some(
   //   (value) => value.trim() !== ""
   // );
-
-  const handleFocus = (field: string) => {
-    setFocused((prevFocused) => ({ ...prevFocused, [field]: true }));
-  };
-
-  const handleBlur = (field: string) => {
-    setFocused((prevFocused) => ({ ...prevFocused, [field]: false }));
-  };
-  const onSubmit = (data: FormData) => {
-    if (
-      data.nome === "" ||
-      data.categoria === "" ||
-      data.produttore === "" ||
-      data.descrizione === ""
-    ) {
-      toast.error("Riempire tutti i campi obbligatori (*)");
-    } else {
-      let isCustomFieldEmpty = false;
-      for (let field of data.customFields) {
-        if (field.name.trim() === "" || field.value.trim() === "") {
-          toast.error("Riempire i campi personalizzati aggiunti");
-          isCustomFieldEmpty = true;
-        }
-      }
-      if (!isCustomFieldEmpty) {
-        data.customFields = data.customFields.filter(
-          (field) => field.name.trim() !== "" && field.value.trim() !== ""
-        );
-        setShowModal(true);
-      }
-    }
-  };
-
-  const confirmUpdate = () => {
-    const data = watchedFields;
-    console.log(data);
-
-    // Object.entries(data).forEach(([key, value]) => {
-    //   if (value === "" || value == null) {
-    //     delete data[key];
-    //   }
-    // });
-
-    axios
-      .post("/api/aggMac", {
-        nome: data.nome,
-        categoria: data.categoria,
-        descrizione: data.descrizione,
-        produttore: data.produttore,
-        peso: data.peso,
-        altezzaLavoro: data.altezzaLavoro,
-        portata: data.portata,
-        dimensioneCarro: data.dimensioneCarro,
-        dimensioneCassone: data.dimensioneCassone,
-        customFields: data.customFields,
-        user: currentUser,
-      })
-      .then((response) => {
-        toast.success(response.data.message);
-        reset();
-        setShowModal(false);
-        router.refresh();
-      })
-      .catch((error) => {
-        toast.error(error.response.data.error);
-      });
-    setShowModal(false);
-  };
-
-  const { fields, append, remove } = useFieldArray({
-    control,
-    name: "customFields",
-  });
-
-  const inputStyle = (field: string) => {
-    const fieldValue = watch(field as any);
-    if (
-      (field === "peso" && pesoError) ||
-      (field === "altezzaLavoro" && altezzaLavoroError)
-    ) {
-      return `shadow appearance-none border border-red-400 rounded w-full py-2 px-3 text-xs lg:text-sm text-gray-700 leading-tight focus:outline-none focus:shadow-outline`;
-    } else {
-      return `shadow appearance-none border ${
-        focused[field] || fieldValue ? "border-blue-500" : "border-gray-300"
-      } rounded w-full py-2 px-3 text-xs lg:text-sm text-gray-700 leading-tight focus:outline-none focus:shadow-outline`;
-    }
-  };
 
   return (
     <DashboardLayout>
@@ -210,6 +63,92 @@ const aggiungiMacchinario: React.FC = () => {
           <h1 className="text-lg lg:text-xl font-bold mb-2">
             Gestisci i macchinari della tua azienda
           </h1>
+        </div>
+        <div className="w-full px-4 lg:px-0">
+          {macchinari.length > 0 ? (
+            <div className="flex flex-wrap gap-6 px-4 lg:px-8 text-sm lg:text-base">
+              {macchinari.map((mac) => (
+                <div
+                  key={mac.id}
+                  className="bg-white p-5 rounded-lg shadow-lg flex flex-col w-full sm:w-72 md:w-80 lg:w-96 flex-grow"
+                >
+                  <h2 className="text-xl font-semibold mb-2">{mac.nome}</h2>
+                  <div className="flex bg-cyan-100 w-1/2 h-[100px] justify-center text-center items-center mb-2 ">
+                    IMAGE
+                  </div>
+                  <hr className="my-2 mr-[100px] md:mr-[180px]" />
+                  <p className="text-gray-500 mb-2">
+                    Tipo:{" "}
+                    <span className="font-bold text-gray-600">{mac.tipo}</span>
+                  </p>
+                  <hr className="my-2 mr-5" />
+                  <p className="text-gray-500 mb-2">
+                    Descrizione:{" "}
+                    <span className="font-bold text-gray-600">
+                      {mac.descrizione}
+                    </span>
+                  </p>
+                  <hr className="my-2 mr-5" />
+                  <p className="text-gray-500 mb-2">
+                    Portata:{" "}
+                    <span className="font-bold text-gray-600">
+                      {mac.portata || "N/A"}
+                    </span>
+                  </p>
+                  <hr className="my-2 mr-5" />
+                  <p className="text-gray-500 mb-2">
+                    Peso:{" "}
+                    <span className="font-bold text-gray-600">
+                      {mac.peso ? `${mac.peso} kg` : "N/A"}
+                    </span>
+                  </p>
+                  <hr className="my-2 mr-5" />
+                  <p className="text-gray-500 mb-2">
+                    Produttore:{" "}
+                    <span className="font-bold text-gray-600">
+                      {mac.produttore}
+                    </span>
+                  </p>
+                  <hr className="my-2 mr-5" />
+                  <p className="text-gray-500 mb-2">
+                    Altezza Lavoro:{" "}
+                    <span className="font-bold text-gray-600">
+                      {mac.altezzaLavoro ? `${mac.altezzaLavoro} m` : "N/A"}
+                    </span>
+                  </p>
+                  <hr className="my-2 mr-5" />
+                  <p className="text-gray-500 mb-2">
+                    Dimensione Carro:{" "}
+                    <span className="font-bold text-gray-600">
+                      {mac.dimensioneCarro || "N/A"}
+                    </span>
+                  </p>
+                  <hr className="my-2 mr-5" />
+                  <p className="text-gray-500 mb-2">
+                    Dimensione Cassone:{" "}
+                    <span className="font-bold text-gray-600">
+                      {mac.dimensioneCassone || "N/A"}
+                    </span>
+                  </p>
+                  {mac.customFields && mac.customFields.length > 0 && (
+                    <div className="mt-4">
+                      <h3 className="font-semibold mb-2">Custom Fields:</h3>
+                      <ul className="list-disc list-inside">
+                        {mac.customFields.map((field) => (
+                          <li key={field.id} className="text-gray-600">
+                            {field.name}: {field.value}
+                          </li>
+                        ))}
+                      </ul>
+                      <hr className="my-2 mr-5" />
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          ) : (
+            <p className="text-center mt-10">Caricamento...</p>
+          )}
         </div>
       </div>
     </DashboardLayout>

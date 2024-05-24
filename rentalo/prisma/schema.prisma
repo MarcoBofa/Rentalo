@@ -112,6 +112,7 @@ model annuncio {
   id          String        @id @default(auto()) @map("_id") @db.ObjectId
   titolo      String
   descrizione String
+  tipo        String
   prezzo      Int
   immagini    String[]
   createdAt   DateTime      @default(now())
@@ -124,6 +125,7 @@ model sollevamento {
   id          String        @id @default(auto()) @map("_id") @db.ObjectId
   nome        String
   descrizione String
+  tipo        String
   peso        Int?
   portata     Int?
   lunghezza   Int?
@@ -141,6 +143,7 @@ model attrezzatura {
   id          String        @id @default(auto()) @map("_id") @db.ObjectId
   nome        String
   descrizione String
+  tipo        String
   peso        Int?
   produttore  String?
   attributi   Json?
@@ -153,6 +156,7 @@ model autocarri {
   id          String        @id @default(auto()) @map("_id") @db.ObjectId
   nome     String
   descrizione String
+  tipo        String
   peso        Int?
   portata     Int?
   altezzaLavoro     Int?
@@ -168,6 +172,7 @@ model pale {
   id          String        @id @default(auto()) @map("_id") @db.ObjectId
   nome        String
   descrizione String
+  tipo        String
   peso        Int?
   produttore  String?
   attributi   Json?
