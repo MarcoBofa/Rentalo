@@ -64,9 +64,9 @@ const aggiungiMacchinario: React.FC = () => {
             Gestisci i macchinari della tua azienda
           </h1>
         </div>
-        <div className="w-full px-4 lg:px-0">
+        <div className="w-full lg:px-0">
           {macchinari.length > 0 ? (
-            <div className="flex flex-wrap gap-6 px-4 lg:px-8 text-sm lg:text-base">
+            <div className="flex flex-wrap gap-6 lg:px-8 text-sm lg:text-base">
               {macchinari.map((mac) => (
                 <div
                   key={mac.id}
