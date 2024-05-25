@@ -160,6 +160,7 @@ model autocarri {
   peso        Int?
   portata     Int?
   altezzaLavoro     Int?
+  dimensioneCassone String?
   dimensioneCarro   String?
   produttore  String?
   attributi   Json?

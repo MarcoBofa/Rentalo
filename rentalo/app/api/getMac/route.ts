@@ -24,11 +24,34 @@ export async function GET(request: Request) {
     );
   }
 
-  const mac = await prisma.attrezzatura.findMany({
-    where: {
-      aziendaId: currentUser.id,
-    },
-  });
+  const [att, sol, aut, pale] = await Promise.all([
+    prisma.attrezzatura.findMany({
+      where: {
+        aziendaId: currentUser.id,
+      },
+    }),
+    prisma.sollevamento.findMany({
+      where: {
+        aziendaId: currentUser.id,
+      },
+    }),
+    prisma.autocarri.findMany({
+      where: {
+        aziendaId: currentUser.id,
+      },
+    }),
+    prisma.pale.findMany({
+      where: {
+        aziendaId: currentUser.id,
+      },
+    }),
+  ]);
 
-  return NextResponse.json(mac);
+  const combinedArray = [...att, ...sol, ...aut, ...pale];
+
+  console.log(combinedArray);
+
+  console.log("dataaaaaaaa ", combinedArray);
+
+  return NextResponse.json(combinedArray);
 }

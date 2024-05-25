@@ -34,6 +34,8 @@ const aggiungiMacchinario: React.FC = () => {
   const router = useRouter();
   const [pesoError, setError] = useState("");
   const [altezzaLavoroError, setAltezzaError] = useState("");
+  const [dimensioneCassoneError, setDimensioneCassoneError] = useState("");
+  const [dimensioneCarroError, setDimensioneCarroError] = useState("");
 
   useEffect(() => {
     if (!currentUser) {
@@ -108,8 +110,47 @@ const aggiungiMacchinario: React.FC = () => {
     setValue("altezzaLavoro", event.target.value);
   };
 
+  const checkDimensioneCarro = (event: any) => {
+    const value = event.target.value;
+    const pattern = /^\d+(\.\d+)?x\d+(\.\d+)?x\d+(\.\d+)?$/;
+
+    if (event.target.value === "") {
+      setDimensioneCarroError("");
+    } else if (!pattern.test(value)) {
+      setDimensioneCarroError(
+        "Inserire la dimensione in metri separata da 'x'"
+      );
+    } else {
+      setDimensioneCarroError("");
+    }
+
+    console.log(pattern.test(value));
+  };
+
+  const checkDimensioneCassone = (event: any) => {
+    const value = event.target.value;
+    const pattern = /^\d+(\.\d+)?x\d+(\.\d+)?$/;
+
+    if (event.target.value === "") {
+      setDimensioneCassoneError("");
+    } else if (!pattern.test(value)) {
+      setDimensioneCassoneError(
+        "Inserire la dimensione in metri separata da 'x'"
+      );
+    } else {
+      setDimensioneCassoneError("");
+    }
+
+    console.log(pattern.test(value));
+  };
+
   const checkBtn = () => {
-    if (pesoError || altezzaLavoroError) {
+    if (
+      pesoError ||
+      altezzaLavoroError ||
+      dimensioneCarroError ||
+      dimensioneCassoneError
+    ) {
       return true;
     } else {
       return false;
@@ -391,7 +432,14 @@ const aggiungiMacchinario: React.FC = () => {
                       {...register("dimensioneCarro")}
                       onFocus={() => handleFocus("dimensioneCarro")}
                       onBlur={() => handleBlur("dimensioneCarro")}
+                      onChange={(e) => checkDimensioneCarro(e)}
                     />
+                    {dimensioneCarroError && (
+                      <div className="flex items-center justify-center text-xs text-red-600 bg-red-200 rounded-sm mt-[3px]">
+                        {" "}
+                        {dimensioneCarroError}{" "}
+                      </div>
+                    )}
                   </div>
                 </div>
               </>
@@ -402,19 +450,26 @@ const aggiungiMacchinario: React.FC = () => {
                 <div className="mb-6">
                   <label
                     className="block text-textSettings text-sm lg:text-base font-semibold mb-2"
-                    htmlFor="altezzaLavoro"
+                    htmlFor="dimensioneCassone"
                   >
                     Dimensione interna del cassone
                   </label>
                   <input
-                    className={inputStyle("altezzaLavoro")}
-                    id="altezzaLavoro"
+                    className={inputStyle("dimensioneCassone")}
+                    id="dimensioneCassone"
                     type="text"
                     placeholder={"m x m"}
-                    {...register("altezzaLavoro")}
-                    onFocus={() => handleFocus("altezzaLavoro")}
-                    onBlur={() => handleBlur("altezzaLavoro")}
+                    {...register("dimensioneCassone")}
+                    onFocus={() => handleFocus("dimensioneCassone")}
+                    onBlur={() => handleBlur("dimensioneCassone")}
+                    onChange={(e) => checkDimensioneCassone(e)}
                   />
+                  {dimensioneCassoneError && (
+                    <div className="flex items-center justify-center text-xs text-red-600 bg-red-200 rounded-sm mt-[3px]">
+                      {" "}
+                      {dimensioneCassoneError}{" "}
+                    </div>
+                  )}
                 </div>
                 <div className="flex flex-row w-full space-x-[30px] mb-6">
                   <div className="w-1/2">
@@ -458,7 +513,14 @@ const aggiungiMacchinario: React.FC = () => {
                       {...register("dimensioneCarro")}
                       onFocus={() => handleFocus("dimensioneCarro")}
                       onBlur={() => handleBlur("dimensioneCarro")}
+                      onChange={(e) => checkDimensioneCarro(e)}
                     />
+                    {dimensioneCarroError && (
+                      <div className="flex items-center justify-center text-xs text-red-600 bg-red-200 rounded-sm mt-[3px]">
+                        {" "}
+                        {dimensioneCarroError}{" "}
+                      </div>
+                    )}
                   </div>
                 </div>
               </>

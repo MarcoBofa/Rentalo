@@ -24,7 +24,7 @@ interface FormData {
   altezzaLavoro?: number;
   dimensioneCarro?: string;
   dimensioneCassone?: string;
-  customFields: Array<{ id: string; name: string; value: string }>;
+  attributi: Array<{ id: string; name: string; value: string }>;
 }
 
 const aggiungiMacchinario: React.FC = () => {
@@ -44,6 +44,7 @@ const aggiungiMacchinario: React.FC = () => {
       axios
         .get("/api/getMac")
         .then((response) => {
+          console.log(response.data);
           setMacchinari(response.data);
         })
         .catch((error) => {
@@ -66,14 +67,14 @@ const aggiungiMacchinario: React.FC = () => {
         </div>
         <div className="w-full lg:px-0">
           {macchinari.length > 0 ? (
-            <div className="flex flex-wrap gap-6 lg:px-8 text-sm lg:text-base">
+            <div className="flex flex-wrap gap-8 lg:px-8 text-sm lg:text-base">
               {macchinari.map((mac) => (
                 <div
                   key={mac.id}
                   className="bg-white p-5 rounded-lg shadow-lg flex flex-col w-full sm:w-72 md:w-80 lg:w-96 flex-grow"
                 >
                   <h2 className="text-xl font-semibold mb-2">{mac.nome}</h2>
-                  <div className="flex bg-cyan-100 w-1/2 h-[100px] justify-center text-center items-center mb-2 ">
+                  <div className="flex bg-gray-100 border-gray-200 border-2 w-1/2 h-[140px] justify-center text-center items-center mb-2 ">
                     IMAGE
                   </div>
                   <hr className="my-2 mr-[100px] md:mr-[180px]" />
@@ -82,27 +83,28 @@ const aggiungiMacchinario: React.FC = () => {
                     <span className="font-bold text-gray-600">{mac.tipo}</span>
                   </p>
                   <hr className="my-2 mr-5" />
-                  <p className="text-gray-500 mb-2">
-                    Descrizione:{" "}
-                    <span className="font-bold text-gray-600">
-                      {mac.descrizione}
-                    </span>
-                  </p>
-                  <hr className="my-2 mr-5" />
-                  <p className="text-gray-500 mb-2">
-                    Portata:{" "}
-                    <span className="font-bold text-gray-600">
-                      {mac.portata || "N/A"}
-                    </span>
-                  </p>
-                  <hr className="my-2 mr-5" />
-                  <p className="text-gray-500 mb-2">
-                    Peso:{" "}
-                    <span className="font-bold text-gray-600">
-                      {mac.peso ? `${mac.peso} kg` : "N/A"}
-                    </span>
-                  </p>
-                  <hr className="my-2 mr-5" />
+                  {mac.portata && (
+                    <>
+                      <p className="text-gray-500 mb-2">
+                        Portata:{" "}
+                        <span className="font-bold text-gray-600">
+                          {mac.portata ? `${mac.portata} kg` : "N/A"}
+                        </span>
+                      </p>
+                      <hr className="my-2 mr-5" />
+                    </>
+                  )}
+                  {mac.peso && mac.peso > 0 && (
+                    <>
+                      <p className="text-gray-500 mb-2">
+                        Peso:{" "}
+                        <span className="font-bold text-gray-600">
+                          {mac.peso ? `${mac.peso} kg` : "N/A"}
+                        </span>
+                      </p>
+                      <hr className="my-2 mr-5" />
+                    </>
+                  )}
                   <p className="text-gray-500 mb-2">
                     Produttore:{" "}
                     <span className="font-bold text-gray-600">
@@ -110,38 +112,67 @@ const aggiungiMacchinario: React.FC = () => {
                     </span>
                   </p>
                   <hr className="my-2 mr-5" />
-                  <p className="text-gray-500 mb-2">
-                    Altezza Lavoro:{" "}
-                    <span className="font-bold text-gray-600">
-                      {mac.altezzaLavoro ? `${mac.altezzaLavoro} m` : "N/A"}
-                    </span>
-                  </p>
-                  <hr className="my-2 mr-5" />
-                  <p className="text-gray-500 mb-2">
-                    Dimensione Carro:{" "}
-                    <span className="font-bold text-gray-600">
-                      {mac.dimensioneCarro || "N/A"}
-                    </span>
-                  </p>
-                  <hr className="my-2 mr-5" />
-                  <p className="text-gray-500 mb-2">
-                    Dimensione Cassone:{" "}
-                    <span className="font-bold text-gray-600">
-                      {mac.dimensioneCassone || "N/A"}
-                    </span>
-                  </p>
-                  {mac.customFields && mac.customFields.length > 0 && (
-                    <div className="mt-4">
-                      <h3 className="font-semibold mb-2">Custom Fields:</h3>
-                      <ul className="list-disc list-inside">
-                        {mac.customFields.map((field) => (
-                          <li key={field.id} className="text-gray-600">
-                            {field.name}: {field.value}
-                          </li>
-                        ))}
-                      </ul>
+                  {mac.altezzaLavoro && (
+                    <>
+                      <p className="text-gray-500 mb-2">
+                        Altezza Lavoro:{" "}
+                        <span className="font-bold text-gray-600">
+                          {mac.altezzaLavoro ? `${mac.altezzaLavoro} m` : "N/A"}
+                        </span>
+                      </p>
                       <hr className="my-2 mr-5" />
-                    </div>
+                    </>
+                  )}
+
+                  {mac.dimensioneCarro && (
+                    <>
+                      <p className="text-gray-500 mb-2">
+                        Dimensione Carro:{" "}
+                        <span className="font-bold text-gray-600">
+                          {mac.dimensioneCarro
+                            ? `${mac.dimensioneCarro} m`
+                            : "N/A"}
+                        </span>
+                      </p>
+                      <hr className="my-2 mr-5" />
+                    </>
+                  )}
+                  {mac.dimensioneCassone && (
+                    <>
+                      <p className="text-gray-500 mb-2">
+                        Dimensione Cassone:{" "}
+                        <span className="font-bold text-gray-600">
+                          {mac.dimensioneCassone
+                            ? `${mac.dimensioneCassone} m`
+                            : "N/A"}
+                        </span>
+                      </p>
+                      <hr className="my-2 mr-5" />
+                    </>
+                  )}
+                  <p className="text-gray-500 mb-2">
+                    Descrizione:{" "}
+                    <span className="font-bold text-gray-600">
+                      {mac.descrizione}
+                    </span>
+                  </p>
+                  {mac.attributi && mac.attributi.length > 0 && (
+                    <>
+                      <div className="mt-4">
+                        <hr className="my-2 mr-5" />
+                        <h3 className="font-semibold mb-2">
+                          Attributi personalizzati:
+                        </h3>
+                        <ul className="list-disc list-inside">
+                          {mac.attributi.map((field) => (
+                            <li key={field.id} className="text-gray-600">
+                              {field.name}: {field.value}
+                            </li>
+                          ))}
+                        </ul>
+                        <hr className="my-2 mr-5" />
+                      </div>
+                    </>
                   )}
                 </div>
               ))}
