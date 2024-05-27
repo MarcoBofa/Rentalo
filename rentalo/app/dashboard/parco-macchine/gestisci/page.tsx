@@ -68,7 +68,7 @@ const aggiungiMacchinario: React.FC = () => {
           {macchinari.length > 0 ? (
             <>
               <select
-                className="flex text-center w-[160px] ml-8 rounded h-[40px] border-gray-300 bg-gray-200 border-2 mb-5"
+                className="flex text-center w-[160px] lg:ml-8 rounded h-[40px] border-gray-300 bg-gray-200 border-2 mb-5"
                 id="selection"
                 onChange={(e) => handleSelectBtn(e)}
               >
