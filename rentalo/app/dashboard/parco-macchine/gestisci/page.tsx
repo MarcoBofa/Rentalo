@@ -85,8 +85,11 @@ const aggiungiMacchinario: React.FC = () => {
                       (selection == "attrezzatura" || selection == "all") && (
                         <div
                           key={mac.id}
-                          className="bg-white p-5 rounded-lg shadow-lg flex flex-col w-full sm:w-72 md:w-80 lg:w-96 flex-grow max-w-[500px]"
+                          className="bg-white p-5 rounded-lg shadow-lg flex flex-col w-full sm:w-72 md:w-80 lg:w-96 flex-grow max-w-[500px] relative group"
                         >
+                          <button className="bg-red-400 rounded-full w-[25px] h-[25px] absolute top-2 right-2 flex items-center justify-center font-bold text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                            x
+                          </button>
                           <h2 className="text-xl font-semibold mb-2">
                             {mac.nome}
                           </h2>
