@@ -182,6 +182,7 @@ model pale {
 
 }
 
+
 // model recensione {
 //   id          String        @id @default(auto()) @map("_id") @db.ObjectId
 //   punteggio   Int

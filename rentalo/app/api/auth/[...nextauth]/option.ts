@@ -37,11 +37,11 @@ const authOptions: AuthOptions = {
         };
       },
       clientId:
-        process.env.NODE_ENV === "development"
+        process.env.NODE_ENV === "production"
           ? (process.env.GITHUB_ID_DEV as string)
           : (process.env.GITHUB_ID as string),
       clientSecret:
-        process.env.NODE_ENV === "development"
+        process.env.NODE_ENV === "production"
           ? (process.env.GITHUB_SECRET_DEV as string)
           : (process.env.GITHUB_SECRET as string),
     }),
