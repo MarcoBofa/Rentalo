@@ -37,13 +37,13 @@ const authOptions: AuthOptions = {
         };
       },
       clientId:
-        process.env.NODE_ENV === "production"
-          ? (process.env.GITHUB_ID_DEV as string)
-          : (process.env.GITHUB_ID as string),
+        process.env.NODE_ENV === "development"
+          ? (process.env.GITHUB_ID as string)
+          : (process.env.GITHUB_ID_DEV as string),
       clientSecret:
-        process.env.NODE_ENV === "production"
-          ? (process.env.GITHUB_SECRET_DEV as string)
-          : (process.env.GITHUB_SECRET as string),
+        process.env.NODE_ENV === "development"
+          ? (process.env.GITHUB_SECRET as string)
+          : (process.env.GITHUB_SECRET_DEV as string),
     }),
     GoogleProvider({
       clientId: process.env.GOOGLE_CLIENT_ID!,
