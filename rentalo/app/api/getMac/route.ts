@@ -49,9 +49,9 @@ export async function GET(request: Request) {
 
   const combinedArray = [...att, ...sol, ...aut, ...pale];
 
-  console.log(combinedArray);
+  //console.log(combinedArray);
 
-  console.log("dataaaaaaaa ", combinedArray);
+  //console.log("dataaaaaaaa ", combinedArray);
 
   return NextResponse.json(combinedArray);
 }

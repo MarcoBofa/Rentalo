@@ -7,6 +7,7 @@ import { useRouter } from "next/navigation";
 import axios from "axios";
 import toast from "react-hot-toast";
 import "@/app/globals.css";
+import { refresh } from "aos";
 
 type FocusedState = {
   [key: string]: boolean;
@@ -27,9 +28,16 @@ interface FormData {
   attributi: Array<{ id: string; name: string; value: string }>;
 }
 
+interface DeleteForm {
+  tipo: string;
+  id: string;
+}
+
 const aggiungiMacchinario: React.FC = () => {
   const [focused, setFocused] = useState<FocusedState>({});
   const [macchinari, setMacchinari] = useState<FormData[]>([]);
+  const [showModal, setShowModal] = useState(false);
+  const [deleteId, setDeleteId] = useState<DeleteForm>();
 
   const { currentUser } = useContext(UserContext);
   const router = useRouter();
@@ -42,7 +50,7 @@ const aggiungiMacchinario: React.FC = () => {
       axios
         .get("/api/getMac")
         .then((response) => {
-          console.log(response.data);
+          //console.log(response.data);
           setMacchinari(response.data);
         })
         .catch((error) => {
@@ -50,6 +58,31 @@ const aggiungiMacchinario: React.FC = () => {
         });
     }
   }, [currentUser, router]);
+
+  const deleteAction = (mac: DeleteForm) => {
+    setDeleteId(mac);
+    setShowModal(true);
+  };
+
+  const confirmUpdate = () => {
+    axios
+      .post("/api/deleteMac", { email: currentUser?.email, mac: deleteId })
+      .then(() => {
+        toast.success("Il macchinario è stato rimosso correttamente", {
+          duration: 5000,
+        });
+      })
+      .catch((error) => {
+        // Check if the server responded with a message, otherwise use a default message
+        const message = error.response?.data?.error || "An error occurred!";
+        toast.error(message, {
+          duration: 8000, // duration in milliseconds (e.g., 5000ms = 5 seconds)
+        });
+        return;
+      });
+    setShowModal(false);
+    router.refresh();
+  };
 
   const handleSelectBtn = (event: React.ChangeEvent<HTMLSelectElement>) => {
     setSelection(event.target.value);
@@ -87,9 +120,15 @@ const aggiungiMacchinario: React.FC = () => {
                           key={mac.id}
                           className="bg-white p-5 rounded-lg shadow-lg flex flex-col w-full sm:w-72 md:w-80 lg:w-96 flex-grow max-w-[500px] relative group"
                         >
-                          <button className="bg-red-400 rounded-full w-[25px] h-[25px] absolute top-2 right-2 flex items-center justify-center font-bold text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                          <button
+                            onClick={() =>
+                              deleteAction({ tipo: mac.tipo, id: mac.id })
+                            }
+                            className="bg-red-400 rounded-full w-[25px] h-[25px] absolute top-2 right-2 flex items-center justify-center font-bold text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                          >
                             x
                           </button>
+
                           <h2 className="text-xl font-semibold mb-2">
                             {mac.nome}
                           </h2>
@@ -216,8 +255,16 @@ const aggiungiMacchinario: React.FC = () => {
                       (selection == "sollevamento" || selection == "all") && (
                         <div
                           key={mac.id}
-                          className="bg-white p-5 rounded-lg shadow-lg flex flex-col w-full sm:w-72 md:w-80 lg:w-96 flex-grow max-w-[500px]"
+                          className="bg-white p-5 rounded-lg shadow-lg flex flex-col w-full sm:w-72 md:w-80 lg:w-96 flex-grow max-w-[500px] relative group"
                         >
+                          <button
+                            onClick={() =>
+                              deleteAction({ tipo: mac.tipo, id: mac.id })
+                            }
+                            className="bg-red-400 rounded-full w-[25px] h-[25px] absolute top-2 right-2 flex items-center justify-center font-bold text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                          >
+                            x
+                          </button>
                           <h2 className="text-xl font-semibold mb-2">
                             {mac.nome}
                           </h2>
@@ -344,8 +391,16 @@ const aggiungiMacchinario: React.FC = () => {
                       (selection == "autocarri" || selection == "all") && (
                         <div
                           key={mac.id}
-                          className="bg-white p-5 rounded-lg shadow-lg flex flex-col w-full sm:w-72 md:w-80 lg:w-96 flex-grow max-w-[500px]"
+                          className="bg-white p-5 rounded-lg shadow-lg flex flex-col w-full sm:w-72 md:w-80 lg:w-96 flex-grow max-w-[500px] relative group"
                         >
+                          <button
+                            onClick={() =>
+                              deleteAction({ tipo: mac.tipo, id: mac.id })
+                            }
+                            className="bg-red-400 rounded-full w-[25px] h-[25px] absolute top-2 right-2 flex items-center justify-center font-bold text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                          >
+                            x
+                          </button>
                           <h2 className="text-xl font-semibold mb-2">
                             {mac.nome}
                           </h2>
@@ -461,6 +516,29 @@ const aggiungiMacchinario: React.FC = () => {
                   </>
                 ))}
               </div>
+              {showModal && (
+                <div className="fixed inset-0 bg-gray-600 bg-opacity-50 overflow-y-auto h-full w-full flex justify-center items-center">
+                  <div className="flex flex-col items-center justify-center bg-white w-[350px] h-[200px] p-5 rounded-lg shadow-lg text-center">
+                    <h3 className="text-lg font-bold mb-8">
+                      Confermare la rimozione del Macchinario?
+                    </h3>
+                    <div>
+                      <button
+                        onClick={confirmUpdate}
+                        className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded mr-10"
+                      >
+                        Conferma
+                      </button>
+                      <button
+                        onClick={() => setShowModal(false)}
+                        className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
+                      >
+                        Annulla
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              )}
             </>
           ) : (
             <p className="text-center mt-10">Caricamento...</p>
