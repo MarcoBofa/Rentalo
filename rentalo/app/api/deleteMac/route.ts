@@ -9,7 +9,7 @@ export async function POST(request: Request) {
   }
 
   const body = await request.json();
-  const { email, mac } = body;
+  const { email, userId, mac } = body;
 
   if (mac.id == "" || mac.categoria == "") {
     return NextResponse.json(
@@ -22,8 +22,9 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Not authorized" }, { status: 401 });
   }
 
-  console.log("datiii macccc: ", mac);
+  //console.log("datiii macccc: ", mac);
 
+  // Perform deletion if machine is of type ATTREZZATURA
   if (mac.tipo === "attrezzatura") {
     const macchinario = await prisma.attrezzatura.findUnique({
       where: { id: mac.id },
@@ -35,9 +36,19 @@ export async function POST(request: Request) {
         { status: 400 }
       );
     }
+
+    if (macchinario.aziendaId != userId) {
+      return NextResponse.json(
+        { error: "Rimozione non autorizzata" },
+        { status: 400 }
+      );
+    }
+
     await prisma.attrezzatura.delete({
       where: { id: mac.id },
     });
+
+    // Perform deletion if machine is of type SOLLEVAMENTO
   } else if (mac.tipo === "sollevamento") {
     const macchinario = await prisma.sollevamento.findUnique({
       where: { id: mac.id },
@@ -49,9 +60,19 @@ export async function POST(request: Request) {
         { status: 400 }
       );
     }
+
+    if (macchinario.aziendaId != userId) {
+      return NextResponse.json(
+        { error: "Rimozione non autorizzata" },
+        { status: 400 }
+      );
+    }
+
     await prisma.sollevamento.delete({
       where: { id: mac.id },
     });
+
+    // Perform deletion if machine is of type AUTOCARRO
   } else if (mac.tipo === "autocarri") {
     const macchinario = await prisma.autocarri.findUnique({
       where: { id: mac.id },
@@ -63,6 +84,14 @@ export async function POST(request: Request) {
         { status: 400 }
       );
     }
+
+    if (macchinario.aziendaId != userId) {
+      return NextResponse.json(
+        { error: "Rimozione non autorizzata" },
+        { status: 400 }
+      );
+    }
+
     await prisma.autocarri.delete({
       where: { id: mac.id },
     });

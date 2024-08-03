@@ -66,7 +66,11 @@ const aggiungiMacchinario: React.FC = () => {
 
   const confirmUpdate = () => {
     axios
-      .post("/api/deleteMac", { email: currentUser?.email, mac: deleteId })
+      .post("/api/deleteMac", {
+        email: currentUser?.email,
+        userId: currentUser?.id,
+        mac: deleteId,
+      })
       .then(() => {
         toast.success("Il macchinario è stato rimosso correttamente", {
           duration: 5000,
