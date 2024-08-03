@@ -1,11 +1,8 @@
 "use client";
 import DashboardLayout from "@/app/layout/dashboardLayout";
-import { CSSProperties, useContext, useEffect, useState } from "react";
+import { useContext, useEffect } from "react";
 import UserContext from "@/app/context/useContext";
-import { useForm, useFieldArray } from "react-hook-form";
 import { useRouter } from "next/navigation";
-import axios from "axios";
-import toast from "react-hot-toast";
 import "@/app/globals.css";
 import Link from "next/link";
 
