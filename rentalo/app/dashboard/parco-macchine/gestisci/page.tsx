@@ -91,9 +91,9 @@ const aggiungiMacchinario: React.FC = () => {
   return (
     <DashboardLayout>
       <div className="flex flex-col items-center h-full text-textSettings bg-settings py-2 px-4 lg:px-0">
-        <div className="flex flex-col items-center justify-center mb-[44px] mt-[155px] lg:mt-[150px] w-full  lg:w-1/2 rounded  p-[10px] lg:p-[35px] bg-white">
-          <h1 className="text-lg lg:text-xl font-bold mb-2">
-            Gestisci i macchinari della tua azienda
+        <div className="flex flex-col items-center justify-center mb-[26px] mt-[155px] lg:mt-[110px] w-full  lg:w-1/2 rounded  p-[10px] lg:p-[25px] bg-white">
+          <h1 className="text-lg lg:text-2xl font-bold mb-2">
+            Gestisci il tuo parco macchine
           </h1>
         </div>
 
@@ -101,7 +101,7 @@ const aggiungiMacchinario: React.FC = () => {
           {macchinari.length > 0 ? (
             <>
               <select
-                className="flex text-center w-[160px] lg:ml-8 rounded h-[40px] border-gray-300 bg-gray-200 border-2 mb-5"
+                className="flex cursor-pointer text-center w-[160px] lg:ml-8 rounded h-[40px] border-gray-300 bg-gray-200 border-2 mb-5"
                 id="selection"
                 onChange={(e) => handleSelectBtn(e)}
               >
