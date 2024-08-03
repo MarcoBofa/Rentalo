@@ -38,6 +38,7 @@ model User {
   attrezzatura              attrezzatura[]
   autocarri                 autocarri[]
   pale                      pale[]
+  annunci                   annuncio[]
   
   emailVerified             DateTime?
 }
@@ -111,14 +112,18 @@ model macchina {
 model annuncio {
   id          String        @id @default(auto()) @map("_id") @db.ObjectId
   titolo      String
+  durata      Int
   descrizione String
-  tipo        String
+  regione     String
   prezzo      Int
   immagini    String[]
   createdAt   DateTime      @default(now())
-  updatedAt   DateTime      @updatedAt
-  aziendaId   String @db.ObjectId
+  updatedAt   DateTime      @updatedAt 
+  macchinarioId String @db.ObjectId
+  macchinarioType String
 
+  aziendaId   String @db.ObjectId
+  azienda User? @relation(fields: [aziendaId], references: [id])
 }
 
 model sollevamento {
