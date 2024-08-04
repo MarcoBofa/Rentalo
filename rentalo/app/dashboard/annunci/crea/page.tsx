@@ -255,7 +255,7 @@ const creaAnnuncio: React.FC = () => {
           <h1 className="text-lg lg:text-xl font-bold mb-2">
             Crea un nuovo annuncio (in-sviluppo)
           </h1>
-          <form onSubmit={handleSubmit(onSubmit)} className="w-full pt-2 pb-1 ">
+          {/* <form onSubmit={handleSubmit(onSubmit)} className="w-full pt-2 pb-1 ">
             <div className="mb-4">
               <label
                 className="block text-textSettings text-sm lg:text-base font-semibold mb-2"
@@ -597,7 +597,7 @@ const creaAnnuncio: React.FC = () => {
                 </button>
               </div>
             </div>
-          </form>
+          </form> */}
         </div>
       </div>
 
