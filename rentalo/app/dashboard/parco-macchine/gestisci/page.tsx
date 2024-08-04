@@ -96,7 +96,7 @@ const gestisciMacchinari: React.FC = () => {
     <DashboardLayout>
       <div className="flex flex-col items-center h-full text-textSettings bg-settings py-2 px-4 lg:px-0">
         <div className="flex flex-col items-center justify-center mb-[26px] mt-[155px] lg:mt-[110px] w-full  lg:w-1/2 rounded  p-[10px] lg:p-[25px] bg-white">
-          <h1 className="text-lg lg:text-2xl font-bold mb-2">
+          <h1 className="text-lg lg:text-xl font-bold mb-2">
             Gestisci il tuo parco macchine
           </h1>
         </div>
