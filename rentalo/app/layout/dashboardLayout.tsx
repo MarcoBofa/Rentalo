@@ -148,6 +148,33 @@ const DashboardLayout: React.FC<DashboardProps> = ({ children }) => {
                 <MdBurstMode className="mr-[1px] lg:mr-[4px] mt-[1px] lg:mt-[-1px] text-sm lg:text-xl" />
               </div>
               <div> Gestisci parco macchine</div>
+            </Link>{" "}
+            <Link
+              href="/dashboard/annunci"
+              className={linkClass("/dashboard/annunci")}
+            >
+              <div>
+                <GiMineTruck className="lg:mr-[4px] mt-[-1px] lg:mt-[-2px] text-base lg:text-2.5xl" />
+              </div>
+              <div>I miei annunci</div>
+            </Link>
+            <Link
+              href="/dashboard/annunci/crea"
+              className={subLinkClass("/dashboard/annunci/crea")}
+            >
+              <div>
+                <MdBorderColor className="mr-[1px] lg:mr-[4px] mt-[2px] lg:mt-[1px] text-xs lg:text-base" />
+              </div>
+              <div> Crea nuovo annuncio</div>
+            </Link>
+            <Link
+              href="/dashboard/annunci/gestisci"
+              className={subLinkClass("dashboard/annunci/gestisci")}
+            >
+              <div>
+                <MdBurstMode className="mr-[1px] lg:mr-[4px] mt-[1px] lg:mt-[-1px] text-sm lg:text-xl" />
+              </div>
+              <div> Gestisci annunci</div>
             </Link>
             <Link
               href="/dashboard/macchinari-noleggiati"

@@ -33,7 +33,7 @@ interface DeleteForm {
   id: string;
 }
 
-const gestisciMacchinari: React.FC = () => {
+const gestisciAnnunci: React.FC = () => {
   const [focused, setFocused] = useState<FocusedState>({});
   const [macchinari, setMacchinari] = useState<FormData[]>([]);
   const [showModal, setShowModal] = useState(false);
@@ -97,11 +97,11 @@ const gestisciMacchinari: React.FC = () => {
       <div className="flex flex-col items-center h-full text-textSettings bg-settings py-2 px-4 lg:px-0">
         <div className="flex flex-col items-center justify-center mb-[26px] mt-[155px] lg:mt-[110px] w-full  lg:w-1/2 rounded  p-[10px] lg:p-[25px] bg-white">
           <h1 className="text-lg lg:text-2xl font-bold mb-2">
-            Gestisci il tuo parco macchine
+            Gestisci i tuoi annunci (in-sviluppo)
           </h1>
         </div>
 
-        <div className="w-full lg:px-0">
+        {/* <div className="w-full lg:px-0">
           {macchinari.length > 0 ? (
             <>
               <select
@@ -547,10 +547,10 @@ const gestisciMacchinari: React.FC = () => {
           ) : (
             <p className="text-center mt-10">Caricamento...</p>
           )}
-        </div>
+        </div>*/}
       </div>
     </DashboardLayout>
   );
 };
 
-export default gestisciMacchinari;
+export default gestisciAnnunci;
