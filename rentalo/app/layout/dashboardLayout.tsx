@@ -9,10 +9,13 @@ import { GiMineTruck } from "react-icons/gi";
 import { GiTowTruck } from "react-icons/gi";
 import { MdAnalytics } from "react-icons/md";
 import { FaUserAlt } from "react-icons/fa";
+import { HiOutlineClipboardDocumentList } from "react-icons/hi2";
 import { MdAccountCircle } from "react-icons/md"; // Example: Material Design account circle icon
 import { ClimbingBoxLoader } from "react-spinners";
 import { MdBorderColor } from "react-icons/md";
 import { MdBurstMode } from "react-icons/md";
+import { ImStatsDots } from "react-icons/im";
+import { ImBooks } from "react-icons/im";
 
 interface DashboardProps {
   children?: React.ReactNode;
@@ -154,7 +157,7 @@ const DashboardLayout: React.FC<DashboardProps> = ({ children }) => {
               className={linkClass("/dashboard/annunci")}
             >
               <div>
-                <GiMineTruck className="lg:mr-[4px] mt-[-1px] lg:mt-[-2px] text-base lg:text-2.5xl" />
+                <HiOutlineClipboardDocumentList className="lg:mr-[4px] mt-[-1px] lg:mt-[-2px] text-base lg:text-2.5xl" />
               </div>
               <div>I miei annunci</div>
             </Link>
@@ -172,7 +175,7 @@ const DashboardLayout: React.FC<DashboardProps> = ({ children }) => {
               className={subLinkClass("dashboard/annunci/gestisci")}
             >
               <div>
-                <MdBurstMode className="mr-[1px] lg:mr-[4px] mt-[1px] lg:mt-[-1px] text-sm lg:text-xl" />
+                <ImBooks className="mr-[1px] lg:mr-[4px] mt-[1px] lg:mt-[-1px] text-sm lg:text-xl" />
               </div>
               <div> Gestisci annunci</div>
             </Link>
